@@ -14,4 +14,6 @@ app.route('/solve/:id').get(solve)
 app.route('/code/:id').get(getCode)
 app.route('/problems').get(getProblems)
 
-export const api = functions.https.onRequest(app)
+export const api = functions
+    .region('europe-west1')
+    .https.onRequest(app)
