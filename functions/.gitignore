@@ -1,0 +1,6 @@
+## Compiled JavaScript files
+dist/
+
+node_modules/
+
+firebase-debug.log

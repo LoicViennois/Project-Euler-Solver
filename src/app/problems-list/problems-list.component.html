@@ -1,0 +1,13 @@
+<div class="row justify-content-center mx-0">
+  <div *ngFor="let pbs of problems" class="col-sm p-1">
+    <div class="row justify-content-center">
+      <button (click)="solve(pbs)" class="btn btn-secondary btn-solve mb-1 mt-2">
+        Solve problems
+        {{ pbs | firstId }}
+        to
+        {{ pbs | lastId }}
+      </button>
+    </div>
+    <euler-problem-card *ngFor="let p of pbs" [problem]="p"></euler-problem-card>
+  </div>
+</div>

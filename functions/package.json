@@ -1,0 +1,47 @@
+{
+  "name": "project-euler-functions",
+  "version": "1.0.0",
+  "description": "Project Euler",
+  "author": "Loïc Viennois",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "logs": "firebase functions:log",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "deploy": "firebase deploy --only functions"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0",
+    "js-combinatorics": "^0.5.4",
+    "lodash": "^4.17.15",
+    "number-to-words": "^1.2.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/jest": "^24.0.21",
+    "@types/js-combinatorics": "^0.5.31",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^12.12.5",
+    "@types/number-to-words": "^1.2.0",
+    "firebase-functions-test": "^0.1.6",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "private": true
+}
