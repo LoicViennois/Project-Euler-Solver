@@ -6,12 +6,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "functions": "npm --prefix functions run serve",
     "dev": "run-p start functions",
-    "build:prod": "ng build --prod",
     "lint": "ng lint",
     "release": "standard-version",
-    "deploy": "npm run build:prod && firebase deploy"
+    "deploy": "firebase deploy"
   },
   "private": true,
   "dependencies": {
