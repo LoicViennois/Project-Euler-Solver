@@ -3,7 +3,7 @@ import { maxKey } from '../maths'
 
 export function euler039 (): number {
   const limit = 1000
-  const squareRoots = new Map<number, number>(range(1, limit).map((n) => [n ** 2, n]) as Array<[number, number]>)
+  const squareRoots = new Map<number, number>(range(1, limit).map((n) => [n ** 2, n]) as [number, number][])
   const candidates = new Map<number, number>()
 
   for (let a = 1; a < limit; a++) {
