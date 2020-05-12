@@ -1,15 +1,23 @@
+# Build
 FROM node:lts-slim as build
 
 WORKDIR /usr/src/app
 
-COPY . .
-RUN npm install && npm run build
+COPY package*.json ./
 
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Run
 FROM node:lts-slim
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+
 RUN npm ci --only=production
 
 COPY --from=build /usr/src/app/dist ./dist
