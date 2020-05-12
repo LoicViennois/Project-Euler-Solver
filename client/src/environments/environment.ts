@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/euler-91415/europe-west1/api',
+  apiUrl: 'http://localhost:3000',
 }
