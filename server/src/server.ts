@@ -13,7 +13,13 @@ process.on('SIGTERM', shutdownServer)
 
 function shutdownServer () {
   console.info('shutting down...')
-  server.close(() => {
-    console.info('bye')
+  server.close((err) => {
+    if (err) {
+      console.error(err);
+      process.exitCode = 1;
+    } else {
+      console.info('bye')
+    }
+    process.exit()
   })
 }
