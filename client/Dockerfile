@@ -1,5 +1,5 @@
 # Build
-FROM node:lts-alpine as build
+FROM node:12.16-alpine as build
 
 WORKDIR /usr/src/app
 

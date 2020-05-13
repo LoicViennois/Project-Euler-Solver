@@ -1,5 +1,5 @@
 # Build
-FROM node:lts-alpine as build
+FROM node:12.16-alpine as build
 
 WORKDIR /usr/src/app
 
@@ -12,7 +12,9 @@ COPY . .
 RUN npm run build
 
 # Run
-FROM node:lts-alpine
+FROM node:12.16-alpine
+
+EXPOSE 3000
 
 RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
 
@@ -25,7 +27,5 @@ COPY --chown=node:node package*.json ./
 RUN npm ci --only=production
 
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
-
-EXPOSE 3000
 
 CMD [ "node", "./dist/server.js" ]
