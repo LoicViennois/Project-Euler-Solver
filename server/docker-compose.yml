@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  server:
+    image: loicviennois/project-euler-server
+    build: .
+    ports:
+      - '3000:3000'
