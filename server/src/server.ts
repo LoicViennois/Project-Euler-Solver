@@ -15,8 +15,8 @@ function shutdownServer () {
   console.info('shutting down...')
   server.close((err) => {
     if (err) {
-      console.error(err);
-      process.exitCode = 1;
+      console.error(err)
+      process.exitCode = 1
     } else {
       console.info('bye')
     }
