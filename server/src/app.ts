@@ -11,7 +11,7 @@ export const app = express()
 app.use(cors({
   origin: [
     'http://localhost:4200',
-    'http://euler.loicviennois.com'
+    process.env.EULER_CLIENT_URL
   ]
 }))
 app.use(morgan('tiny'))

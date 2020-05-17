@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+  server:
+    environment:
+      EULER_CLIENT_URL: https://euler.loicviennois.com
