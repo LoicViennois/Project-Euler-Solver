@@ -4,3 +4,6 @@ services:
   server:
     environment:
       EULER_CLIENT_URL: https://euler.loicviennois.com
+  client:
+    environment:
+      EULER_SERVER_URL: https://europe-west1-euler-91415.cloudfunctions.net/api

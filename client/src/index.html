@@ -11,6 +11,12 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+<script>
+  env = {
+    production: true,
+    apiUrl: '${EULER_SERVER_URL}',
+  }
+</script>
 <euler-root></euler-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>

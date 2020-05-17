@@ -14,4 +14,12 @@ RUN npm run build:prod
 # Run
 FROM nginx:1.17
 
+ENV EULER_SERVER_URL="http://localhost:3000"
+
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["nginx", "-g", "daemon off;"]

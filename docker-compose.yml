@@ -11,5 +11,7 @@ services:
   client:
     image: loicviennois/project-euler-client
     build: client
+    environment:
+      EULER_SERVER_URL: http://localhost:3000
     ports:
       - '8080:80'
