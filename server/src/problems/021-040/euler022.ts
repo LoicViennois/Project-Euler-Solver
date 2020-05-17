@@ -1,8 +1,11 @@
 import * as fs from 'fs'
+import * as path from 'path'
+
 import { wordValue } from '../utils'
+import { assetsFolder } from '../assets-folder'
 
 export function euler022 (): number {
-  const names = fs.readFileSync('./src/problems/021-040/p022_names.txt')
+  const names = fs.readFileSync(path.join(assetsFolder, 'p022_names.txt'))
       .toString()
       .replace(/"/g, '')
       .split(',')

@@ -1,7 +1,10 @@
 import * as fs from 'fs'
+import * as path from 'path'
+
 import { range, sortBy, isEqual, uniq, concat } from 'lodash'
 import { min, max, sum } from '../maths'
 import { isUniq, nbOccurences } from '../utils'
+import { assetsFolder } from '../assets-folder'
 
 enum HandValues {
   HighCard,      // 0
@@ -23,7 +26,7 @@ interface HandValue {
 }
 
 export function euler054 (): number {
-  const hands = fs.readFileSync('./src/problems/041-060/p054_poker.txt')
+  const hands = fs.readFileSync(path.join(assetsFolder, 'p054_poker.txt'))
       .toString()
       .split('\n')
       .filter((line) => line)
