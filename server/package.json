@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "build": "tsc && copyfiles -f src/assets/*.txt dist/assets/",
-    "test": "jest",
+    "test": "jest src/",
     "test:prod": "npm run build && cross-env NODE_ENV=production jest --config=jest.config.prod.js dist/",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
