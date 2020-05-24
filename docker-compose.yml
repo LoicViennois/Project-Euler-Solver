@@ -4,15 +4,10 @@ services:
   server:
     image: loicviennois/project-euler-server
     build: server
-    environment:
-      NODE_ENV: production
-      EULER_CLIENT_URL: http://localhost:8080
     ports:
       - '3000:3000'
   client:
     image: loicviennois/project-euler-client
     build: client
-    environment:
-      EULER_SERVER_URL: http://localhost:3000
     ports:
       - '8080:80'
