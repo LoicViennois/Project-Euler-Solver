@@ -1,5 +1,5 @@
-# Build
-FROM node:12.16-alpine as build
+# Base
+FROM node:12.16-alpine as base
 
 WORKDIR /usr/src/app
 
@@ -9,9 +9,19 @@ RUN npm install
 
 COPY . .
 
+# Dev
+FROM base as dev
+
+EXPOSE 80
+
+CMD ["npm", "run", "start:docker"]
+
+# Build
+FROM base as build
+
 RUN npm run build:prod
 
-# Run
+# Prod
 FROM nginx:1.17
 
 ENV EULER_SERVER_URL="http://localhost:3000"

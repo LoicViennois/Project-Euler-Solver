@@ -1,5 +1,7 @@
-# Build
-FROM node:12.16-alpine as build
+# Base
+FROM node:12.16-alpine as base
+
+EXPOSE 3000
 
 WORKDIR /usr/src/app
 
@@ -9,16 +11,30 @@ RUN npm install
 
 COPY . .
 
+# Dev
+FROM base as dev
+
+ENV EULER_CLIENT_URL="http://localhost:8080"
+
+ENV NODE_ENV="development"
+
+ENV EXPRESS_INTERFACE="0.0.0.0"
+
+CMD ["npm", "run", "start"]
+
+# Build
+FROM base as build
+
 RUN npm run build
 
-# Run
+# Prod
 FROM node:12.16-alpine
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 
 ENV NODE_ENV="production"
 
-EXPOSE 3000
+ENV EXPRESS_INTERFACE="0.0.0.0"
 
 RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
 

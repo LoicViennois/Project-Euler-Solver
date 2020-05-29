@@ -1,13 +1,13 @@
-version: '2'
+version: '2.4'
 
 services:
   server:
     image: loicviennois/project-euler-server
-    build: server
+    build: ./server
     ports:
       - '3000:3000'
   client:
     image: loicviennois/project-euler-client
-    build: client
+    build: ./client
     ports:
       - '8080:80'

@@ -1,8 +1,0 @@
-version: '2'
-
-services:
-  client:
-    image: loicviennois/project-euler-client
-    build: .
-    ports:
-      - '8080:80'
