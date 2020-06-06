@@ -9,5 +9,7 @@ services:
   client:
     image: loicviennois/project-euler-client
     build: ./client
+    depends_on:
+      - server
     ports:
       - '8080:80'
