@@ -28,7 +28,7 @@ FROM base as build
 RUN npm run build
 
 # Prod
-FROM node:12.16-alpine
+FROM node:12.16-alpine as prod
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 

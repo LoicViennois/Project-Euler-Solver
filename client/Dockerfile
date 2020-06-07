@@ -22,7 +22,7 @@ FROM base as build
 RUN npm run build:prod
 
 # Prod
-FROM nginx:1.17
+FROM nginx:1.17 as prod
 
 ENV EULER_SERVER_URL="http://localhost:3000"
 
