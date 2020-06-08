@@ -25,7 +25,9 @@ FROM base as build
 
 COPY . .
 
-RUN npm run build
+RUN npm run lint && \
+    npm run build && \
+    npm run test:prod
 
 # Prod
 FROM node:12.16-alpine as prod

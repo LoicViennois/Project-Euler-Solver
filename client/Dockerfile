@@ -19,7 +19,8 @@ FROM base as build
 
 COPY . .
 
-RUN npm run build:prod
+RUN npm run lint && \
+    npm run build:prod
 
 # Prod
 FROM nginx:1.17 as prod
