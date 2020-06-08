@@ -5,9 +5,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
-
-COPY . .
+RUN npm ci
 
 # Dev
 FROM base as dev
@@ -18,6 +16,8 @@ CMD ["npm", "run", "start:docker"]
 
 # Build
 FROM base as build
+
+COPY . .
 
 RUN npm run build:prod
 
