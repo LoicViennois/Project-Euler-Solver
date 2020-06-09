@@ -10,6 +10,7 @@ services:
     image: loicviennois/project-euler-client
     build: ./client
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     ports:
       - '8080:80'

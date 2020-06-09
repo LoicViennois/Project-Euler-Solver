@@ -50,4 +50,6 @@ RUN npm ci --only=production
 
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 
+HEALTHCHECK --interval=5s CMD node ./dist/hc.js
+
 CMD [ "node", "./dist/server.js" ]
