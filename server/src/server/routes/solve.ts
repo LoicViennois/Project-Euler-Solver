@@ -3,7 +3,7 @@ import { execTime } from '../../problems/utils'
 import { Solution } from '../models/solution'
 import { problems } from './problems'
 
-export let solve: RequestHandler = (req: Request, res: Response) => {
+export const solve: RequestHandler = (req: Request, res: Response) => {
   const id = +req.params.id
 
   console.log(`Solving problem ${id}`)

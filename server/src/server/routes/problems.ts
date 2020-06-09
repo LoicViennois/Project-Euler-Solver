@@ -6,7 +6,7 @@ import { problems as p4 } from '../../problems/061-080/list'
 import { Problem, Status } from '../models/problem'
 
 const problemsList: Problem[] = []
-export let problems = new Map<number, () => number>()
+export const problems = new Map<number, () => number>()
 
 const pbCreator = (f, n) => {
   const pb: Problem = {
@@ -23,7 +23,7 @@ p2.forEach(pbCreator)
 p3.forEach(pbCreator)
 p4.forEach(pbCreator)
 
-export let getProblems: RequestHandler = (req: Request, res: Response) => {
-  console.log(`Get problems`)
+export const getProblems: RequestHandler = (req: Request, res: Response) => {
+  console.log('Get problems')
   return res.json(problemsList)
 }

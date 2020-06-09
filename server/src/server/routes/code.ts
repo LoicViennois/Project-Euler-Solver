@@ -1,7 +1,7 @@
 import { Request, RequestHandler, Response } from 'express'
 import * as fs from 'fs'
 
-export let getCode: RequestHandler = (req: Request, res: Response) => {
+export const getCode: RequestHandler = (req: Request, res: Response) => {
   const name: string = req.params.id
   let filePath: string = null
 
