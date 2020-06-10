@@ -27,11 +27,15 @@ FROM nginx:1.17 as prod
 
 ENV EULER_SERVER_URL="http://localhost:3000"
 
+RUN apt-get update && apt-get install --no-install-recommends -y curl
+
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+HEALTHCHECK --interval=1m CMD curl -f http://localhost/ || exit 1
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
