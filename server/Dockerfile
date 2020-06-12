@@ -1,5 +1,5 @@
 # Base
-FROM node:12.16-alpine as base
+FROM node:lts-alpine as base
 
 EXPOSE 3000
 
@@ -30,7 +30,7 @@ RUN npm run lint && \
     npm run test:prod
 
 # Prod
-FROM node:12.16-alpine as prod
+FROM node:lts-alpine as prod
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 

@@ -1,5 +1,5 @@
 # Base
-FROM node:12.16-alpine as base
+FROM node:lts-alpine as base
 
 WORKDIR /usr/src/app
 
@@ -23,7 +23,7 @@ RUN npm run lint && \
     npm run build:prod
 
 # Prod
-FROM nginx:1.17 as prod
+FROM nginx:stable as prod
 
 ENV EULER_SERVER_URL="http://localhost:3000"
 
