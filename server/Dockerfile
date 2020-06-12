@@ -9,6 +9,8 @@ COPY package*.json ./
 
 RUN npm ci
 
+COPY . .
+
 # Dev
 FROM base as dev
 
@@ -22,8 +24,6 @@ CMD ["npm", "run", "start"]
 
 # Build
 FROM base as build
-
-COPY . .
 
 RUN npm run lint && \
     npm run build && \
