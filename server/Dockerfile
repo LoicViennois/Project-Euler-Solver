@@ -18,7 +18,7 @@ ENV EULER_CLIENT_URL="http://localhost:8080"
 
 ENV NODE_ENV="development"
 
-ENV EXPRESS_INTERFACE="0.0.0.0"
+ENV EULER_SERVER_INTERFACE="0.0.0.0"
 
 CMD ["npm", "run", "start"]
 
@@ -34,9 +34,9 @@ FROM node:lts-alpine as prod
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 
-ENV NODE_ENV="production"
+ENV EULER_SERVER_INTERFACE="0.0.0.0"
 
-ENV EXPRESS_INTERFACE="0.0.0.0"
+ENV NODE_ENV="production"
 
 RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
 

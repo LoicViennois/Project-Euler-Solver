@@ -3,7 +3,7 @@ import * as http from 'http'
 const options = {
   timeout: 2000,
   host: 'localhost',
-  port: process.env.EXPRESS_PORT || 3000,
+  port: process.env.EULER_SERVER_PORT || 3000,
   path: '/healthz'
 }
 
