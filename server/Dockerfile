@@ -1,8 +1,6 @@
 # Base
 FROM node:lts-alpine as base
 
-EXPOSE 3000
-
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -13,6 +11,8 @@ COPY . .
 
 # Dev
 FROM base as dev
+
+EXPOSE 3000
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 
@@ -31,6 +31,8 @@ RUN npm run lint && \
 
 # Prod
 FROM node:lts-alpine as prod
+
+EXPOSE 3000
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 
