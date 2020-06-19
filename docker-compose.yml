@@ -6,6 +6,8 @@ services:
     build: ./server
     ports:
       - '3000:3000'
+    healthcheck:
+      interval: 5s
   client:
     image: loicviennois/project-euler-client
     build: ./client
@@ -14,3 +16,5 @@ services:
         condition: service_healthy
     ports:
       - '8080:80'
+    healthcheck:
+      interval: 5s
