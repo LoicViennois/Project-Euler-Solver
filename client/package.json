@@ -36,7 +36,6 @@
     "@types/highlight.js": "^9.12.3",
     "@types/node": "^13.13.5",
     "codelyzer": "^5.2.2",
-    "sharp": "^0.25.2",
     "ts-node": "~8.10.1",
     "tslint": "~6.1.2",
     "typescript": "~3.8.3"
