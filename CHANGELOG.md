@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.1.0...v1.2.0) (2020-08-28)
+
+
+### Features
+
+* **client:** upgrade to Angular 10 ([26cac42](https://github.com/LoicViennois/Project-Euler-Solver/commit/26cac429221aa21c4ead638ff3cb779b9b3944fa))
+
+
+### Bug Fixes
+
+* **server:** deal with assets path resolution in dev and prod envs ([b8149c2](https://github.com/LoicViennois/Project-Euler-Solver/commit/b8149c2af965bfaabd59dee44d2868191d43ae75))
+* **server:** display server error on server shutdown, if any ([ca36bb5](https://github.com/LoicViennois/Project-Euler-Solver/commit/ca36bb552782091251b3416b803dfcfb2808bd81))
+* **server:** gracefully shutdown server on SIGINT and SIGTERM signals ([9c1b4d0](https://github.com/LoicViennois/Project-Euler-Solver/commit/9c1b4d09fb35c68f4792959608240d7091845a04))
+
 ## [1.1.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.0.0...v1.1.0) (2019-11-05)
 
 
