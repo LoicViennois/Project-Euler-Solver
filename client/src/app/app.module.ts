@@ -10,6 +10,8 @@ import { ProblemCardComponent } from './problems-list/problem-card/problem-card.
 import { ProblemsListComponent } from './problems-list/problems-list.component'
 import { CodeViewComponent } from './code-view/code-view.component'
 import { CodeBlockComponent } from './code-view/code-block/code-block.component'
+import { ModalContainerComponent } from './modals/modal-container/modal-container.component'
+import { CopyrightComponent } from './modals/copyright/copyright.component'
 
 // Providers
 import { ProblemsService } from './problems-list/problems.service'
@@ -30,6 +32,8 @@ import { environment } from '../environments/environment'
     CodeViewComponent,
     FormatCodePipe,
     CodeBlockComponent,
+    ModalContainerComponent,
+    CopyrightComponent,
   ],
   imports: [
     BrowserModule,

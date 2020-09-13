@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router'
 import { CodeViewComponent } from './code-view/code-view.component'
 import { ProblemsListComponent } from './problems-list/problems-list.component'
 import { CodeBlockComponent } from './code-view/code-block/code-block.component'
+import { ModalContainerComponent } from './modals/modal-container/modal-container.component'
+import { CopyrightComponent } from './modals/copyright/copyright.component'
 
 const routes: Routes = [
   {
@@ -18,6 +20,12 @@ const routes: Routes = [
         component: CodeBlockComponent,
       }
     ]
+  },
+  {
+    path: 'copyright',
+    component: ModalContainerComponent,
+    data: { component: CopyrightComponent },
+    outlet: 'modal'
   },
   {
     path: '**',

@@ -3,8 +3,13 @@
   <div class="col-md-auto order-lg-2 py-1">
     <h1 class="title text-center">Project Euler Solver</h1>
     <div class="text-center">
-      <a href="https://github.com/LoicViennois/Project-Euler-Solver">
+      <a href="https://github.com/LoicViennois/Project-Euler-Solver"
+         class="mx-2">
         <i class="title fa-lg fab fa-github"></i>
+      </a>
+      <a [routerLink]="[{ outlets: { primary: [''], modal: ['copyright'] } }]"
+         class="mx-2">
+        <i class="title fa-lg fas fa-copyright"></i>
       </a>
     </div>
   </div>
@@ -22,4 +27,5 @@
 <div class="container pt-3">
   <router-outlet></router-outlet>
 </div>
+<router-outlet name="modal"></router-outlet>
 
