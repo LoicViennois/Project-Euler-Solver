@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.2.0...v1.3.0) (2020-09-13)
+
+
+### Features
+
+* add copyright modal ([8879e6e](https://github.com/LoicViennois/Project-Euler-Solver/commit/8879e6eeea156a9da13dfe71a604f0d4e17b1037))
+
 ## [1.2.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.1.0...v1.2.0) (2020-08-28)
 
 
