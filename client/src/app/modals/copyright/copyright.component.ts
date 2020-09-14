@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
-import { version } from '../../../../../package.json'
+import { version } from '../../../../package.json'
 
 
 @Component({
