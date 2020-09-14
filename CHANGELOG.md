@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.3.0...v1.3.1) (2020-09-14)
+
+
+### Bug Fixes
+
+* improve version bump and fix version recovery form client ([170fb76](https://github.com/LoicViennois/Project-Euler-Solver/commit/170fb76e6e6c99f6c224f09e9a3c0bb8d1c5e818))
+
 ## [1.3.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.2.0...v1.3.0) (2020-09-13)
 
 
