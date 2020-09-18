@@ -20,14 +20,13 @@ export class Problem {
   id: number;
   name: string;
   private status: Status;
+  private pSolution: Solution;
 
   constructor(p: ApiProblem) {
     this.id = p.id;
     this.name = p.name;
     this.status = p.status;
   }
-
-  private pSolution: Solution;
 
   get solution(): Solution {
     return this.pSolution;

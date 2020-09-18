@@ -3,7 +3,7 @@ version: '2.4'
 services:
   server:
     build:
-     target: dev
+      target: dev
     volumes:
       - ./server/src:/usr/src/app/src
   client:
