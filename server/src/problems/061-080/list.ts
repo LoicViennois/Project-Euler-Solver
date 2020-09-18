@@ -1,4 +1,4 @@
-import { euler061 } from './euler061'
+import { euler061 } from './euler061';
 
 export let problems = new Map<number, () => number>([
   [61, euler061],
@@ -21,4 +21,4 @@ export let problems = new Map<number, () => number>([
   [78, null],
   [79, null],
   [80, null],
-])
+]);

@@ -1,8 +1,8 @@
-import { range } from 'lodash'
-import { mul } from '../maths'
-import { transpose } from '../utils'
+import { range } from 'lodash';
+import { mul } from '../maths';
+import { transpose } from '../utils';
 
-export function euler011 (): number {
+export function euler011(): number {
   const theBigGrid = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
     [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
     [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],
@@ -22,9 +22,9 @@ export function euler011 (): number {
     [4, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18, 8, 46, 29, 32, 40, 62, 76, 36],
     [20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16],
     [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
-    [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]]
+    [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]];
 
-  let maxProd = 0
+  let maxProd = 0;
 
   /*
   Check rows
@@ -32,8 +32,8 @@ export function euler011 (): number {
   */
   for (const row of theBigGrid) {
     for (const i of range(row.length - 4 + 1)) {
-      const chunck = row.slice(i, i + 4)
-      maxProd = Math.max(maxProd, mul(chunck))
+      const chunck = row.slice(i, i + 4);
+      maxProd = Math.max(maxProd, mul(chunck));
     }
   }
 
@@ -42,11 +42,11 @@ export function euler011 (): number {
         |
         |
    */
-  const gridT = transpose(theBigGrid)
+  const gridT = transpose(theBigGrid);
   for (const row of gridT) {
     for (const i of range(row.length - 4 + 1)) {
-      const chunck = row.slice(i, i + 4)
-      maxProd = Math.max(maxProd, mul(chunck))
+      const chunck = row.slice(i, i + 4);
+      maxProd = Math.max(maxProd, mul(chunck));
     }
   }
 
@@ -56,10 +56,10 @@ export function euler011 (): number {
         /
    */
   for (const r of range(theBigGrid.length - 4 + 1)) {
-    const rows = theBigGrid.slice(r, r + 4) // group of 4 rows
+    const rows = theBigGrid.slice(r, r + 4); // group of 4 rows
     for (const i of range(3, rows[0].length)) {
-      const prod = rows[0][i] * rows[1][i - 1] * rows[2][i - 2] * rows[3][i - 3]
-      maxProd = Math.max(maxProd, prod)
+      const prod = rows[0][i] * rows[1][i - 1] * rows[2][i - 2] * rows[3][i - 3];
+      maxProd = Math.max(maxProd, prod);
     }
   }
 
@@ -69,12 +69,12 @@ export function euler011 (): number {
          \
   */
   for (const r of range(theBigGrid.length - 4 + 1)) {
-    const rows = theBigGrid.slice(r, r + 4) // group of 4 rows
+    const rows = theBigGrid.slice(r, r + 4); // group of 4 rows
     for (const i of range(rows[0].length - 3)) {
-      const prod = rows[0][i] * rows[1][i + 1] * rows[2][i + 2] * rows[3][i + 3]
-      maxProd = Math.max(maxProd, prod)
+      const prod = rows[0][i] * rows[1][i + 1] * rows[2][i + 2] * rows[3][i + 3];
+      maxProd = Math.max(maxProd, prod);
     }
   }
 
-  return maxProd
+  return maxProd;
 }

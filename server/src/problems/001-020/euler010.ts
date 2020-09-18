@@ -1,5 +1,5 @@
-import { sieve, sum } from '../maths'
+import { sieve, sum } from '../maths';
 
-export function euler010 (): number {
-  return sum(sieve(2e6))
+export function euler010(): number {
+  return sum(sieve(2e6));
 }

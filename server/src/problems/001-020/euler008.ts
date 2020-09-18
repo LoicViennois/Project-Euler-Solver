@@ -1,8 +1,8 @@
-import { range } from 'lodash'
-import { mul } from '../maths'
-import { number2digits } from '../utils'
+import { range } from 'lodash';
+import { mul } from '../maths';
+import { number2digits } from '../utils';
 
-export function euler008 (): number {
+export function euler008(): number {
   const theBigNumber = `
 73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
@@ -24,15 +24,15 @@ export function euler008 (): number {
 84580156166097919133875499200524063689912560717606\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450\
-`
+`;
 
-  const split = number2digits(theBigNumber)
+  const split = number2digits(theBigNumber);
 
-  let maxProd = 0
+  let maxProd = 0;
   for (const i of range(1000 - 13 + 1)) {
-    const group = split.slice(i, i + 13)
-    maxProd = Math.max(mul(group), maxProd)
+    const group = split.slice(i, i + 13);
+    maxProd = Math.max(mul(group), maxProd);
   }
 
-  return maxProd
+  return maxProd;
 }

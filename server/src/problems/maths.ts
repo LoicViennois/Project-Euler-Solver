@@ -1,5 +1,5 @@
-import { BigNumber } from 'bignumber.js'
-import { range, uniq, without } from 'lodash'
+import { BigNumber } from 'bignumber.js';
+import { range, uniq, without } from 'lodash';
 
 /**
  * isPrime(XX) is more efficient than sieve(n).includes(XX)
@@ -7,22 +7,22 @@ import { range, uniq, without } from 'lodash'
  *   isPrime => 14ms
  *   sieve.includes => 144ms
  */
-export function isPrime (num: number): boolean {
+export function isPrime(num: number): boolean {
   if (num === 1 || num < 0) {
-    return false
+    return false;
   }
   if (num % 2 === 0) {
-    return num === 2
+    return num === 2;
   }
-  const root = Math.sqrt(num)
-  let n = 3
+  const root = Math.sqrt(num);
+  let n = 3;
   while (n <= root) {
     if (num % n === 0) {
-      return false
+      return false;
     }
-    n += 2
+    n += 2;
   }
-  return true
+  return true;
 }
 
 /**
@@ -30,101 +30,101 @@ export function isPrime (num: number): boolean {
  * Done using the sieve of Eratosthenes
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
-export function sieve (n: number): number[] {
-  const numbers = range(n)
+export function sieve(n: number): number[] {
+  const numbers = range(n);
 
   for (const prime of numbers) {
     if (prime < 2) {
-      continue
+      continue;
     } else if (prime > n ** 0.5) {
-      break
+      break;
     }
     for (const i of range(prime ** 2, n, prime)) {
-      numbers[i] = 0
+      numbers[i] = 0;
     }
   }
 
-  const final = []
+  const final = [];
   for (const num of numbers) {
     if (num > 1) {
-      final.push(num)
+      final.push(num);
     }
   }
-  return final
+  return final;
 }
 
-export function dividers (val: number): number[] {
-  const divs = []
+export function dividers(val: number): number[] {
+  const divs = [];
   for (const d of range(1, Math.sqrt(val) + 1)) {
     if (val % d === 0) {
-      divs.push(d)
-      divs.push(val / d)
+      divs.push(d);
+      divs.push(val / d);
     }
   }
-  return without(uniq(divs), val)
+  return without(uniq(divs), val);
 }
 
-export function sum (array: number[]): number {
-  let s = 0
+export function sum(array: number[]): number {
+  let s = 0;
   for (const a of array) {
-    s += a
+    s += a;
   }
-  return s
+  return s;
 }
 
-export function mul (array: number[]): number {
-  let m = 1
+export function mul(array: number[]): number {
+  let m = 1;
   for (const a of array) {
-    m *= a
+    m *= a;
   }
-  return m
+  return m;
 }
 
-export function min (array: number[]): number {
-  let m = Infinity
+export function min(array: number[]): number {
+  let m = Infinity;
   for (const n of array) {
-    m = n < m ? n : m
+    m = n < m ? n : m;
   }
-  return m
+  return m;
 }
 
-export function max (array: number[]): number {
-  let m = -Infinity
+export function max(array: number[]): number {
+  let m = -Infinity;
   for (const n of array) {
-    m = n > m ? n : m
+    m = n > m ? n : m;
   }
-  return m
+  return m;
 }
 
-export function maxKey<T> (map: Map<T, number>): T {
-  let m = -Infinity
-  let mk = null
+export function maxKey<T>(map: Map<T, number>): T {
+  let m = -Infinity;
+  let mk = null;
   map.forEach((v, k) => {
-    [m, mk] = v > m ? [v, k] : [m, mk]
-  })
-  return mk
+    [m, mk] = v > m ? [v, k] : [m, mk];
+  });
+  return mk;
 }
 
-export function factorial (num: number): number {
+export function factorial(num: number): number {
   if (num === 0) {
-    return 1
+    return 1;
   }
-  let res = num
+  let res = num;
   for (const n of range(1, num)) {
-    res *= n
+    res *= n;
   }
-  return res
+  return res;
 }
 
-export function bigFactorial (num: number): BigNumber {
+export function bigFactorial(num: number): BigNumber {
   if (num === 0) {
-    return new BigNumber(0)
+    return new BigNumber(0);
   }
-  let res = new BigNumber(num)
+  let res = new BigNumber(num);
   for (const n of range(1, num)) {
-    res = res.times(n)
+    res = res.times(n);
   }
-  return res
+  return res;
 }
 
 /**
@@ -132,9 +132,9 @@ export function bigFactorial (num: number): BigNumber {
  * Done using the Euclidean algorithm
  * https://en.wikipedia.org/wiki/Euclidean_algorithm
  */
-export function gcd (a: number, b: number): number {
+export function gcd(a: number, b: number): number {
   if (!b) {
-    return a
+    return a;
   }
-  return gcd(b, a % b)
+  return gcd(b, a % b);
 }

@@ -1,19 +1,19 @@
-import { isPrime, sieve, sum } from '../maths'
+import { isPrime, sieve, sum } from '../maths';
 
-export function euler060 (): number {
-  const limit = 1e4
-  const primes = sieve(limit)
+export function euler060(): number {
+  const limit = 1e4;
+  const primes = sieve(limit);
 
-  function areCombinationsPrime (array: number[], n: number): boolean {
+  function areCombinationsPrime(array: number[], n: number): boolean {
     for (const n1 of array) {
       if (!isPrime(+[n1, n].join(''))) {
-        return false
+        return false;
       }
       if (!isPrime(+[n, n1].join(''))) {
-        return false
+        return false;
       }
     }
-    return true
+    return true;
   }
 
   for (const p1 of primes) {
@@ -25,7 +25,7 @@ export function euler060 (): number {
               if (areCombinationsPrime([p1, p2, p3], p4)) {
                 for (const p5 of primes.filter((p) => p > p4)) {
                   if (areCombinationsPrime([p1, p2, p3, p4], p5)) {
-                    return sum([p1, p2, p3, p4, p5])
+                    return sum([p1, p2, p3, p4, p5]);
                   }
                 }
               }

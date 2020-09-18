@@ -4,7 +4,7 @@ export enum Status {
 }
 
 export class Problem {
-  id: number
-  name: string
-  status: Status
+  id: number;
+  name: string;
+  status: Status;
 }

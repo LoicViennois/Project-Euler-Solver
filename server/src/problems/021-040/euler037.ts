@@ -1,50 +1,50 @@
-import { isPrime, sieve, sum } from '../maths'
-import { digits2number, number2digits } from '../utils'
+import { isPrime, sieve, sum } from '../maths';
+import { digits2number, number2digits } from '../utils';
 
-export function euler037 (): number {
-  const primes = sieve(1e6)
+export function euler037(): number {
+  const primes = sieve(1e6);
 
-  const truncatablePrimes = []
+  const truncatablePrimes = [];
 
   for (const p of primes.filter((n) => n >= 10)) {
-    const digits = number2digits(p)
-    const dLeft = digits.slice()
-    const dRight = digits.slice()
-    let isTruncatable = true
+    const digits = number2digits(p);
+    const dLeft = digits.slice();
+    const dRight = digits.slice();
+    let isTruncatable = true;
 
-    dLeft.pop()
+    dLeft.pop();
     while (dLeft.length) {
-      const newP = digits2number(dLeft)
+      const newP = digits2number(dLeft);
       if (!isPrime(newP)) {
-        isTruncatable = false
-        break
+        isTruncatable = false;
+        break;
       }
-      dLeft.pop()
+      dLeft.pop();
     }
 
     if (!isTruncatable) {
-      continue
+      continue;
     }
 
-    dRight.shift()
+    dRight.shift();
     while (dRight.length) {
-      const newP = digits2number(dRight)
+      const newP = digits2number(dRight);
       if (!isPrime(newP)) {
-        isTruncatable = false
-        break
+        isTruncatable = false;
+        break;
       }
-      dRight.shift()
+      dRight.shift();
     }
 
     if (!isTruncatable) {
-      continue
+      continue;
     }
 
-    truncatablePrimes.push(p)
+    truncatablePrimes.push(p);
     if (truncatablePrimes.length === 11) {
-      break
+      break;
     }
   }
 
-  return sum(truncatablePrimes)
+  return sum(truncatablePrimes);
 }

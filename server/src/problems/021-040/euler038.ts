@@ -1,8 +1,8 @@
-import { difference, intersection, range, union, uniq } from 'lodash'
-import { max } from '../maths'
-import { digits2number, number2digits } from '../utils'
+import { difference, intersection, range, union, uniq } from 'lodash';
+import { max } from '../maths';
+import { digits2number, number2digits } from '../utils';
 
-export function euler038 (): number {
+export function euler038(): number {
   /*
   maxNum = num such as :
     - num * 1 = A
@@ -10,28 +10,28 @@ export function euler038 (): number {
     - nDigits(AB) = 9
     => num has 4 digits max
    */
-  const maxNum = 9876
-  const allDigits = range(1, 10)
+  const maxNum = 9876;
+  const allDigits = range(1, 10);
 
-  const pandigitals = []
+  const pandigitals = [];
 
   for (const p of range(1, maxNum + 1)) {
-    let digits: number[] = []
-    let n = 1
+    let digits: number[] = [];
+    let n = 1;
     while (true) {
-      const newDigits = number2digits(p * n)
+      const newDigits = number2digits(p * n);
       if (newDigits.length > uniq(newDigits).length ||
-          intersection(digits, newDigits).length > 0 ||
-          newDigits.includes(0)) {
-        break
+        intersection(digits, newDigits).length > 0 ||
+        newDigits.includes(0)) {
+        break;
       }
-      digits = union(digits, newDigits)
+      digits = union(digits, newDigits);
       if (difference(allDigits, digits).length === 0) {
-        pandigitals.push(digits2number(digits))
+        pandigitals.push(digits2number(digits));
       }
-      n += 1
+      n += 1;
     }
   }
 
-  return max(pandigitals)
+  return max(pandigitals);
 }

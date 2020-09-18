@@ -1,42 +1,42 @@
-import { isPrime, sieve, sum } from '../maths'
-import { maxBy } from 'lodash'
+import { isPrime, sieve, sum } from '../maths';
+import { maxBy } from 'lodash';
 
-export function euler050 (): number {
-  const limit = 1e6
-  const primes = sieve(limit - 1)
-  const chains: number[][] = []
+export function euler050(): number {
+  const limit = 1e6;
+  const primes = sieve(limit - 1);
+  const chains: number[][] = [];
 
   primes.forEach((p, i) => {
-    let k = 1
-    let chainSum = p
-    const chain = [p]
+    let k = 1;
+    let chainSum = p;
+    const chain = [p];
     while (true) {
-      const nextPrime = primes[i + k]
+      const nextPrime = primes[i + k];
       if (!nextPrime) {
-        break
+        break;
       }
-      chainSum += nextPrime
+      chainSum += nextPrime;
       if (nextPrime < limit && chainSum < limit) {
-        chain.push(nextPrime)
-        k += 1
+        chain.push(nextPrime);
+        k += 1;
       } else {
-        break
+        break;
       }
     }
     if (chain.length > 20) {
-      chains.push(chain)
+      chains.push(chain);
     }
-  })
+  });
 
-  const finalChains = []
+  const finalChains = [];
   for (const chain of chains) {
     while (!isPrime(sum(chain))) {
-      chain.pop()
+      chain.pop();
     }
     if (chain.length > 20) {
-      finalChains.push(chain)
+      finalChains.push(chain);
     }
   }
 
-  return sum(maxBy(finalChains, (c) => c.length))
+  return sum(maxBy(finalChains, (c) => c.length));
 }

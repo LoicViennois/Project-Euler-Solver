@@ -1,10 +1,10 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from 'fs';
+import * as path from 'path';
 
-import { range, sortBy, isEqual, uniq, concat } from 'lodash'
-import { min, max, sum } from '../maths'
-import { isUniq, nbOccurences } from '../utils'
-import { assetsFolder } from '../assets-folder'
+import { concat, isEqual, range, sortBy, uniq } from 'lodash';
+import { max, min, sum } from '../maths';
+import { isUniq, nbOccurences } from '../utils';
+import { assetsFolder } from '../assets-folder';
 
 enum HandValues {
   HighCard,      // 0
@@ -20,85 +20,85 @@ enum HandValues {
 }
 
 interface HandValue {
-  round1: number,
-  round2: number,
-  round3: number,
+  round1: number;
+  round2: number;
+  round3: number;
 }
 
-export function euler054 (): number {
+export function euler054(): number {
   const hands = fs.readFileSync(path.join(assetsFolder, 'p054_poker.txt'))
-      .toString()
-      .split('\n')
-      .filter((line) => line)
-      .map((game) => {
-        const cards = game.split(' ')
-        return [cards.slice(0, 5), cards.slice(5, 10)]
-      })
+    .toString()
+    .split('\n')
+    .filter((line) => line)
+    .map((game) => {
+      const cards = game.split(' ');
+      return [cards.slice(0, 5), cards.slice(5, 10)];
+    });
 
-  function cardValue (card: string): number {
-    const value = card[0]
+  function cardValue(card: string): number {
+    const value = card[0];
     if (value === 'A') {
-      return 14 // Ace
+      return 14; // Ace
     } else if (value === 'K') {
-      return 13 // King
+      return 13; // King
     } else if (value === 'Q') {
-      return 12 // Queen
+      return 12; // Queen
     } else if (value === 'J') {
-      return 11 // Jack
+      return 11; // Jack
     } else if (value === 'T') {
-      return 10 // Ten
+      return 10; // Ten
     } else {
-      return +value
+      return +value;
     }
   }
 
-  function handValue (hand: string[]): HandValue {
-    const cardValues = sortBy(hand.map((card) => cardValue(card)))
+  function handValue(hand: string[]): HandValue {
+    const cardValues = sortBy(hand.map((card) => cardValue(card)));
 
-    const pairs = uniq(cardValues.filter((val) => nbOccurences(val, cardValues) === 2))
-    const three = cardValues.filter((val) => nbOccurences(val, cardValues) === 3)[0] || null
-    const four = cardValues.filter((val) => nbOccurences(val, cardValues) === 4)[0] || null
-    const handCards = concat(pairs, [three], [four])
-    const other = cardValues.filter((c) => !handCards.includes(c))
+    const pairs = uniq(cardValues.filter((val) => nbOccurences(val, cardValues) === 2));
+    const three = cardValues.filter((val) => nbOccurences(val, cardValues) === 3)[0] || null;
+    const four = cardValues.filter((val) => nbOccurences(val, cardValues) === 4)[0] || null;
+    const handCards = concat(pairs, [three], [four]);
+    const other = cardValues.filter((c) => !handCards.includes(c));
 
     if (pairs.length === 1 && three) {
       return {
         round1: HandValues.FullHouse,
         round2: three,
         round3: pairs[0],
-      }
+      };
     } else if (three) {
       return {
         round1: HandValues.ThreeOfAKind,
         round2: three,
         round3: max(other),
-      }
+      };
     } else if (four) {
       return {
         round1: HandValues.FourOfAKind,
         round2: four,
         round3: max(other),
-      }
+      };
     } else {
       if (pairs.length === 2) {
         return {
           round1: HandValues.TwoPairs,
           round2: sum(pairs),
           round3: max(other),
-        }
+        };
       } else if (pairs.length === 1) {
         return {
           round1: HandValues.OnePair,
           round2: pairs[0],
           round3: max(other),
-        }
+        };
       }
     }
 
-    const cardSuits = sortBy(hand.map((card) => card[1]))
+    const cardSuits = sortBy(hand.map((card) => card[1]));
 
-    const isStraight = isEqual(cardValues, range(min(cardValues), max(cardValues) + 1))
-    const isFlush = isUniq(cardSuits)
+    const isStraight = isEqual(cardValues, range(min(cardValues), max(cardValues) + 1));
+    const isFlush = isUniq(cardSuits);
 
     if (isStraight && isFlush) {
       if (cardValues.includes(14)) {
@@ -106,13 +106,13 @@ export function euler054 (): number {
           round1: HandValues.RoyalFlush,
           round2: null,
           round3: null,
-        }
+        };
       } else {
         return {
           round1: HandValues.StraightFlush,
           round2: max(cardValues),
           round3: null,
-        }
+        };
       }
     }
 
@@ -121,7 +121,7 @@ export function euler054 (): number {
         round1: HandValues.Straigh,
         round2: max(cardValues),
         round3: null,
-      }
+      };
     }
 
     if (isFlush) {
@@ -129,33 +129,33 @@ export function euler054 (): number {
         round1: HandValues.Flush,
         round2: max(cardValues),
         round3: null,
-      }
+      };
     }
 
     return {
       round1: HandValues.HighCard,
       round2: max(cardValues),
       round3: max(cardValues.filter((c) => c !== max(cardValues))),
-    }
+    };
   }
 
-  let playerOneWins = 0
+  let playerOneWins = 0;
   for (const [hand1, hand2] of hands) {
-    const value1 = handValue(hand1)
-    const value2 = handValue(hand2)
+    const value1 = handValue(hand1);
+    const value2 = handValue(hand2);
 
     if (value1.round1 > value2.round1) {
-      playerOneWins += 1
+      playerOneWins += 1;
     } else if (value1.round1 === value2.round1) {
       if (value1.round2 > value2.round2) {
-        playerOneWins += 1
+        playerOneWins += 1;
       } else if (value1.round2 === value2.round2) {
         if (value1.round3 > value2.round3) {
-          playerOneWins += 1
+          playerOneWins += 1;
         }
       }
     }
   }
 
-  return playerOneWins
+  return playerOneWins;
 }

@@ -1,6 +1,6 @@
-import { max } from '../maths'
+import { max } from '../maths';
 
-export function euler018 (): number {
+export function euler018(): number {
 
   const triangle = [
     [75],
@@ -18,20 +18,20 @@ export function euler018 (): number {
     [91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48],
     [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
     [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23],
-  ]
+  ];
 
   const followPath = (r, c, sum = 0): void => {
     if (r === triangle.length) {
-      sums.push(sum)
-      return
+      sums.push(sum);
+      return;
     }
-    sum += triangle[r][c]
-    followPath(r + 1, c, sum)
-    followPath(r + 1, c + 1, sum)
-  }
+    sum += triangle[r][c];
+    followPath(r + 1, c, sum);
+    followPath(r + 1, c + 1, sum);
+  };
 
-  const sums = []
-  followPath(0, 0)
+  const sums = [];
+  followPath(0, 0);
 
-  return max(sums)
+  return max(sums);
 }

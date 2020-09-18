@@ -1,6 +1,6 @@
-import { sum } from '../maths'
+import { sum } from '../maths';
 
-export function euler013 (): number {
+export function euler013(): number {
   const bigNumbers = [
     37107287533902102798797998220837590246510135740250,
     46376937677490009712648124896970078050417018260538,
@@ -101,9 +101,9 @@ export function euler013 (): number {
     77158542502016545090413245809786882778948721859617,
     72107838435069186155435662884062257473692284509516,
     20849603980134001723930671666823555245252804609722,
-    53503534226472524250874054075591789781264330331690]
+    53503534226472524250874054075591789781264330331690];
 
-  const notSoBigNumbers = bigNumbers.map((n) => Math.round(n / 1e39))
+  const notSoBigNumbers = bigNumbers.map((n) => Math.round(n / 1e39));
 
-  return +sum(notSoBigNumbers).toString().slice(0, 10)
+  return +sum(notSoBigNumbers).toString().slice(0, 10);
 }

@@ -1,7 +1,7 @@
-import { range } from 'lodash'
+import { range } from 'lodash';
 
-export function euler031 (): number {
-  let comb = 0
+export function euler031(): number {
+  let comb = 0;
 
   for (const g of range(200 / 100 + 1)) {
     for (const f of range((200 - g * 100) / 50 + 1)) {
@@ -10,9 +10,9 @@ export function euler031 (): number {
           for (const c of range((200 - d * 10) / 5 + 1)) {
             for (const b of range((200 - c * 5) / 2 + 1)) {
               for (const a of range((200 - b * 2) + 1)) {
-                const sum = a + b * 2 + c * 5 + d * 10 + e * 20 + f * 50 + g * 100
+                const sum = a + b * 2 + c * 5 + d * 10 + e * 20 + f * 50 + g * 100;
                 if (sum === 200) {
-                  comb += 1
+                  comb += 1;
                 }
               }
             }
@@ -22,5 +22,5 @@ export function euler031 (): number {
     }
   }
 
-  return comb + 1
+  return comb + 1;
 }

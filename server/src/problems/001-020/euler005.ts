@@ -1,29 +1,29 @@
-import { range } from 'lodash'
+import { range } from 'lodash';
 
-export function euler005 (): number {
-  let theBigOne = 1
+export function euler005(): number {
+  let theBigOne = 1;
   for (const i of range(10)) {
-    theBigOne *= i + 11
+    theBigOne *= i + 11;
   }
 
   const isValid = (num): boolean => {
     for (const i of range(10)) {
-      const m = i + 11
+      const m = i + 11;
       if (num % m !== 0) {
-        return false
+        return false;
       }
     }
-    return true
-  }
+    return true;
+  };
 
-  let res = theBigOne
+  let res = theBigOne;
   for (const i of range(20)) {
-    const d = 20 - i
-    const dd = res / d
+    const d = 20 - i;
+    const dd = res / d;
     if (isValid(dd)) {
-      res = dd
+      res = dd;
     }
   }
 
-  return res
+  return res;
 }
