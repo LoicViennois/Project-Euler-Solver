@@ -1,1 +1,1 @@
-export const environment = (window as any).env
+export const environment = (window as any).env;

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { Problem } from './problem'
-import { ProblemsService } from './problems.service'
-import { Chunkify } from '../utils/chunkify'
+import { Component, OnInit } from '@angular/core';
+import { Problem } from './problem';
+import { ProblemsService } from './problems.service';
+import { Chunkify } from '../utils/chunkify';
 
 @Component({
   selector: 'euler-problems-list',
@@ -9,23 +9,23 @@ import { Chunkify } from '../utils/chunkify'
   styleUrls: ['./problems-list.component.less']
 })
 export class ProblemsListComponent implements OnInit {
-  problems: Problem[][] = [] // By chunks of 10
+  problems: Problem[][] = []; // By chunks of 10
 
-  constructor (private problemsService: ProblemsService) {
+  constructor(private problemsService: ProblemsService) {
   }
 
-  ngOnInit () {
+  ngOnInit(): void {
     this.problemsService.getProblems().subscribe((problems: Problem[]) => {
-      this.problems = Chunkify(problems, 10)
-    })
+      this.problems = Chunkify(problems, 10);
+    });
   }
 
-  solve (problems: Problem[]) {
+  solve(problems: Problem[]): void {
     problems.forEach(p => {
       this.problemsService.solve(p).subscribe(solution => {
-        p.solution = solution
-      })
-    })
+        p.solution = solution;
+      });
+    });
   }
 
 }

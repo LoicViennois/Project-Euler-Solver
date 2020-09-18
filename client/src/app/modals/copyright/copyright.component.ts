@@ -1,7 +1,7 @@
-import { Component } from '@angular/core'
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { version } from '../../../../package.json'
+import { version } from '../../../../package.json';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { version } from '../../../../package.json'
   styleUrls: ['./copyright.component.less']
 })
 export class CopyrightComponent {
-  readonly version: string = version
+  readonly version: string = version;
 
-  constructor (public activeModal: NgbActiveModal) {
+  constructor(public activeModal: NgbActiveModal) {
   }
 
 }

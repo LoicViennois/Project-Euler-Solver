@@ -7,16 +7,16 @@
 <div class="row justify-content-center pt-4 pb-4">
   <div class="col-lg code-list sticky-top border border-dark mx-3 my-1">
     <ul class="fa-ul ml-2 py-1">
-      <li routerLinkActive="active" #rla1="routerLinkActive"
-          class="link-file">
+      <li #rla1="routerLinkActive" class="link-file"
+          routerLinkActive="active">
         <a routerLink="maths">
           <i *ngIf="!rla1.isActive" class="far fa-file-code"></i>
           <i *ngIf="rla1.isActive" class="fas fa-arrow-right"></i>
           maths
         </a>
       </li>
-      <li routerLinkActive="active" #rla2="routerLinkActive"
-          class="link-file">
+      <li #rla2="routerLinkActive" class="link-file"
+          routerLinkActive="active">
         <a routerLink="utils">
           <i *ngIf="!rla2.isActive" class="far fa-file-code"></i>
           <i *ngIf="rla2.isActive" class="fas fa-arrow-right"></i>
@@ -24,9 +24,9 @@
         </a>
       </li>
       <li><p></p></li>
-      <li *ngFor="let pb of problems"
-          routerLinkActive="active" #rlaX="routerLinkActive"
-          class="link-file">
+      <li #rlaX="routerLinkActive"
+          *ngFor="let pb of problems" class="link-file"
+          routerLinkActive="active">
         <a [routerLink]="pb.name">
           <i *ngIf="!rlaX.isActive" class="far fa-file-code"></i>
           <i *ngIf="rlaX.isActive" class="fas fa-arrow-right"></i>

@@ -29,7 +29,7 @@ ENV EULER_SERVER_URL="http://localhost:3000"
 
 RUN apt-get update && apt-get install --no-install-recommends -y curl
 
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/project-euler-solver /usr/share/nginx/html
 
 COPY docker-entrypoint.sh /usr/local/bin/
 

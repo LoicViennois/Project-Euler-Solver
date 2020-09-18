@@ -6,60 +6,61 @@ enum Status {
 }
 
 export class Solution {
-  time: string
-  value: number
+  time: string;
+  value: number;
 }
 
 export class ApiProblem {
-  id: number
-  name: string
-  status: Status
+  id: number;
+  name: string;
+  status: Status;
 }
 
 export class Problem {
-  id: number
-  name: string
-  private _solution: Solution
-  private status: Status
+  id: number;
+  name: string;
+  private status: Status;
 
-  constructor (p: ApiProblem) {
-    this.id = p.id
-    this.name = p.name
-    this.status = p.status
+  constructor(p: ApiProblem) {
+    this.id = p.id;
+    this.name = p.name;
+    this.status = p.status;
   }
 
-  set solution (s: Solution) {
-    this._solution = s
-    this.status = Status.solved
+  private pSolution: Solution;
+
+  get solution(): Solution {
+    return this.pSolution;
   }
 
-  get solution (): Solution {
-    return this._solution
+  set solution(s: Solution) {
+    this.pSolution = s;
+    this.status = Status.solved;
   }
 
-  get isNotAvailable (): boolean {
-    return this.status === Status.notAvailable
+  get isNotAvailable(): boolean {
+    return this.status === Status.notAvailable;
   }
 
-  get isAvailable (): boolean {
-    return this.status !== Status.notAvailable
+  get isAvailable(): boolean {
+    return this.status !== Status.notAvailable;
   }
 
-  get isSolved (): boolean {
-    return this.status === Status.solved
+  get isSolved(): boolean {
+    return this.status === Status.solved;
   }
 
-  get isSolving (): boolean {
-    return this.status === Status.solving
+  get isSolving(): boolean {
+    return this.status === Status.solving;
   }
 
-  set isSolving (v: boolean) {
+  set isSolving(v: boolean) {
     if (v) {
-      this.status = Status.solving
+      this.status = Status.solving;
     }
   }
 
-  get isToSolve (): boolean {
-    return this.status === Status.toSolve
+  get isToSolve(): boolean {
+    return this.status === Status.toSolve;
   }
 }

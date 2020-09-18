@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
-import { ProblemsService } from '../../problems-list/problems.service'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProblemsService } from '../../problems-list/problems.service';
 
 @Component({
   selector: 'euler-code-block',
@@ -8,19 +8,19 @@ import { ProblemsService } from '../../problems-list/problems.service'
   styleUrls: ['./code-block.component.css']
 })
 export class CodeBlockComponent implements OnInit {
-  source = ''
+  source = '';
 
-  constructor (private route: ActivatedRoute,
-               private problemsService: ProblemsService) {
+  constructor(private route: ActivatedRoute,
+              private problemsService: ProblemsService) {
   }
 
-  ngOnInit () {
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const name: string = params['name']
+      const name: string = params.name;
       this.problemsService.getCode(name).subscribe((source: string) => {
-        this.source = source
-      })
-    })
+        this.source = source;
+      });
+    });
   }
 
 }

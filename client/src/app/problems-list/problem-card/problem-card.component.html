@@ -3,24 +3,24 @@
     <div class="card-text container pl-1 pr-1">
       <div class="row pr-3">
         <h6 class="col-9">
-          <a class="link-problem" target="_blank" [href]="url">Problem {{ problem.id }}</a>
+          <a [href]="url" class="link-problem" target="_blank">Problem {{ problem.id }}</a>
           &nbsp;<i class="fas fa-arrow-right"></i>&nbsp;
-          <a class="link-code"
-             routerLink="/code/{{ problem.name }}"
-             [class.disabled]="problem.isNotAvailable">code</a>
+          <a [class.disabled]="problem.isNotAvailable"
+             class="link-code"
+             routerLink="/code/{{ problem.name }}">code</a>
         </h6>
-        <button *ngIf="problem.isToSolve"
-                class="col-3 btn btn-secondary btn-sm btn-to-solve"
-                (click)="solve()">
+        <button (click)="solve()"
+                *ngIf="problem.isToSolve"
+                class="col-3 btn btn-secondary btn-sm btn-to-solve">
           <i class="fas fa-play"></i>
         </button>
         <button *ngIf="problem.isSolving"
                 class="col-3 btn btn-secondary btn-sm btn-solving">
           <i class="fas fa-sync-alt fa-spin"></i>
         </button>
-        <button *ngIf="problem.isSolved"
-                class="col-3 btn btn-secondary btn-sm btn-solved"
-                (click)="solve()">
+        <button (click)="solve()"
+                *ngIf="problem.isSolved"
+                class="col-3 btn btn-secondary btn-sm btn-solved">
           <i class="fas fa-check"></i>
         </button>
         <button *ngIf="problem.isNotAvailable"

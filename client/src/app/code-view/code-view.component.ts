@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { Problem } from '../problems-list/problem'
-import { ProblemsService } from '../problems-list/problems.service'
+import { Component, OnInit } from '@angular/core';
+import { Problem } from '../problems-list/problem';
+import { ProblemsService } from '../problems-list/problems.service';
 
 @Component({
   selector: 'euler-code-view',
@@ -8,15 +8,15 @@ import { ProblemsService } from '../problems-list/problems.service'
   styleUrls: ['./code-view.component.less']
 })
 export class CodeViewComponent implements OnInit {
-  problems: Problem[]
+  problems: Problem[];
 
-  constructor (private problemsService: ProblemsService) {
+  constructor(private problemsService: ProblemsService) {
   }
 
-  ngOnInit () {
+  ngOnInit(): void {
     this.problemsService.getProblems().subscribe(problems => {
-      this.problems = problems.filter(p => p.isAvailable)
-    })
+      this.problems = problems.filter(p => p.isAvailable);
+    });
   }
 
 }

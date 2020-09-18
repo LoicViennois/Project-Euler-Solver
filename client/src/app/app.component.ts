@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'euler-root',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core'
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  badgeUrl = 'https://projecteuler.net/profile/LoicViennois.png'
+  badgeUrl = 'https://projecteuler.net/profile/LoicViennois.png';
 
-  constructor () {
+  constructor() {
   }
 
 }
