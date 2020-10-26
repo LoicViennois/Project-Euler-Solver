@@ -21,121 +21,121 @@ import { euler060 } from './euler060';
 
 describe('Euler 041-060', () => {
   describe('euler041', () => {
-    it('7652413', () => {
+    test('7652413', () => {
       expect(euler041()).toBe(7652413);
     });
   });
 
   describe('euler042', () => {
-    it('162', () => {
+    test('162', () => {
       expect(euler042()).toBe(162);
     });
   });
 
   describe('euler043', () => {
-    it('16695334890', () => {
+    test('16695334890', () => {
       expect(euler043()).toBe(16695334890);
     });
   });
 
   describe('euler044', () => {
-    it('5482660', () => {
+    test('5482660', () => {
       expect(euler044()).toBe(5482660);
     });
   });
 
   describe('euler045', () => {
-    it('1533776805', () => {
+    test('1533776805', () => {
       expect(euler045()).toBe(1533776805);
     });
   });
 
   describe('euler046', () => {
-    it('5777', () => {
+    test('5777', () => {
       expect(euler046()).toBe(5777);
     });
   });
 
   describe('euler047', () => {
-    it('134043', () => {
+    test('134043', () => {
       expect(euler047()).toBe(134043);
     });
   });
 
   describe('euler048', () => {
-    it('9110846700', () => {
+    test('9110846700', () => {
       expect(euler048()).toBe(9110846700);
     });
   });
 
   describe('euler049', () => {
-    it('296962999629', () => {
+    test('296962999629', () => {
       expect(euler049()).toBe(296962999629);
     });
   });
 
   describe('euler050', () => {
-    it('997651', () => {
+    test('997651', () => {
       expect(euler050()).toBe(997651);
     });
   });
 
   describe('euler051', () => {
-    it('121313', () => {
+    test('121313', () => {
       expect(euler051()).toBe(121313);
     });
   });
 
   describe('euler052', () => {
-    it('142857', () => {
+    test('142857', () => {
       expect(euler052()).toBe(142857);
     });
   });
 
   describe('euler053', () => {
-    it('4075', () => {
+    test('4075', () => {
       expect(euler053()).toBe(4075);
     });
   });
 
   describe('euler054', () => {
-    it('376', () => {
+    test('376', () => {
       expect(euler054()).toBe(376);
     });
   });
 
   describe('euler055', () => {
-    it('249', () => {
+    test('249', () => {
       expect(euler055()).toBe(249);
     });
   });
 
   describe('euler056', () => {
-    it('972', () => {
+    test('972', () => {
       expect(euler056()).toBe(972);
     });
   });
 
   describe('euler057', () => {
-    it('153', () => {
+    test('153', () => {
       expect(euler057()).toBe(153);
     });
   });
 
   describe('euler058', () => {
-    it('26241', () => {
+    test('26241', () => {
       expect(euler058()).toBe(26241);
     });
   });
 
   describe('euler059', () => {
-    it('129448', () => {
+    test('129448', () => {
       expect(euler059()).toBe(129448);
     });
   });
 
   describe('euler060', () => {
-    it('26033', () => {
+    test('26033', () => {
       expect(euler060()).toBe(26033);
     });
   });
