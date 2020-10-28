@@ -1,5 +1,6 @@
 import { BigNumber } from 'bignumber.js';
-import { range, uniq } from 'lodash';
+import { uniq } from 'lodash';
+import { range } from './utils';
 
 /**
  * isPrime(XX) is more efficient than sieve(n).includes(XX)

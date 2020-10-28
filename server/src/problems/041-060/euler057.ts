@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { BigNumber } from 'bignumber.js';
 
 export function euler057(): number {

@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler006(): number {
   let sumSq = 0;

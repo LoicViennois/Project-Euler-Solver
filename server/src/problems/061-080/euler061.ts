@@ -1,5 +1,5 @@
-import { isEqual, range } from 'lodash';
-import { digits2number, number2digits } from '../utils';
+import { isEqual } from 'lodash';
+import { digits2number, number2digits, range } from '../utils';
 import { sum } from '../maths';
 
 export function euler061(): number {

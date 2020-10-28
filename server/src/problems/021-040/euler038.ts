@@ -1,6 +1,6 @@
-import { difference, intersection, range, union, uniq } from 'lodash';
+import { difference, intersection, union, uniq } from 'lodash';
 import { max } from '../maths';
-import { digits2number, number2digits } from '../utils';
+import { digits2number, number2digits, range } from '../utils';
 
 export function euler038(): number {
   /*

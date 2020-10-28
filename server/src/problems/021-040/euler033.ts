@@ -1,6 +1,6 @@
-import { intersection, range } from 'lodash';
+import { intersection } from 'lodash';
 import { gcd } from '../maths';
-import { digits2number, number2digits } from '../utils';
+import { digits2number, number2digits, range } from '../utils';
 
 export function euler033(): number {
   const r = range(11, 100).filter((n) => n % 10 !== 0);

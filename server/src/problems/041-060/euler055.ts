@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 function isPalindromic(n: number): boolean {
   const num = n + '';

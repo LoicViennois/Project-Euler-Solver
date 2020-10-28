@@ -1,6 +1,5 @@
-import { range } from 'lodash';
 import { mul } from '../maths';
-import { number2digits } from '../utils';
+import { number2digits, range } from '../utils';
 
 export function euler008(): number {
   const theBigNumber = `

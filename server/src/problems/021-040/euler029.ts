@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler029(): number {
   const nums = new Set();

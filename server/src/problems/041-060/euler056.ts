@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { range } from 'lodash';
+import { range } from '../utils';
 import { sum } from '../maths';
 import { bigNumber2digits } from '../utils';
 

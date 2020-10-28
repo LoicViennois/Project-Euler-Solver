@@ -1,5 +1,5 @@
 import { factorial } from '../maths';
-import { range } from 'lodash';
+import { range } from '../utils';
 
 function ncr(n, r): number {
   return factorial(n) / (factorial(r) * factorial(n - r));

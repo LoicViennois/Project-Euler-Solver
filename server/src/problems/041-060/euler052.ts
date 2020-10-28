@@ -1,5 +1,4 @@
-import { arePermutations } from '../utils';
-import { range } from 'lodash';
+import { arePermutations, range } from '../utils';
 
 export function euler052(): number {
   for (const n of range(100, 1e6)) {

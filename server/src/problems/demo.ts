@@ -1,6 +1,5 @@
-import { range } from 'lodash';
 import { isPrime, sieve } from './maths';
-import { execTime } from './utils';
+import { execTime, range } from './utils';
 
 const r = range(1e6);
 const primes = sieve(1e6);

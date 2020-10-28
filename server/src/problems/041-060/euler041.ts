@@ -1,5 +1,5 @@
 import { permutation } from 'js-combinatorics';
-import { range } from 'lodash';
+import { range } from '../utils';
 import { isPrime } from '../maths';
 import { digits2number } from '../utils';
 

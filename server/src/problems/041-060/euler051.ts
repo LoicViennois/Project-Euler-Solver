@@ -1,7 +1,8 @@
-import { maxBy, range } from 'lodash';
+import { maxBy } from 'lodash';
 import { cartesianProduct, combination } from 'js-combinatorics';
 
 import { isPrime } from '../maths';
+import { range } from '../utils';
 
 export function euler051(): number {
   const digits = range(10).map((d) => '' + d);

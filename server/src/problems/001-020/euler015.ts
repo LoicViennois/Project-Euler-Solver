@@ -1,5 +1,6 @@
-import { range, times } from 'lodash';
+import { times } from 'lodash';
 import { sum } from '../maths';
+import { range } from '../utils';
 
 export function euler015(): number {
   let level = [1];

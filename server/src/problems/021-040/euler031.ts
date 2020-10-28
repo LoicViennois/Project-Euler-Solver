@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler031(): number {
   let comb = 0;

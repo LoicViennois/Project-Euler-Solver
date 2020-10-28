@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler045(): number {
   const limit = 1e5;

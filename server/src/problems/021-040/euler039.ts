@@ -1,5 +1,5 @@
-import { range } from 'lodash';
 import { maxKey } from '../maths';
+import { range } from '../utils';
 
 export function euler039(): number {
   const limit = 1000;

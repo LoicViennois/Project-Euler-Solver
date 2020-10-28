@@ -1,7 +1,7 @@
-import { concat, range } from 'lodash';
+import { concat } from 'lodash';
 
 import { sum } from '../maths';
-import { digits2number, haveDuplicates, number2digits } from '../utils';
+import { digits2number, haveDuplicates, number2digits, range } from '../utils';
 
 export function euler043(): number {
 

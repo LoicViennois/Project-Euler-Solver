@@ -1,5 +1,5 @@
-import { range } from 'lodash';
 import { dividers, sum } from '../maths';
+import { range } from '../utils';
 
 export function euler021(): number {
   const divSum = new Map<number, number>();

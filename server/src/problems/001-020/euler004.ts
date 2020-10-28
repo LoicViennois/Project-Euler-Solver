@@ -1,4 +1,5 @@
-import { clone, isEqual, range } from 'lodash';
+import { clone, isEqual } from 'lodash';
+import { range } from '../utils';
 
 export function euler004(): number {
   let pal = 0;

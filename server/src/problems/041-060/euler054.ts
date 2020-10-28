@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { concat, isEqual, range, sortBy, uniq } from 'lodash';
+import { concat, isEqual, sortBy, uniq } from 'lodash';
 import { max, min, sum } from '../maths';
-import { isUniq, nbOccurences } from '../utils';
+import { isUniq, nbOccurences, range } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
 enum HandValues {

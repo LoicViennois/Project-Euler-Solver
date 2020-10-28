@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler009(): number {
   const sum = 1000;

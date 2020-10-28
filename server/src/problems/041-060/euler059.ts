@@ -1,10 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { range, times, zip } from 'lodash';
+import { times, zip } from 'lodash';
 import { permutation } from 'js-combinatorics';
 import { sum } from '../maths';
 import { assetsFolder } from '../assets-folder';
+import { range } from '../utils';
 
 export function euler059(): number {
   const bytes = fs.readFileSync(path.join(assetsFolder, 'p059_cipher.txt'))

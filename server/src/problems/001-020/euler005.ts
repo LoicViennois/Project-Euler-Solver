@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 
 export function euler005(): number {
   let theBigOne = 1;

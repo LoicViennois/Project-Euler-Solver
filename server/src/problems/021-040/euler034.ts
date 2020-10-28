@@ -1,5 +1,5 @@
-import { range } from 'lodash';
 import { factorial } from '../maths';
+import { range } from '../utils';
 
 export function euler034(): number {
 

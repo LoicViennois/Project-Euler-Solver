@@ -1,7 +1,7 @@
 import { permutation } from 'js-combinatorics';
-import { difference, isEmpty, range, union, zip } from 'lodash';
+import { difference, isEmpty, union, zip } from 'lodash';
 import { sum } from '../maths';
-import { digits2number, number2digits } from '../utils';
+import { digits2number, number2digits, range } from '../utils';
 
 export function euler032(): number {
   const digits = range(1, 10);

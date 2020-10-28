@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { dividers, sum } from '../maths';
 
 export function euler023(): number {

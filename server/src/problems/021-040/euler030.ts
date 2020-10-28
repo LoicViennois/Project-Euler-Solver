@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { sum } from '../maths';
 import { number2digits } from '../utils';
 

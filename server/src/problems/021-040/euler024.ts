@@ -1,5 +1,5 @@
-import { range } from 'lodash';
 import { bigFactorial } from '../maths';
+import { range } from '../utils';
 
 export function euler024(): number {
   let availNums = range(10);

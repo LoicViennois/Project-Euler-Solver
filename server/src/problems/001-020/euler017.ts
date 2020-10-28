@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { toWords } from 'number-to-words';
 
 export function euler017(): number {

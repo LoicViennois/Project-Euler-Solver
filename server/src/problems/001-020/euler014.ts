@@ -1,5 +1,5 @@
-import { range } from 'lodash';
 import { maxKey } from '../maths';
+import { range } from '../utils';
 
 export function euler014(): number {
   const sizeDict = new Map<number, number>();

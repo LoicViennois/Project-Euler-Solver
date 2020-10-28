@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { sieve } from '../maths';
 
 export function euler046(): number {

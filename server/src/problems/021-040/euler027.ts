@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import { range } from '../utils';
 import { isPrime, maxKey, mul, sieve } from '../maths';
 
 export function euler027(): number {

@@ -90,3 +90,16 @@ export function nbOccurences<T>(item: T, array: T[]): number {
 export function arePermutations(n1: number, n2: number): boolean {
   return isEqual(sortBy(number2digits(n1)), sortBy(number2digits(n2)));
 }
+
+export function range(start: number, end?: number, step?: number): number[] {
+  if (end === undefined) {
+    end = start;
+    start = 0;
+  }
+  step = step || 1
+  const result = [];
+  for (let i = start; i < end; i += step) {
+    result.push(i);
+  }
+  return result;
+}
