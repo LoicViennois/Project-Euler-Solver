@@ -1,4 +1,4 @@
-import { intersection, range, without } from 'lodash';
+import { intersection, range } from 'lodash';
 import { gcd } from '../maths';
 import { digits2number, number2digits } from '../utils';
 
@@ -15,8 +15,8 @@ export function euler033(): number {
 
       for (const i of intersection(numDigits, denumDigits)) {
 
-        const numShort = digits2number(without(numDigits, i));
-        const denumShort = digits2number(without(denumDigits, i));
+        const numShort = digits2number(numDigits.filter(k => k !== i));
+        const denumShort = digits2number(denumDigits.filter(k => k !== i));
         const fraction = num / denum;
         const fractionShort = numShort / denumShort;
 

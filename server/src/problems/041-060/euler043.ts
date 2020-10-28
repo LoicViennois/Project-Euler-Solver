@@ -1,4 +1,4 @@
-import { concat, range, without } from 'lodash';
+import { concat, range } from 'lodash';
 
 import { sum } from '../maths';
 import { digits2number, haveDuplicates, number2digits } from '../utils';
@@ -27,7 +27,7 @@ export function euler043(): number {
    * Get possible values for the next 3-uniq-digits number, excluding previously used digits
    */
   function getPossibleValues(n: number[]): number[][] {
-    const remainingDigits = without(range(10), ...n);
+    const remainingDigits = range(10).filter(k => !n.includes(k));
     const values = [];
     for (const k of remainingDigits) {
       values.push(concat([k], n.slice(0, 2)));
@@ -62,7 +62,7 @@ export function euler043(): number {
                           if (d2.includes(digits2number(n2))) {
                             let finalDigits: number[] = [n2[0], n3[0], n5[0], n7[0], n11[0], n13[0]].concat(n17);
                             if (!haveDuplicates(finalDigits)) {
-                              const firstDigit = without(range(10), ...finalDigits)[0];
+                              const firstDigit = range(10).filter(k => !finalDigits.includes(k))[0];
                               finalDigits = [firstDigit].concat(finalDigits);
                               finalNumbers.push(digits2number(finalDigits));
                             }

@@ -1,4 +1,4 @@
-import { range, without } from 'lodash';
+import { range } from 'lodash';
 import { dividers, sum } from '../maths';
 
 export function euler021(): number {
@@ -6,7 +6,7 @@ export function euler021(): number {
 
   for (const n of range(2, 10001)) {
     let divs = dividers(n);
-    divs = without(divs, n);
+    divs = divs.filter(k => k !== n);
     divSum.set(n, sum(divs));
   }
 

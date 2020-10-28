@@ -1,4 +1,4 @@
-import { range, without } from 'lodash';
+import { range } from 'lodash';
 import { bigFactorial } from '../maths';
 
 export function euler024(): number {
@@ -23,7 +23,7 @@ export function euler024(): number {
   // Pick nums one by one
   while (availNums.length > 1) {
     const picked = pickOne(availNums);
-    availNums = without(availNums, picked);
+    availNums = availNums.filter(k => k !== picked);
     pickedNums.push(picked);
   }
 

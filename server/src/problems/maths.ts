@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { range, uniq, without } from 'lodash';
+import { range, uniq } from 'lodash';
 
 /**
  * isPrime(XX) is more efficient than sieve(n).includes(XX)
@@ -61,7 +61,7 @@ export function dividers(val: number): number[] {
       divs.push(val / d);
     }
   }
-  return without(uniq(divs), val);
+  return uniq(divs).filter(k => k !== val);
 }
 
 export function sum(array: number[]): number {
