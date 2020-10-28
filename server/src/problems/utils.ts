@@ -96,7 +96,7 @@ export function range(start: number, end?: number, step?: number): number[] {
     end = start;
     start = 0;
   }
-  step = step || 1
+  step = step || 1;
   const result = [];
   for (let i = start; i < end; i += step) {
     result.push(i);
