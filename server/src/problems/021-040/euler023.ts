@@ -1,6 +1,9 @@
 import { range } from '../utils';
 import { dividers, sum } from '../maths';
 
+/*
+https://projecteuler.net/problem=23
+*/
 export function euler023(): number {
 
   const isAbundant = (n) => {

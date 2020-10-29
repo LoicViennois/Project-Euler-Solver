@@ -2,6 +2,9 @@ import { difference, intersection, union, uniq } from 'lodash';
 import { max } from '../maths';
 import { digits2number, number2digits, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=38
+*/
 export function euler038(): number {
   /*
   maxNum = num such as :

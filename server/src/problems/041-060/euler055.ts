@@ -10,6 +10,9 @@ function reverse(n: number): number {
   return +num.split('').reverse().join('');
 }
 
+/*
+https://projecteuler.net/problem=55
+*/
 export function euler055(): number {
   let count = 0;
   for (const start of range(10, 1e4)) {

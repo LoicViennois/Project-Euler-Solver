@@ -1,6 +1,9 @@
 import { maxKey } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=39
+*/
 export function euler039(): number {
   const limit = 1000;
   const squareRoots = new Map<number, number>(range(1, limit).map((n) => [n ** 2, n]) as [number, number][]);

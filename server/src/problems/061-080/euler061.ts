@@ -2,6 +2,9 @@ import { isEqual } from 'lodash';
 import { digits2number, number2digits, range } from '../utils';
 import { sum } from '../maths';
 
+/*
+https://projecteuler.net/problem=61
+*/
 export function euler061(): number {
   const triangles = range(1e3).map((n) => n * (n + 1) / 2).filter((k) => k >= 1e3 && k < 1e4);
   const squares = range(1e3).map((n) => n * n).filter((k) => k >= 1e3 && k < 1e4);

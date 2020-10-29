@@ -1,5 +1,8 @@
 import { BigNumber } from 'bignumber.js';
 
+/*
+https://projecteuler.net/problem=25
+*/
 export function euler025(): number {
   let num1 = new BigNumber(1);
   let num2 = new BigNumber(1);

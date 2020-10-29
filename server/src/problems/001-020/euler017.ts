@@ -1,6 +1,9 @@
 import { range } from '../utils';
 import { toWords } from 'number-to-words';
 
+/*
+https://projecteuler.net/problem=17
+*/
 export function euler017(): number {
   let nbLetters = 0;
   for (const num of range(1, 1001)) {

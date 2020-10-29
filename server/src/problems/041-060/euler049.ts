@@ -3,6 +3,9 @@ import { concat } from 'lodash';
 import { isPrime, sieve } from '../maths';
 import { arePermutations, digits2number, number2digits } from '../utils';
 
+/*
+https://projecteuler.net/problem=49
+*/
 export function euler049(): number {
   const primes = sieve(9999).filter((p) => p > 999 && p !== 1487);
   for (const p1 of primes) {

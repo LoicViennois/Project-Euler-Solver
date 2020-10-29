@@ -1,5 +1,8 @@
 import { isPrime } from '../maths';
 
+/*
+https://projecteuler.net/problem=58
+*/
 export function euler058(): number {
   let step = 1;
   const corners = [1];

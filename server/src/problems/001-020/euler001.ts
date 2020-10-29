@@ -1,3 +1,6 @@
+/*
+https://projecteuler.net/problem=01
+*/
 export function euler001(): number {
   const limit = 999;
 

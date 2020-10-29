@@ -1,6 +1,9 @@
 import { range } from '../utils';
 import { BigNumber } from 'bignumber.js';
 
+/*
+https://projecteuler.net/problem=57
+*/
 export function euler057(): number {
   /**
    * let u be the sequence converging to sqrt(2)

@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=31
+*/
 export function euler031(): number {
   let comb = 0;
 

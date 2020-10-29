@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=06
+*/
 export function euler006(): number {
   let sumSq = 0;
   let sqSum = 0;

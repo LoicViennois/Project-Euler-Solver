@@ -3,6 +3,9 @@ import { difference, isEmpty, union, zip } from 'lodash';
 import { sum } from '../maths';
 import { digits2number, number2digits, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=32
+*/
 export function euler032(): number {
   const digits = range(1, 10);
 

@@ -1,5 +1,8 @@
 import { isPrime, sieve, sum } from '../maths';
 
+/*
+https://projecteuler.net/problem=60
+*/
 export function euler060(): number {
   const limit = 1e4;
   const primes = sieve(limit);

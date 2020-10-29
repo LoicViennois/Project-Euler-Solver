@@ -1,5 +1,8 @@
 import { arePermutations, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=52
+*/
 export function euler052(): number {
   for (const n of range(100, 1e6)) {
     if (arePermutations(n, 2 * n) &&

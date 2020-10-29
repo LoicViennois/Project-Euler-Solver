@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=36
+*/
 export function euler036(): number {
 
   const isPalindromic = (n: number): boolean => {

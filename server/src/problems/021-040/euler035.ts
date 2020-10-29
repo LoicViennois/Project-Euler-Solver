@@ -2,6 +2,9 @@ import { times } from 'lodash';
 import { isPrime, sieve } from '../maths';
 import { digits2number, number2digits } from '../utils';
 
+/*
+https://projecteuler.net/problem=35
+*/
 export function euler035(): number {
   const primes = sieve(1e6);
 

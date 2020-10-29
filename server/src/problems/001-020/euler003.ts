@@ -1,5 +1,8 @@
 import { isPrime } from '../maths';
 
+/*
+https://projecteuler.net/problem=03
+*/
 export function euler003(): number {
   const theMax = 600851475143;
   const root = Math.floor(Math.sqrt(theMax));

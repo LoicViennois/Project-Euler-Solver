@@ -2,6 +2,9 @@ import { range } from '../utils';
 import { sum } from '../maths';
 import { number2digits } from '../utils';
 
+/*
+https://projecteuler.net/problem=30
+*/
 export function euler030(): number {
   let p = 9;
   let maxNum = 0;

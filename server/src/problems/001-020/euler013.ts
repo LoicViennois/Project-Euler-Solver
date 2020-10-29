@@ -1,5 +1,8 @@
 import { sum } from '../maths';
 
+/*
+https://projecteuler.net/problem=13
+*/
 export function euler013(): number {
   const bigNumbers = [
     37107287533902102798797998220837590246510135740250,

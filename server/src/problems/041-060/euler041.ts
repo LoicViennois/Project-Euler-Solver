@@ -3,6 +3,9 @@ import { range } from '../utils';
 import { isPrime } from '../maths';
 import { digits2number } from '../utils';
 
+/*
+https://projecteuler.net/problem=41
+*/
 export function euler041(): number {
   let max = 0;
   let found = false;

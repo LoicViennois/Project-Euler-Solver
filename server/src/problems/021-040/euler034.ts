@@ -1,6 +1,9 @@
 import { factorial } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=34
+*/
 export function euler034(): number {
 
   const factorials = range(10).map((x) => factorial(x));

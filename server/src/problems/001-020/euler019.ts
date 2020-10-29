@@ -1,3 +1,6 @@
+/*
+https://projecteuler.net/problem=19
+*/
 export function euler019(): number {
   const date = new Date('1901-01-01');
   const lastDate = new Date('2000-12-31');

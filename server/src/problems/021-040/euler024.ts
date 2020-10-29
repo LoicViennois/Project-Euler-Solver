@@ -1,6 +1,9 @@
 import { bigFactorial } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=24
+*/
 export function euler024(): number {
   let availNums = range(10);
   const pickedNums = [];

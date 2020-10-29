@@ -1,3 +1,6 @@
+/*
+https://projecteuler.net/problem=28
+*/
 export function euler028(): number {
   let sum = 1;
   let n = 1;

@@ -2,6 +2,9 @@ import { intersection } from 'lodash';
 import { gcd } from '../maths';
 import { digits2number, number2digits, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=33
+*/
 export function euler033(): number {
   const r = range(11, 100).filter((n) => n % 10 !== 0);
   let numProd = 1;

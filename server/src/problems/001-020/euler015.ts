@@ -2,6 +2,9 @@ import { times } from 'lodash';
 import { sum } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=15
+*/
 export function euler015(): number {
   let level = [1];
   let nextLevel = [];

@@ -1,3 +1,6 @@
+/*
+https://projecteuler.net/problem=02
+*/
 export function euler002(): number {
   let res = 0;
 

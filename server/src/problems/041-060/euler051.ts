@@ -4,6 +4,9 @@ import { cartesianProduct, combination } from 'js-combinatorics';
 import { isPrime } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=51
+*/
 export function euler051(): number {
   const digits = range(10).map((d) => '' + d);
   const maxNbDigits = 6;

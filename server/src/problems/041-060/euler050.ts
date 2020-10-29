@@ -1,6 +1,9 @@
 import { isPrime, sieve, sum } from '../maths';
 import { maxBy } from 'lodash';
 
+/*
+https://projecteuler.net/problem=50
+*/
 export function euler050(): number {
   const limit = 1e6;
   const primes = sieve(limit - 1);

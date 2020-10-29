@@ -3,6 +3,9 @@ import { concat } from 'lodash';
 import { sum } from '../maths';
 import { digits2number, haveDuplicates, number2digits, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=43
+*/
 export function euler043(): number {
 
   /**

@@ -1,5 +1,8 @@
 import { max } from '../maths';
 
+/*
+https://projecteuler.net/problem=18
+*/
 export function euler018(): number {
 
   const triangle = [

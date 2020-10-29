@@ -1,6 +1,9 @@
 import { isPrime, sieve, sum } from '../maths';
 import { digits2number, number2digits } from '../utils';
 
+/*
+https://projecteuler.net/problem=37
+*/
 export function euler037(): number {
   const primes = sieve(1e6);
 

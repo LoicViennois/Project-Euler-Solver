@@ -1,6 +1,9 @@
 import { mul } from '../maths';
 import { number2digits, range } from '../utils';
 
+/*
+https://projecteuler.net/problem=08
+*/
 export function euler008(): number {
   const theBigNumber = `
 73167176531330624919225119674426574742355349194934\

@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=05
+*/
 export function euler005(): number {
   let theBigOne = 1;
   for (const i of range(10)) {

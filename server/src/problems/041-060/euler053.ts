@@ -5,6 +5,9 @@ function ncr(n, r): number {
   return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
+/*
+https://projecteuler.net/problem=53
+*/
 export function euler053(): number {
   let count = 0;
   for (const n of range(1, 101)) {

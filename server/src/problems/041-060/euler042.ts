@@ -5,6 +5,9 @@ import { max } from '../maths';
 import { wordValue } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
+/*
+https://projecteuler.net/problem=42
+*/
 export function euler042(): number {
 
   const triangle = (n: number): number => {

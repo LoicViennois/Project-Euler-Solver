@@ -2,6 +2,9 @@ import { uniq } from 'lodash';
 import { sieve } from '../maths';
 import { areDisjoint, haveSameLength } from '../utils';
 
+/*
+https://projecteuler.net/problem=47
+*/
 export function euler047(): number {
   const limit = 1e4;
   const primes = sieve(limit);

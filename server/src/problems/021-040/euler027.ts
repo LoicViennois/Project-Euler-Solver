@@ -1,6 +1,9 @@
 import { range } from '../utils';
 import { isPrime, maxKey, mul, sieve } from '../maths';
 
+/*
+https://projecteuler.net/problem=27
+*/
 export function euler027(): number {
   const aRange = range(-999, 1000).filter((x) => x % 2 !== 0); // odd numbers between -999 and 999
   const bRange = sieve(1e3); // All primes under 1000

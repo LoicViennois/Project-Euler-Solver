@@ -1,6 +1,9 @@
 import { maxKey } from '../maths';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=14
+*/
 export function euler014(): number {
   const sizeDict = new Map<number, number>();
 

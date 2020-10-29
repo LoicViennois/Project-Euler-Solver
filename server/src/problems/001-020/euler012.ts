@@ -1,6 +1,9 @@
 import { union } from 'lodash';
 import { dividers } from '../maths';
 
+/*
+https://projecteuler.net/problem=12
+*/
 export function euler012(): number {
 
   const un = (k) => {

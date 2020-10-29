@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=26
+*/
 export function euler026(): number {
 
   let maxLen = 0;

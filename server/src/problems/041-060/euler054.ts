@@ -25,6 +25,9 @@ interface HandValue {
   round3: number;
 }
 
+/*
+https://projecteuler.net/problem=54
+*/
 export function euler054(): number {
   const hands = fs.readFileSync(path.join(assetsFolder, 'p054_poker.txt'))
     .toString()

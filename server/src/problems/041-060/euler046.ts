@@ -1,6 +1,9 @@
 import { range } from '../utils';
 import { sieve } from '../maths';
 
+/*
+https://projecteuler.net/problem=46
+*/
 export function euler046(): number {
   const limit = 1e4;
 

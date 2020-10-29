@@ -4,6 +4,9 @@ import * as path from 'path';
 import { wordValue } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
+/*
+https://projecteuler.net/problem=22
+*/
 export function euler022(): number {
   const names = fs.readFileSync(path.join(assetsFolder, 'p022_names.txt'))
     .toString()

@@ -1,6 +1,9 @@
 import { BigNumber } from 'bignumber.js';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=48
+*/
 export function euler048(): number {
   let sum = new BigNumber(0);
   for (const i of range(1000)) {

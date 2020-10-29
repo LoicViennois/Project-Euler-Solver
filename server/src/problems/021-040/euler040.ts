@@ -1,3 +1,6 @@
+/*
+https://projecteuler.net/problem=40
+*/
 export function euler040(): number {
   let digits = '0';
   let n = 1;

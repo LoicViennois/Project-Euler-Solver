@@ -7,6 +7,9 @@ import { sum } from '../maths';
 import { assetsFolder } from '../assets-folder';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=59
+*/
 export function euler059(): number {
   const bytes = fs.readFileSync(path.join(assetsFolder, 'p059_cipher.txt'))
     .toString()

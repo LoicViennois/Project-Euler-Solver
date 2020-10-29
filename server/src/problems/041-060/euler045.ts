@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=45
+*/
 export function euler045(): number {
   const limit = 1e5;
 

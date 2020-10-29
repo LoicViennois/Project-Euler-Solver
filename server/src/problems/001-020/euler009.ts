@@ -1,5 +1,8 @@
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=09
+*/
 export function euler009(): number {
   const sum = 1000;
 

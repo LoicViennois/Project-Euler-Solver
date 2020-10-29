@@ -1,6 +1,9 @@
 import { clone, isEqual } from 'lodash';
 import { range } from '../utils';
 
+/*
+https://projecteuler.net/problem=04
+*/
 export function euler004(): number {
   let pal = 0;
 
