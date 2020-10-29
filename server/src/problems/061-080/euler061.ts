@@ -1,5 +1,4 @@
-import { isEqual } from 'lodash';
-import { digits2number, number2digits, range } from '../utils';
+import { arraysEqual, concat, digits2number, number2digits, range } from '../utils';
 import { sum } from '../maths';
 
 /*
@@ -26,7 +25,7 @@ export function euler061(): number {
     const prefix = number2digits(k).slice(2);
     for (const d1 of range(10)) {
       for (const d2 of range(10)) {
-        combinations.push(digits2number(prefix.concat(d1, d2)));
+        combinations.push(digits2number(concat(prefix, [d1, d2])));
       }
     }
     return combinations;
@@ -44,7 +43,7 @@ export function euler061(): number {
   }
 
   function areCyclic(a: number, b: number): boolean {
-    return isEqual(number2digits(a).slice(2), number2digits(b).slice(0, 2));
+    return arraysEqual(number2digits(a).slice(2), number2digits(b).slice(0, 2));
   }
 
   for (const n1 of triangles) {

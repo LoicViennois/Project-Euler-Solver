@@ -1,6 +1,5 @@
-import { times } from 'lodash';
 import { sum } from '../maths';
-import { range } from '../utils';
+import { range, times } from '../utils';
 
 /*
 https://projecteuler.net/problem=15

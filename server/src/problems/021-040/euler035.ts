@@ -1,6 +1,5 @@
-import { times } from 'lodash';
 import { isPrime, sieve } from '../maths';
-import { digits2number, number2digits } from '../utils';
+import { digits2number, number2digits, times } from '../utils';
 
 /*
 https://projecteuler.net/problem=35

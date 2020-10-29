@@ -1,5 +1,5 @@
-import { union } from 'lodash';
 import { dividers } from '../maths';
+import { union } from '../utils';
 
 /*
 https://projecteuler.net/problem=12

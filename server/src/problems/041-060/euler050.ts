@@ -1,5 +1,5 @@
 import { isPrime, sieve, sum } from '../maths';
-import { maxBy } from 'lodash';
+import { maxBy } from '../utils';
 
 /*
 https://projecteuler.net/problem=50

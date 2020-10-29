@@ -1,7 +1,5 @@
-import { concat } from 'lodash';
-
 import { sum } from '../maths';
-import { digits2number, haveDuplicates, number2digits, range } from '../utils';
+import { concat, digits2number, haveDuplicates, number2digits, range } from '../utils';
 
 /*
 https://projecteuler.net/problem=43
@@ -63,10 +61,10 @@ export function euler043(): number {
                       if (d3.includes(digits2number(n3))) {
                         for (const n2 of getPossibleValues(n3)) {
                           if (d2.includes(digits2number(n2))) {
-                            let finalDigits: number[] = [n2[0], n3[0], n5[0], n7[0], n11[0], n13[0]].concat(n17);
+                            let finalDigits: number[] = concat([n2[0], n3[0], n5[0], n7[0], n11[0], n13[0]], n17);
                             if (!haveDuplicates(finalDigits)) {
                               const firstDigit = range(10).filter(k => !finalDigits.includes(k))[0];
-                              finalDigits = [firstDigit].concat(finalDigits);
+                              finalDigits = concat([firstDigit], finalDigits);
                               finalNumbers.push(digits2number(finalDigits));
                             }
                           }

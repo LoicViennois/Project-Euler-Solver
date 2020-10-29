@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { concat, isEqual, sortBy, uniq } from 'lodash';
+import { sortBy } from 'lodash';
 import { max, min, sum } from '../maths';
-import { isUniq, nbOccurences, range } from '../utils';
+import { arraysEqual, concat, isUniq, nbOccurences, range, uniq } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
 enum HandValues {
@@ -61,7 +61,7 @@ export function euler054(): number {
     const pairs = uniq(cardValues.filter((val) => nbOccurences(val, cardValues) === 2));
     const three = cardValues.filter((val) => nbOccurences(val, cardValues) === 3)[0] || null;
     const four = cardValues.filter((val) => nbOccurences(val, cardValues) === 4)[0] || null;
-    const handCards = concat(pairs, [three], [four]);
+    const handCards = concat(pairs, [three, four]);
     const other = cardValues.filter((c) => !handCards.includes(c));
 
     if (pairs.length === 1 && three) {
@@ -100,7 +100,7 @@ export function euler054(): number {
 
     const cardSuits = sortBy(hand.map((card) => card[1]));
 
-    const isStraight = isEqual(cardValues, range(min(cardValues), max(cardValues) + 1));
+    const isStraight = arraysEqual(cardValues, range(min(cardValues), max(cardValues) + 1));
     const isFlush = isUniq(cardSuits);
 
     if (isStraight && isFlush) {

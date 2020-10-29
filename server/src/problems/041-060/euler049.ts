@@ -1,7 +1,5 @@
-import { concat } from 'lodash';
-
 import { isPrime, sieve } from '../maths';
-import { arePermutations, digits2number, number2digits } from '../utils';
+import { arePermutations, concat, digits2number, number2digits } from '../utils';
 
 /*
 https://projecteuler.net/problem=49

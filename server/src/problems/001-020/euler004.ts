@@ -1,5 +1,5 @@
-import { clone, isEqual } from 'lodash';
-import { range } from '../utils';
+import { clone } from 'lodash';
+import { arraysEqual, range } from '../utils';
 
 /*
 https://projecteuler.net/problem=04
@@ -13,7 +13,7 @@ export function euler004(): number {
       const pop: string[] = prod.toString().split('');
       const revPop: string[] = clone(pop);
       revPop.reverse();
-      if (isEqual(pop, revPop)) {
+      if (arraysEqual(pop, revPop)) {
         pal = Math.max(pal, prod);
       }
     }

@@ -1,6 +1,5 @@
-import { uniq } from 'lodash';
 import { sieve } from '../maths';
-import { areDisjoint, haveSameLength } from '../utils';
+import { areDisjoint, haveSameLength, uniq } from '../utils';
 
 /*
 https://projecteuler.net/problem=47

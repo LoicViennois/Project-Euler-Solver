@@ -1,8 +1,7 @@
-import { maxBy } from 'lodash';
 import { cartesianProduct, combination } from 'js-combinatorics';
 
 import { isPrime } from '../maths';
-import { range } from '../utils';
+import { maxBy, range } from '../utils';
 
 /*
 https://projecteuler.net/problem=51

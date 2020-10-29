@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { intersection, isEmpty, isEqual, sortBy, uniq, unzip } from 'lodash';
+import { intersection, isEmpty, sortBy, unzip } from 'lodash';
 
 import { sum } from './maths';
 
@@ -88,7 +88,7 @@ export function nbOccurences<T>(item: T, array: T[]): number {
 }
 
 export function arePermutations(n1: number, n2: number): boolean {
-  return isEqual(sortBy(number2digits(n1)), sortBy(number2digits(n2)));
+  return arraysEqual(sortBy(number2digits(n1)), sortBy(number2digits(n2)));
 }
 
 export function range(start: number, end?: number, step?: number): number[] {
@@ -103,3 +103,42 @@ export function range(start: number, end?: number, step?: number): number[] {
   }
   return result;
 }
+
+export function times<T>(k: number, fn: () => T): void {
+  for (let i = 0; i < k; i++) {
+    fn();
+  }
+}
+
+export function uniq<T>(array: T[]): T[] {
+  return [...new Set(array)];
+}
+
+export function concat<T>(...arrays: T[][]): T[] {
+  const [array1, ...otherArrays] = arrays;
+  return array1.concat(...otherArrays);
+}
+
+export function union<T>(...arrays: T[][]): T[] {
+  return uniq(concat(...arrays));
+}
+
+export function maxBy<T>(array: T[], mapFn: (a) => number): T {
+  return array.reduce((a, b) => mapFn(a) >= mapFn(b) ? a : b);
+}
+
+export function arraysEqual<T>(a: T[], b: T[]): boolean {
+  if (a === b) {
+    return true;
+  }
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (let i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+

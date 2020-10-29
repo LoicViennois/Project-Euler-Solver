@@ -1,6 +1,6 @@
-import { difference, intersection, union, uniq } from 'lodash';
+import { difference, intersection } from 'lodash';
 import { max } from '../maths';
-import { digits2number, number2digits, range } from '../utils';
+import { digits2number, number2digits, range, union, uniq } from '../utils';
 
 /*
 https://projecteuler.net/problem=38
