@@ -47,5 +47,5 @@ export function euler032(): number {
     }
   }
 
-  return sum(Array.from(pandigitalProducts));
+  return sum([...pandigitalProducts]);
 }
