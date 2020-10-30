@@ -1,11 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { zip } from 'lodash';
 import { permutation } from 'js-combinatorics';
 import { sum } from '../maths';
 import { assetsFolder } from '../assets-folder';
-import { concat, range, times } from '../utils';
+import { concat, range, times, zip } from '../utils';
 
 /*
 https://projecteuler.net/problem=59
@@ -29,7 +28,7 @@ export function euler059(): number {
     const shortBytes = bytes.slice(0, bytes.length / 10);
     const shortNbCycles = Math.ceil(shortBytes.length / 3);
     for (const key of permutation(possibleBytes, 3).toArray()) {
-      let shortKeyBytes = [];
+      let shortKeyBytes: number[] = [];
       times(shortNbCycles, () => {
         shortKeyBytes = concat(shortKeyBytes, key);
       });
@@ -48,7 +47,7 @@ export function euler059(): number {
 
   const pass = guessPassword();
 
-  let keyBytes = [];
+  let keyBytes: number[] = [];
   times(nbCycles, () => {
     keyBytes = concat(keyBytes, pass);
   });

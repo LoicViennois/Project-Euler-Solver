@@ -1,5 +1,5 @@
 import { BigNumber } from 'bignumber.js';
-import { intersection, isEmpty, sortBy, unzip } from 'lodash';
+import { intersection, isEmpty, sortBy } from 'lodash';
 
 import { sum } from './maths';
 
@@ -24,10 +24,6 @@ export function execTime(func: nFunc): [number, string] {
   const res = func();
   const t1 = +new Date();
   return [res, msToTime(t1 - t0)];
-}
-
-export function transpose(array: number[][]): number[][] {
-  return unzip(array);
 }
 
 export function number2digits(n: number | string): number[] {
@@ -142,3 +138,10 @@ export function arraysEqual<T>(a: T[], b: T[]): boolean {
   return true;
 }
 
+export function transpose<T>(array: T[][]): T[][] {
+  return array[0].map((col, colIndex) => array.map(row => row[colIndex]));
+}
+
+export function zip<T, U>(array1: T[], array2: U[]): [T,  U][] {
+  return array1.map((val1, index) => [val1, array2[index]]);
+}

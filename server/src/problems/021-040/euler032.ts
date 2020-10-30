@@ -1,7 +1,7 @@
 import { permutation } from 'js-combinatorics';
-import { difference, isEmpty, zip } from 'lodash';
+import { difference, isEmpty } from 'lodash';
 import { sum } from '../maths';
-import { digits2number, number2digits, range, union } from '../utils';
+import { digits2number, number2digits, range, union, zip } from '../utils';
 
 /*
 https://projecteuler.net/problem=32
