@@ -1,5 +1,4 @@
 import { BigNumber } from 'bignumber.js';
-import { intersection, isEmpty, sortBy } from 'lodash';
 
 import { sum } from './maths';
 
@@ -61,16 +60,12 @@ export function haveSameLength(...arrays): boolean {
   return areEqual(...arrays.map((a) => a.length));
 }
 
-export function areDisjoint(...arrays): boolean {
-  return isEmpty(intersection(...arrays));
-}
-
 export function haveDuplicates(array): boolean {
   return uniq(array).length !== array.length;
 }
 
 export function isUniq(array): boolean {
-  return sortBy(array).reduce((a, b) => a === b ? a : null) !== null;
+  return array.sort().reduce((a, b) => a === b ? a : null) !== null;
 }
 
 export function nbOccurences<T>(item: T, array: T[]): number {
@@ -84,7 +79,7 @@ export function nbOccurences<T>(item: T, array: T[]): number {
 }
 
 export function arePermutations(n1: number, n2: number): boolean {
-  return arraysEqual(sortBy(number2digits(n1)), sortBy(number2digits(n2)));
+  return arraysEqual(number2digits(n1).sort(), number2digits(n2).sort());
 }
 
 export function range(start: number, end?: number, step?: number): number[] {
@@ -142,6 +137,18 @@ export function transpose<T>(array: T[][]): T[][] {
   return array[0].map((col, colIndex) => array.map(row => row[colIndex]));
 }
 
-export function zip<T, U>(array1: T[], array2: U[]): [T,  U][] {
+export function zip<T, U>(array1: T[], array2: U[]): [T, U][] {
   return array1.map((val1, index) => [val1, array2[index]]);
+}
+
+export function difference<T>(array1: T[], array2: T[]): T[] {
+  return array1.filter((val1) => !array2.includes(val1));
+}
+
+export function intersection<T>(array1: T[], array2: T[]): T[] {
+  return array1.filter((val1) => array2.includes(val1));
+}
+
+export function areDisjoint<T>(...arrays: T[][]): boolean {
+  return arrays.reduce((array1, array2) => intersection(array1, array2)).length === 0;
 }

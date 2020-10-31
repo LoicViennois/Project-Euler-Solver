@@ -1,4 +1,3 @@
-import { clone } from 'lodash';
 import { arraysEqual, range } from '../utils';
 
 /*
@@ -11,7 +10,7 @@ export function euler004(): number {
     for (const j of range(i, 999)) {
       const prod = i * j;
       const pop: string[] = prod.toString().split('');
-      const revPop: string[] = clone(pop);
+      const revPop: string[] = [...pop];
       revPop.reverse();
       if (arraysEqual(pop, revPop)) {
         pal = Math.max(pal, prod);

@@ -1,6 +1,5 @@
-import { intersection } from 'lodash';
 import { gcd } from '../maths';
-import { digits2number, number2digits, range } from '../utils';
+import { digits2number, intersection, number2digits, range } from '../utils';
 
 /*
 https://projecteuler.net/problem=33

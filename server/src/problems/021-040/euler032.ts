@@ -1,7 +1,6 @@
 import { permutation } from 'js-combinatorics';
-import { difference, isEmpty } from 'lodash';
 import { sum } from '../maths';
-import { digits2number, number2digits, range, union, zip } from '../utils';
+import { difference, digits2number, number2digits, range, union, zip } from '../utils';
 
 /*
 https://projecteuler.net/problem=32
@@ -19,7 +18,7 @@ export function euler032(): number {
 
   const containsAllDigitsOnlyOnce = (...arrays: number[][]): boolean => {
     const areUniq = union(...arrays).length === sum(arrays.map((a) => a.length));
-    const containsAll = isEmpty(difference(union(...arrays), digits));
+    const containsAll = difference(union(...arrays), digits).length === 0;
     return areUniq && containsAll;
   };
 

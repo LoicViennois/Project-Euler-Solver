@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { sortBy } from 'lodash';
 import { max, min, sum } from '../maths';
 import { arraysEqual, concat, isUniq, nbOccurences, range, uniq } from '../utils';
 import { assetsFolder } from '../assets-folder';
@@ -56,7 +55,7 @@ export function euler054(): number {
   }
 
   function handValue(hand: string[]): HandValue {
-    const cardValues = sortBy(hand.map((card) => cardValue(card)));
+    const cardValues = hand.map((card) => cardValue(card)).sort();
 
     const pairs = uniq(cardValues.filter((val) => nbOccurences(val, cardValues) === 2));
     const three = cardValues.filter((val) => nbOccurences(val, cardValues) === 3)[0] || null;
@@ -98,7 +97,7 @@ export function euler054(): number {
       }
     }
 
-    const cardSuits = sortBy(hand.map((card) => card[1]));
+    const cardSuits = hand.map((card) => card[1]).sort();
 
     const isStraight = arraysEqual(cardValues, range(min(cardValues), max(cardValues) + 1));
     const isFlush = isUniq(cardSuits);
