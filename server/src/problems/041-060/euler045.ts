@@ -24,4 +24,6 @@ export function euler045(): number {
       return t;
     }
   }
+
+  return null;
 }

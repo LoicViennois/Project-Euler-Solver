@@ -24,4 +24,6 @@ export function euler044(): number {
       }
     }
   }
+
+  return null;
 }

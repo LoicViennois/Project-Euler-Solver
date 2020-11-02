@@ -13,4 +13,5 @@ export function euler052(): number {
       return n;
     }
   }
+  return null;
 }

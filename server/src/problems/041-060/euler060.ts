@@ -38,4 +38,6 @@ export function euler060(): number {
       }
     }
   }
+
+  return null;
 }

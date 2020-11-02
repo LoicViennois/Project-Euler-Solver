@@ -6,7 +6,7 @@ import { Problem } from './problem';
 })
 export class FirstIdPipe implements PipeTransform {
 
-  transform(problems: Problem[]): any {
+  transform(problems: Problem[]): number {
     return problems[0].id;
   }
 
@@ -17,7 +17,7 @@ export class FirstIdPipe implements PipeTransform {
 })
 export class LastIdPipe implements PipeTransform {
 
-  transform(problems: Problem[]): any {
+  transform(problems: Problem[]): number {
     return problems[problems.length - 1].id;
   }
 

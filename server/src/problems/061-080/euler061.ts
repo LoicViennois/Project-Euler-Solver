@@ -76,4 +76,6 @@ export function euler061(): number {
       }
     }
   }
+
+  return null;
 }

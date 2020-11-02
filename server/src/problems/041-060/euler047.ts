@@ -14,12 +14,16 @@ export function euler047(): number {
         return p;
       }
     }
+    return null;
   }
 
   function primeFactors(n: number): number[] {
     const factors: number[] = [];
     while (n > 1) {
       const p = nextPrimeFactor(n);
+      if (p == null) {
+        break;
+      }
       factors.push(p);
       n /= p;
     }

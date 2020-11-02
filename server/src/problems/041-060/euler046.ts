@@ -22,4 +22,6 @@ export function euler046(): number {
       return n;
     }
   }
+
+  return null;
 }

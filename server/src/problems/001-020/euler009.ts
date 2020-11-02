@@ -16,4 +16,5 @@ export function euler009(): number {
     }
   }
 
+  return null;
 }

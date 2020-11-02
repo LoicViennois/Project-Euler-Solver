@@ -21,6 +21,7 @@ export function euler024(): number {
         place = newPlace;
       }
     }
+    return null;
   };
 
   // Pick nums one by one

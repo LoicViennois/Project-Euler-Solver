@@ -14,4 +14,5 @@ export function euler049(): number {
       }
     }
   }
+  return null;
 }

@@ -6,7 +6,7 @@ import * as hljs from 'highlight.js';
 })
 export class FormatCodePipe implements PipeTransform {
 
-  transform(value: string, lang?: string): any {
+  transform(value: string, lang?: string): string {
     if (lang) {
       return hljs.highlight(lang, value).value;
     } else {

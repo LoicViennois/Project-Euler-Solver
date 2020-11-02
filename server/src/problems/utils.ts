@@ -68,7 +68,7 @@ export function isUniq(array): boolean {
   return array.sort().reduce((a, b) => a === b ? a : null) !== null;
 }
 
-export function nbOccurences<T>(item: T, array: T[]): number {
+export function nbOccurrences<T>(item: T, array: T[]): number {
   let count = 0;
   for (const e of array) {
     if (e === item) {

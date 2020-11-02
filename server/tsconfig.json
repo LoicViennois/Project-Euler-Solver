@@ -4,6 +4,11 @@
     "target": "es2017",
     "moduleResolution": "node",
     "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "typeRoots": [
       "node_modules/@types"
     ],

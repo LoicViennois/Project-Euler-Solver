@@ -43,6 +43,7 @@ export function euler059(): number {
         return key;
       }
     }
+    return null;
   }
 
   const pass = guessPassword();

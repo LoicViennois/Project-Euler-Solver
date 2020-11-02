@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { max, min, sum } from '../maths';
-import { arraysEqual, concat, isUniq, nbOccurences, range, uniq } from '../utils';
+import { arraysEqual, concat, isUniq, nbOccurrences, range, uniq } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
 enum HandValues {
@@ -57,9 +57,9 @@ export function euler054(): number {
   function handValue(hand: string[]): HandValue {
     const cardValues = hand.map((card) => cardValue(card)).sort();
 
-    const pairs = uniq(cardValues.filter((val) => nbOccurences(val, cardValues) === 2));
-    const three = cardValues.filter((val) => nbOccurences(val, cardValues) === 3)[0] || null;
-    const four = cardValues.filter((val) => nbOccurences(val, cardValues) === 4)[0] || null;
+    const pairs = uniq(cardValues.filter((val) => nbOccurrences(val, cardValues) === 2));
+    const three = cardValues.filter((val) => nbOccurrences(val, cardValues) === 3)[0] || null;
+    const four = cardValues.filter((val) => nbOccurrences(val, cardValues) === 4)[0] || null;
     const handCards = concat(pairs, [three, four]);
     const other = cardValues.filter((c) => !handCards.includes(c));
 
