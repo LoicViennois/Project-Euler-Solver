@@ -123,9 +123,7 @@ describe('Utils', () => {
     test('areDisjoint [1, 2, 3, 4] and [2, 3]', () => {
       expect(areDisjoint([1, 2, 3, 4], [2, 3])).toBe(false);
     });
-  });
 
-  describe('areDisjoint', () => {
     test('areDisjoint [1, 2] and [3, 4]', () => {
       expect(areDisjoint([1, 2], [3, 4])).toBe(true);
     });

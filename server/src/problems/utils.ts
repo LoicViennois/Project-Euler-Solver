@@ -46,19 +46,14 @@ export function wordValue(word: string): number {
   return sum(word.split('').map((c: string) => alphaPosition(c)));
 }
 
-export function areEqual(...values: number[]): boolean {
-  const v0 = values[0];
-  for (let i = 1; i < values.length; i++) {
-    if (values[i] !== v0) {
+export function haveSameLength(...arrays): boolean {
+  const len0 = arrays[0].length;
+  for (const array of arrays) {
+    if (array.length !== len0) {
       return false;
     }
   }
   return true;
-}
-
-export function haveSameLength(...arrays): boolean {
-  // TODO: use 'reduce' method
-  return areEqual(...arrays.map((a) => a.length));
 }
 
 export function haveDuplicates(array): boolean {
