@@ -57,6 +57,7 @@ export function areEqual(...values: number[]): boolean {
 }
 
 export function haveSameLength(...arrays): boolean {
+  // TODO: use 'reduce' method
   return areEqual(...arrays.map((a) => a.length));
 }
 
@@ -64,18 +65,8 @@ export function haveDuplicates(array): boolean {
   return uniq(array).length !== array.length;
 }
 
-export function isUniq(array): boolean {
-  return array.sort().reduce((a, b) => a === b ? a : null) !== null;
-}
-
 export function nbOccurrences<T>(item: T, array: T[]): number {
-  let count = 0;
-  for (const e of array) {
-    if (e === item) {
-      count += 1;
-    }
-  }
-  return count;
+  return array.filter(i => i === item).length;
 }
 
 export function arePermutations(n1: number, n2: number): boolean {

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { max, min, sum } from '../maths';
-import { arraysEqual, concat, isUniq, nbOccurrences, range, uniq } from '../utils';
+import { arraysEqual, concat, haveDuplicates, nbOccurrences, range, uniq } from '../utils';
 import { assetsFolder } from '../assets-folder';
 
 enum HandValues {
@@ -100,7 +100,7 @@ export function euler054(): number {
     const cardSuits = hand.map((card) => card[1]).sort();
 
     const isStraight = arraysEqual(cardValues, range(min(cardValues), max(cardValues) + 1));
-    const isFlush = isUniq(cardSuits);
+    const isFlush = !haveDuplicates(cardSuits);
 
     if (isStraight && isFlush) {
       if (cardValues.includes(14)) {

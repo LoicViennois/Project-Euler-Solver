@@ -1,4 +1,4 @@
-import { dividers, factorial, gcd, isPrime, max, maxKey, mul, sieve, sum } from './maths';
+import { dividers, factorial, gcd, isPrime, max, maxKey, min, mul, sieve, sum } from './maths';
 
 describe('Maths', () => {
   describe('isPrime', () => {
@@ -31,6 +31,12 @@ describe('Maths', () => {
   describe('mul', () => {
     test('mul of [1, 2, 3, 4]', () => {
       expect(mul([1, 2, 3, 4])).toBe(24);
+    });
+  });
+
+  describe('min', () => {
+    test('min of [1, 4, 3, 2]', () => {
+      expect(min([1, 4, 3, 2])).toBe(1);
     });
   });
 
