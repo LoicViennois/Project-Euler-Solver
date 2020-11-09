@@ -20,7 +20,6 @@
     "@angular/localize": "^10.0.14",
     "@angular/platform-browser": "^10.0.14",
     "@angular/platform-browser-dynamic": "^10.0.14",
-    "@angular/pwa": "^0.1000.8",
     "@angular/router": "^10.0.14",
     "@angular/service-worker": "^10.0.14",
     "@fortawesome/fontawesome-free": "^5.14.0",
