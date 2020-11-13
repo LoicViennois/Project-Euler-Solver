@@ -9,19 +9,6 @@ RUN npm ci
 
 COPY . .
 
-# Dev
-FROM base as dev
-
-EXPOSE 3000
-
-ENV EULER_CLIENT_URL="http://localhost:8080"
-
-ENV NODE_ENV="development"
-
-ENV EULER_SERVER_INTERFACE="0.0.0.0"
-
-CMD ["npm", "run", "start"]
-
 # Build
 FROM base as build
 
@@ -35,9 +22,7 @@ FROM node:lts-alpine as prod
 EXPOSE 3000
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
-
 ENV EULER_SERVER_INTERFACE="0.0.0.0"
-
 ENV NODE_ENV="production"
 
 RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
