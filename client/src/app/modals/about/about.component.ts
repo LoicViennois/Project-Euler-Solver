@@ -5,11 +5,11 @@ import { version } from '../../../../package.json';
 
 
 @Component({
-  selector: 'euler-copyright',
-  templateUrl: './copyright.component.html',
-  styleUrls: ['./copyright.component.less']
+  selector: 'euler-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.less']
 })
-export class CopyrightComponent {
+export class AboutComponent {
   readonly version: string = version;
 
   constructor(public activeModal: NgbActiveModal) {
