@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.3.1...v1.4.0) (2020-11-20)
+
+
+### Features
+
+* **client:** add matomo analytics (self-hosted) ([f873532](https://github.com/LoicViennois/Project-Euler-Solver/commit/f873532a6c484354503e48d8943130e6f7d201db))
+* **client:** rename modal 'copyright' -> 'about' and change icon ([bb55272](https://github.com/LoicViennois/Project-Euler-Solver/commit/bb5527209cd6fba6923c8172f7c3537233833c5a))
+* **client:** version number inside about modal is now a link to changelog ([4f59071](https://github.com/LoicViennois/Project-Euler-Solver/commit/4f590718eacc0e6b247afa0d7c4e840b22f92cba))
+
+
+### Bug Fixes
+
+* **client:** fix 404 error on page refresh ([b448eff](https://github.com/LoicViennois/Project-Euler-Solver/commit/b448eff9481fe4f709dbdae0f0697c94681534f7))
+* **client:** fix service worker ([439d8ad](https://github.com/LoicViennois/Project-Euler-Solver/commit/439d8ad27a383d2ba43359bec62c686dfe2d6154))
+
 ### [1.3.1](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.3.0...v1.3.1) (2020-09-14)
 
 
