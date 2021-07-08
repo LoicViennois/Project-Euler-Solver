@@ -1,7 +1,6 @@
-import { cartesianProduct, combination } from 'js-combinatorics';
-
 import { isPrime } from '../maths';
 import { maxBy, range } from '../utils';
+import { cartesianProduct, combination } from '../combinatorics';
 
 /*
 https://projecteuler.net/problem=51
@@ -13,8 +12,8 @@ export function euler051(): number {
   const digitReplacements: number[][] = [];
 
   for (const nbDigitsToReplace of range(1, maxNbDigits)) {
-    combination(range(maxNbDigits), nbDigitsToReplace).forEach((digitsToReplace) => {
-      const possibleDigits = [];
+    for (const digitsToReplace of combination(range(maxNbDigits), nbDigitsToReplace)) {
+      const possibleDigits: string[][] = [];
       for (const i of range(maxNbDigits)) {
         if (digitsToReplace.includes(i)) {
           possibleDigits.push(['X']);
@@ -22,7 +21,7 @@ export function euler051(): number {
           possibleDigits.push(digits);
         }
       }
-      cartesianProduct(...possibleDigits).forEach((possibleNumberAsArray) => {
+      for (const possibleNumberAsArray of cartesianProduct(...possibleDigits)) {
         const possibleNumber = possibleNumberAsArray.join('');
         const replacements = [];
         for (const d of digits) {
@@ -32,8 +31,8 @@ export function euler051(): number {
           }
         }
         digitReplacements.push(replacements);
-      });
-    });
+      }
+    }
   }
 
   return maxBy(digitReplacements, (a) => a.length)[0];

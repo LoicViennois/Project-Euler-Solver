@@ -1,6 +1,6 @@
-import { permutation } from 'js-combinatorics';
 import { sum } from '../maths';
 import { difference, digits2number, number2digits, range, union, zip } from '../utils';
+import { permutation } from '../combinatorics';
 
 /*
 https://projecteuler.net/problem=32
@@ -8,9 +8,9 @@ https://projecteuler.net/problem=32
 export function euler032(): number {
   const digits = range(1, 10);
 
-  const perms2array = permutation(digits, 2).toArray();
-  const perms3array = permutation(digits, 3).toArray();
-  const perms4array = permutation(digits, 4).toArray();
+  const perms2array = permutation(digits, 2);
+  const perms3array = permutation(digits, 3);
+  const perms4array = permutation(digits, 4);
 
   const perms2 = perms2array.map(digits2number);
   const perms3 = perms3array.map(digits2number);
