@@ -1,4 +1,3 @@
-import { BigNumber } from 'bignumber.js';
 import { range, uniq } from './utils';
 
 /**
@@ -116,13 +115,13 @@ export function factorial(num: number): number {
   return res;
 }
 
-export function bigFactorial(num: number): BigNumber {
+export function bigFactorial(num: number): BigInt {
   if (num === 0) {
-    return new BigNumber(0);
+    return BigInt(0);
   }
-  let res = new BigNumber(num);
+  let res = BigInt(num);
   for (const n of range(1, num)) {
-    res = res.times(n);
+    res = res * BigInt(n);
   }
   return res;
 }

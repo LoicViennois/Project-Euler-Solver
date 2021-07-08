@@ -1,4 +1,3 @@
-import { BigNumber } from 'bignumber.js';
 import { range } from '../utils';
 
 /*
@@ -9,7 +8,8 @@ export function euler029(): number {
 
   for (const a of range(2, 101)) {
     for (const b of range(2, 101)) {
-      nums.add(new BigNumber(a).pow(b).toFixed());
+      const big = BigInt(a) ** BigInt(b);
+      nums.add(big.toString());
     }
   }
 

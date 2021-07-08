@@ -1,5 +1,3 @@
-import { BigNumber } from 'bignumber.js';
-
 import { sum } from './maths';
 
 export function msToTime(t: number): string {
@@ -34,8 +32,8 @@ export function digits2number(digits: number[]): number {
   return +digits.join('');
 }
 
-export function bigNumber2digits(b: BigNumber): number[] {
-  return b.toFixed().split('').map((c) => +c);
+export function bigNumber2digits(b: BigInt): number[] {
+  return b.toString().split('').map((c) => +c);
 }
 
 function alphaPosition(c: string): number {

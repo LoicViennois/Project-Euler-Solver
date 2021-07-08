@@ -1,13 +1,12 @@
-import { BigNumber } from 'bignumber.js';
 import { range } from '../utils';
 
 /*
 https://projecteuler.net/problem=48
 */
 export function euler048(): number {
-  let sum = new BigNumber(0);
+  let sum = BigInt(0);
   for (const i of range(1000)) {
-    sum = sum.plus(new BigNumber(i + 1).pow(i + 1));
+    sum = sum + (BigInt(i + 1) ** BigInt(i + 1));
   }
-  return +sum.toFixed().slice(sum.e - 9, sum.e + 1);
+  return +sum.toString().slice(sum.toString().length - 10, sum.toString().length);
 }

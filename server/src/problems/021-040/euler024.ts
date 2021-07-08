@@ -1,4 +1,4 @@
-import { bigFactorial } from '../maths';
+import { factorial } from '../maths';
 import { range } from '../utils';
 
 /*
@@ -14,7 +14,7 @@ export function euler024(): number {
   // Pick function
   const pickOne = (nums: number[]): number => {
     for (const n of nums) {
-      const newPlace = place + +bigFactorial(nums.length - 1);
+      const newPlace = place + +factorial(nums.length - 1);
       if (newPlace >= limit) {
         return n;
       } else {
