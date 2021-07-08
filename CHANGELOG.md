@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.4.0...v1.5.0) (2021-07-08)
+
+
+### Features
+
+* **server:** use BigInt and remove npm package bignumber.js ([c334206](https://github.com/LoicViennois/Project-Euler-Solver/commit/c334206c2efc3f5ee08caffcbb7825e3303c0123))
+* **server:** use custom combinatorics and remove npm package js-combinatorics ([6129cd2](https://github.com/LoicViennois/Project-Euler-Solver/commit/6129cd2c8e10bc8647810754ac564742bbd479e4))
+
 ## [1.4.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.3.1...v1.4.0) (2020-11-20)
 
 
