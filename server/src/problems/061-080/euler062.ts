@@ -1,9 +1,9 @@
-/*
-https://projecteuler.net/problem=62
-*/
 import { number2digits, range } from '../utils';
 import { min } from '../maths';
 
+/*
+https://projecteuler.net/problem=62
+*/
 export function euler062(): number {
   const cubes = new Map();
 
