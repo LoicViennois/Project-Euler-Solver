@@ -2,6 +2,7 @@ import { euler061 } from './euler061';
 import { euler062 } from './euler062';
 import { euler063 } from './euler063';
 import { euler064 } from './euler064';
+import { euler065 } from './euler065';
 
 describe('Euler 061-080', () => {
   describe('euler061', () => {
@@ -25,6 +26,12 @@ describe('Euler 061-080', () => {
   describe('euler064', () => {
     test('1322', () => {
       expect(euler064()).toBe(1322);
+    });
+  });
+
+  describe('euler065', () => {
+    test('272', () => {
+      expect(euler065()).toBe(272);
     });
   });
 });
