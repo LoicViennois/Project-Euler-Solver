@@ -2,12 +2,12 @@ import { sum } from '../maths';
 import { bigNumber2digits, range } from '../utils';
 
 function computeBigContinuedFraction(terms: bigint[]): [bigint, bigint] {
-  const limit = terms.length;
+  const len = terms.length;
 
-  let ni = terms[limit - 1];
+  let ni = terms[len - 1];
   let di = BigInt(1);
 
-  for (let i = limit - 1; i--; i >= 0) {
+  for (let i = len - 1; i--; i >= 0) {
     const aj = terms[i];
     const nj1 = ni;
     ni = ni * aj + di;
@@ -15,7 +15,6 @@ function computeBigContinuedFraction(terms: bigint[]): [bigint, bigint] {
   }
   return [ni, di];
 }
-
 
 /*
 https://projecteuler.net/problem=65
