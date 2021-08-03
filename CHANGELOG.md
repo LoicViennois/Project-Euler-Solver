@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.5.0...v1.6.0) (2021-08-03)
+
+
+### Features
+
+* **server:** solve euler062 ([8a907f1](https://github.com/LoicViennois/Project-Euler-Solver/commit/8a907f118b90476260debd37e52df39854f165fd))
+* **server:** solve euler063 ([5e804f5](https://github.com/LoicViennois/Project-Euler-Solver/commit/5e804f54fab0b2561bfb5a0bfb65ae871dc79253))
+* **server:** solve euler064 ([8025f9a](https://github.com/LoicViennois/Project-Euler-Solver/commit/8025f9ad462f04645a91ae227a5afce6ab077b2c))
+* **server:** solve euler065 ([81828df](https://github.com/LoicViennois/Project-Euler-Solver/commit/81828df10e6d2ca728885adef4e1c7a6daa86176))
+* **server:** solve euler066 ([381cba7](https://github.com/LoicViennois/Project-Euler-Solver/commit/381cba78568dfcf1f743fda10373a8759e16dd91))
+* **server:** solve euler067 ([99fd729](https://github.com/LoicViennois/Project-Euler-Solver/commit/99fd729253381c3eed0c8268ebf582a771f16c35))
+* **server:** use custom number to words generator and remove npm package number-to-words ([16da490](https://github.com/LoicViennois/Project-Euler-Solver/commit/16da4905e1cb4a222e19faf7e5e541ea9524840a))
+
+
+### Bug Fixes
+
+* **server:** fix code fetch in production environment ([52886d1](https://github.com/LoicViennois/Project-Euler-Solver/commit/52886d1327a510cd20c7088e26fe12e7f3b6e7c2))
+
 ## [1.5.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.4.0...v1.5.0) (2021-07-08)
 
 
