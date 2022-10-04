@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { version } from '../../../../package.json';
+import pkg from '../../../../package.json';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { version } from '../../../../package.json';
   styleUrls: ['./about.component.less']
 })
 export class AboutComponent {
-  readonly version: string = version;
+  readonly version: string = pkg.version;
 
   constructor(public activeModal: NgbActiveModal) {
   }

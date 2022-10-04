@@ -36,7 +36,6 @@ export function euler059(): number {
 
       let msg = '';
       for (const [b, k] of zip(shortBytes, shortKeyBytes)) {
-        // tslint:disable-next-line:no-bitwise
         msg += String.fromCharCode(b ^ k);
       }
       if (msg.match(/ the /)) {
@@ -56,7 +55,6 @@ export function euler059(): number {
 
   let message = '';
   for (const [b, k] of zip(bytes, keyBytes)) {
-    // tslint:disable-next-line:no-bitwise
     message += String.fromCharCode(b ^ k);
   }
   return sum(message.split('').map((c) => c.charCodeAt(0)));

@@ -115,7 +115,7 @@ export function factorial(num: number): number {
   return res;
 }
 
-export function bigFactorial(num: number): BigInt {
+export function bigFactorial(num: number): bigint {
   if (num === 0) {
     return BigInt(0);
   }

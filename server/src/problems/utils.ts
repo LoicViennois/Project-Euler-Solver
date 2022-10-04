@@ -32,7 +32,7 @@ export function digits2number(digits: number[]): number {
   return +digits.join('');
 }
 
-export function bigNumber2digits(b: BigInt): number[] {
+export function bigNumber2digits(b: bigint): number[] {
   return b.toString().split('').map((c) => +c);
 }
 
