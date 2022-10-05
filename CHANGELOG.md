@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.6.0...v1.7.0) (2022-10-05)
+
+
+### Features
+
+* update to angular 13 ([546bc8a](https://github.com/LoicViennois/Project-Euler-Solver/commit/546bc8a6d0ec0c60539efc6128b2e5fc20ea64a9))
+
 ## [1.6.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.5.0...v1.6.0) (2021-08-03)
 
 
