@@ -1,0 +1,65 @@
+name: Docker
+
+on:
+  push:
+    branches: [ "master" ]
+    tags: [ 'v*' ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME_SERVER: ${{ github.repository_owner }}/project-euler-server
+  IMAGE_NAME_CLIENT: ${{ github.repository_owner }}/project-euler-client
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Login against a Docker registry except on PR
+      # https://github.com/docker/login-action
+      - name: Log into registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata - server
+        id: meta-server
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_SERVER }}
+
+      # Build and push Docker image
+      # https://github.com/docker/build-push-action
+      - name: Build and push Docker image - server
+        uses: docker/build-push-action@v3
+        with:
+          context: server
+          push: true
+          tags: ${{ steps.meta-server.outputs.tags }}
+
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata - client
+        id: meta-client
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_CLIENT }}
+
+      # Build and push Docker image
+      # https://github.com/docker/build-push-action
+      - name: Build and push Docker image - client
+        uses: docker/build-push-action@v3
+        with:
+          context: client
+          push: true
+          tags: ${{ steps.meta-client.outputs.tags }}
