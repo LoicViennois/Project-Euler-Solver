@@ -2,12 +2,12 @@ version: '2.4'
 
 services:
   server:
-    image: loicviennois/project-euler-server
+    image: ghcr.io/loicviennois/project-euler-server
     build: ./server
     ports:
       - '3000:3000'
   client:
-    image: loicviennois/project-euler-client
+    image: ghcr.io/loicviennois/project-euler-client
     build: ./client
     ports:
       - '8080:80'
