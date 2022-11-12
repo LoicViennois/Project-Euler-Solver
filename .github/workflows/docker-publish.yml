@@ -37,6 +37,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_SERVER }}
+          flavor: latest=true
 
       # Build and push Docker image
       # https://github.com/docker/build-push-action
@@ -54,6 +55,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_CLIENT }}
+          flavor: latest=true
 
       # Build and push Docker image
       # https://github.com/docker/build-push-action
