@@ -25,5 +25,5 @@ p4.forEach(pbCreator);
 
 export const getProblems: RequestHandler = (req: Request, res: Response) => {
   console.log('Get problems');
-  return res.json(problemsList);
+  res.json(problemsList);
 };
