@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { sum } from '../maths';
-import { assetsFolder } from '../assets-folder';
+import { ASSETS_FOLDER } from '../assets-folder';
 import { concat, range, times, zip } from '../utils';
 import { permutation } from '../combinatorics';
 
@@ -10,7 +10,7 @@ import { permutation } from '../combinatorics';
 https://projecteuler.net/problem=59
 */
 export function euler059(): number {
-  const bytes = fs.readFileSync(path.join(assetsFolder, 'p059_cipher.txt'))
+  const bytes = fs.readFileSync(path.join(ASSETS_FOLDER, 'p059_cipher.txt'))
     .toString()
     .split(',')
     .map((c) => +c);

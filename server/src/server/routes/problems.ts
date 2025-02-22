@@ -1,4 +1,4 @@
-import { Request, RequestHandler, Response } from 'express';
+import type { Request, RequestHandler, Response } from 'express';
 import { problems as p1 } from '../../problems/001-020/list';
 import { problems as p2 } from '../../problems/021-040/list';
 import { problems as p3 } from '../../problems/041-060/list';

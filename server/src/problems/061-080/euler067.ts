@@ -1,13 +1,13 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { assetsFolder } from '../assets-folder';
+import { ASSETS_FOLDER } from '../assets-folder';
 import { max } from '../maths';
 
 /*
 https://projecteuler.net/problem=67
 */
 export function euler067(): number {
-  const rows = fs.readFileSync(path.join(assetsFolder, 'p067_triangle.txt'))
+  const rows = fs.readFileSync(path.join(ASSETS_FOLDER, 'p067_triangle.txt'))
     .toString()
     .split('\n')
     .filter((line) => line)

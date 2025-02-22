@@ -3,7 +3,7 @@ import * as path from 'path';
 
 import { max, min, sum } from '../maths';
 import { arraysEqual, concat, haveDuplicates, nbOccurrences, range, uniq } from '../utils';
-import { assetsFolder } from '../assets-folder';
+import { ASSETS_FOLDER } from '../assets-folder';
 
 enum HandValues {
   HighCard,      // 0
@@ -28,7 +28,7 @@ interface HandValue {
 https://projecteuler.net/problem=54
 */
 export function euler054(): number {
-  const hands = fs.readFileSync(path.join(assetsFolder, 'p054_poker.txt'))
+  const hands = fs.readFileSync(path.join(ASSETS_FOLDER, 'p054_poker.txt'))
     .toString()
     .split('\n')
     .filter((line) => line)

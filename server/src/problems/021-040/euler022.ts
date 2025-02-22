@@ -2,13 +2,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { wordValue } from '../utils';
-import { assetsFolder } from '../assets-folder';
+import { ASSETS_FOLDER } from '../assets-folder';
 
 /*
 https://projecteuler.net/problem=22
 */
 export function euler022(): number {
-  const names = fs.readFileSync(path.join(assetsFolder, 'p022_names.txt'))
+  const names = fs.readFileSync(path.join(ASSETS_FOLDER, 'p022_names.txt'))
     .toString()
     .replace(/"/g, '')
     .split(',');

@@ -3,7 +3,7 @@ import * as path from 'path';
 
 import { max } from '../maths';
 import { wordValue } from '../utils';
-import { assetsFolder } from '../assets-folder';
+import { ASSETS_FOLDER } from '../assets-folder';
 
 /*
 https://projecteuler.net/problem=42
@@ -14,7 +14,7 @@ export function euler042(): number {
     return n * (n + 1) / 2;
   };
 
-  const words = fs.readFileSync(path.join(assetsFolder, 'p042_words.txt'))
+  const words = fs.readFileSync(path.join(ASSETS_FOLDER, 'p042_words.txt'))
     .toString()
     .replace(/"/g, '')
     .split(',');

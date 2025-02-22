@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { dividers, factorial, gcd, isPrime, max, maxKey, min, mul, sieve, sum } from './maths';
 
 describe('Maths', () => {
