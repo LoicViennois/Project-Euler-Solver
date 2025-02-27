@@ -1,20 +1,18 @@
-FROM node:lts-alpine
+FROM oven/bun
 
 EXPOSE 3000
 
 ENV EULER_CLIENT_URL="http://localhost:8080"
 ENV EULER_SERVER_INTERFACE="0.0.0.0"
-
-RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
+ENV NODE_ENV="production"
 
 WORKDIR /usr/src/app
 
-USER node
+COPY package.json ./
+COPY bun.lock ./
 
-COPY --chown=node:node package*.json ./
+RUN bun install --production
 
-RUN npm ci --only=production
+COPY src ./src
 
-COPY --chown=node:node src ./src
-
-CMD [ "npx", "tsx", "./src/server.ts" ]
+CMD [ "bun", "./src/server.ts" ]
