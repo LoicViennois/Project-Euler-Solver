@@ -16,7 +16,7 @@ const routes: Routes = [
     component: CodeViewComponent,
     children: [
       {
-        path: ':name',
+        path: ':id',
         component: CodeBlockComponent,
       }
     ]

@@ -5,7 +5,7 @@ import { ProblemsService } from '../../problems-list/problems.service';
 @Component({
   selector: 'euler-code-block',
   templateUrl: './code-block.component.html',
-  styleUrls: ['./code-block.component.css']
+  styleUrls: ['./code-block.component.css'],
 })
 export class CodeBlockComponent implements OnInit {
   source = '';
@@ -16,8 +16,7 @@ export class CodeBlockComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const name: string = params.name;
-      this.problemsService.getCode(name).subscribe((source: string) => {
+      this.problemsService.getCode(+params.id).subscribe((source: string) => {
         this.source = source;
       });
     });

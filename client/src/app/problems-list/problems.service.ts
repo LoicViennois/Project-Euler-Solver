@@ -11,7 +11,7 @@ import { codeUrl, problemsUrl, solveUrl } from '../urls';
 @Injectable()
 export class ProblemsService {
   private problems: Problem[];
-  private code = new Map<string, string>();
+  private code = new Map<number, string>();
 
   constructor(private http: HttpClient) {
   }
@@ -37,16 +37,16 @@ export class ProblemsService {
     );
   }
 
-  getCode(name: string): Observable<string> {
-    if (this.code.has(name)) {
-      return of(this.code.get(name));
+  getCode(id: number): Observable<string> {
+    if (this.code.has(id)) {
+      return of(this.code.get(id));
     }
-    const url = `${codeUrl}/${name}`;
+    const url = `${codeUrl}/${id}`;
     return this.http.get<string>(url).pipe(
       map(code => {
-        this.code.set(name, code);
+        this.code.set(id, code);
         return code;
-      })
+      }),
     );
   }
 

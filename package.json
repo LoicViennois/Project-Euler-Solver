@@ -5,7 +5,7 @@
   "license": "GPLv3",
   "author": "Loïc Viennois",
   "scripts": {
-    "start:server": "npm --prefix server run start",
+    "start:server": "npm --prefix server run start:dev",
     "start:client": "npm --prefix client run start",
     "start": "run-p start:server start:client",
     "release": "standard-version"

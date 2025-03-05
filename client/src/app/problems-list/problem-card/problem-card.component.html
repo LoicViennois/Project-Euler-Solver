@@ -7,7 +7,7 @@
           &nbsp;<i class="fas fa-arrow-right"></i>&nbsp;
           <a [class.disabled]="problem.isNotAvailable"
              class="link-code"
-             routerLink="/code/{{ problem.name }}">code</a>
+             routerLink="/code/{{ problem.id }}">code</a>
         </h6>
         <button (click)="solve()"
                 *ngIf="problem.isToSolve"

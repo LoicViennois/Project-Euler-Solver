@@ -1,38 +1,74 @@
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+// @ts-check
+import eslint from '@eslint/js';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import simpleSort from 'eslint-plugin-simple-import-sort';
+import eslintImport from 'eslint-plugin-import';
+import importAlias from '@dword-design/eslint-plugin-import-alias';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
-
-export default [...compat.extends("eslint:recommended"), {
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  eslintPluginPrettierRecommended,
+  {
     plugins: {
-        "@typescript-eslint": typescriptEslint,
+      'simple-import-sort': simpleSort,
+      import: eslintImport,
+      'import-alias': importAlias,
     },
-
     languageOptions: {
-        parser: tsParser,
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+      ecmaVersion: 5,
+      sourceType: 'module',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
-}, ...compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended").map(config => ({
-    ...config,
-    files: ["**/*.ts"],
-})), {
-    files: ["**/*.ts"],
-
-    languageOptions: {
-        ecmaVersion: 5,
-        sourceType: "script",
-
-        parserOptions: {
-            project: ["./tsconfig.json"],
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-floating-promises': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            // External packages.
+            ['^'],
+            // NestJS packages.
+            ['^@nestjs'],
+            // Internal aliased imports.
+            ['^@\\w'],
+            // Relative imports.
+            ['^\\.'],
+          ],
         },
+      ],
+      "import-alias/prefer-alias": [
+        "error",
+        {
+          "alias": {
+            "@problems": "./src/problems",
+          }
+        }
+      ],
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
     },
-}];
+  },
+  {
+    // disable `any` checks in tests
+    files: ['src/**/*.spec.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+    },
+  },
+);

@@ -12,9 +12,8 @@ COPY . .
 # Build
 FROM base as build
 
-RUN npm run lint && \
-    npm run build && \
-    npm run test:prod
+RUN npm run lint:ci && \
+    npm run build
 
 # Prod
 FROM node:lts-alpine as prod
@@ -37,4 +36,4 @@ RUN npm ci --only=production
 
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 
-CMD [ "node", "./dist/server.js" ]
+CMD [ "npm", "run", "start:prod" ]

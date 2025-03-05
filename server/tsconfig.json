@@ -1,19 +1,26 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
-    "moduleResolution": "node",
-    "outDir": "dist",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2023",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
     "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018"
-    ]
+    "paths": {
+      "@problems/*": [
+        "src/problems/*"
+      ]
+    }
   }
 }
