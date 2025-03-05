@@ -9,19 +9,19 @@
       "type": "json"
     },
     {
-      "filename": "client/package.json",
+      "filename": "apps/euler-client/package.json",
       "type": "json"
     },
     {
-      "filename": "client/package-lock.json",
+      "filename": "apps/euler-client/package-lock.json",
       "type": "json"
     },
     {
-      "filename": "server/package.json",
+      "filename": "apps/euler-server/package.json",
       "type": "json"
     },
     {
-      "filename": "server/package-lock.json",
+      "filename": "apps/euler-server/package-lock.json",
       "type": "json"
     }
   ]

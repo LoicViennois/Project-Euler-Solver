@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+  <a class="link-back" routerLink="/">
+    <i class="fas fa-arrow-left"></i>
+    Back to Problems
+  </a>
+</div>
+<div class="row justify-content-center pt-4 pb-4">
+  <div class="col-lg code-list sticky-top border border-dark mx-3 my-1">
+    <ul class="fa-ul ml-2 py-1">
+      <li #rla="routerLinkActive"
+          *ngFor="let pb of problems" class="link-file"
+          routerLinkActive="active">
+        <a [routerLink]="pb.id.toString()">
+          <i *ngIf="!rla.isActive" class="far fa-file-code"></i>
+          <i *ngIf="rla.isActive" class="fas fa-arrow-right"></i>
+          {{ pb.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-lg-10 code-view border border-dark p-0 my-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>

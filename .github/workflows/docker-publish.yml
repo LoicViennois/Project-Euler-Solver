@@ -44,7 +44,7 @@ jobs:
       - name: Build and push Docker image - server
         uses: docker/build-push-action@v3
         with:
-          context: server
+          context: apps/euler-server
           push: true
           tags: ${{ steps.meta-server.outputs.tags }}
 
@@ -62,6 +62,6 @@ jobs:
       - name: Build and push Docker image - client
         uses: docker/build-push-action@v3
         with:
-          context: client
+          context: apps/euler-client
           push: true
           tags: ${{ steps.meta-client.outputs.tags }}

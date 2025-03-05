@@ -1,0 +1,44 @@
+<div class="card small">
+  <div class="card-body p-1">
+    <div class="card-text container pl-1 pr-1">
+      <div class="row pr-3">
+        <h6 class="col-9">
+          <a [href]="url" class="link-problem" target="_blank">Problem {{ problem.id }}</a>
+          &nbsp;<i class="fas fa-arrow-right"></i>&nbsp;
+          <a [class.disabled]="problem.isNotAvailable"
+             class="link-code"
+             routerLink="/code/{{ problem.id }}">code</a>
+        </h6>
+        <button (click)="solve()"
+                *ngIf="problem.isToSolve"
+                class="col-3 btn btn-secondary btn-sm btn-to-solve">
+          <i class="fas fa-play"></i>
+        </button>
+        <button *ngIf="problem.isSolving"
+                class="col-3 btn btn-secondary btn-sm btn-solving">
+          <i class="fas fa-sync-alt fa-spin"></i>
+        </button>
+        <button (click)="solve()"
+                *ngIf="problem.isSolved"
+                class="col-3 btn btn-secondary btn-sm btn-solved">
+          <i class="fas fa-check"></i>
+        </button>
+        <button *ngIf="problem.isNotAvailable"
+                class="col-3 btn btn-secondary btn-sm n-a"
+                disabled>
+          <i class="fas fa-ban"></i>
+        </button>
+      </div>
+      <div class="row">
+        <span class="col-6">
+          Solved in: <br>
+          <span class="solution">{{ problem.isSolved ? problem.solution.time : "-" }}</span>
+        </span>
+        <span class="col-6">
+          Solution: <br>
+          <span class="solution">{{ problem.isSolved ? problem.solution.value : "-" }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
