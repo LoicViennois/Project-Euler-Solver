@@ -28,13 +28,13 @@ export class ProblemsController {
     return this.problemsService.getProblems();
   }
 
-  @Get('/solve/:id')
+  @Get(':id/solve')
   solveProblem(@Param('id', ParseIntPipe) id: number): Solution {
     Logger.log(`Solve problem ${id}`, this.constructor.name);
     return this.solveService.solveProblem(id);
   }
 
-  @Get('/code/:id')
+  @Get(':id/code')
   @Header('Content-Type', 'application/json')
   getCode(@Param('id', ParseIntPipe) id: number): string {
     Logger.log(`Get code for problem ${id}`, this.constructor.name);
