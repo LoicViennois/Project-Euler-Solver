@@ -1,4 +1,11 @@
-import { Controller, Get, Logger, Param, ParseIntPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Header,
+  Logger,
+  Param,
+  ParseIntPipe,
+} from '@nestjs/common';
 
 import { Solution } from '@problems/core/types/solution';
 
@@ -28,8 +35,9 @@ export class ProblemsController {
   }
 
   @Get('/code/:id')
+  @Header('Content-Type', 'application/json')
   getCode(@Param('id', ParseIntPipe) id: number): string {
     Logger.log(`Get code for problem ${id}`, this.constructor.name);
-    return this.codeService.getCode(id);
+    return JSON.stringify(this.codeService.getCode(id));
   }
 }

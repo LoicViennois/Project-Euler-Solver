@@ -1,3 +1,5 @@
+import * as fs from 'node:fs';
+
 import {
   Injectable,
   Logger,
@@ -28,7 +30,7 @@ export class CodeService {
       throw new UnprocessableEntityException(message);
     }
 
-    return problem.code;
+    return this.readCode(problem.codeFilePath);
   }
 
   private listProblems(): EulerProblem[] {
@@ -38,5 +40,9 @@ export class CodeService {
       ...problemsPack3,
       ...problemsPack4,
     ];
+  }
+
+  private readCode(filePath: string) {
+    return fs.readFileSync(filePath).toString();
   }
 }

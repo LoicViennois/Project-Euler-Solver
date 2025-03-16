@@ -1,4 +1,3 @@
-import * as fs from 'node:fs';
 import * as path from 'node:path';
 
 import { EulerProblem } from '@problems/core/types/euler-problem';
@@ -24,30 +23,105 @@ import { euler018 } from './euler018';
 import { euler019 } from './euler019';
 import { euler020 } from './euler020';
 
-function getCode(filePath: string) {
-  filePath = path.resolve(__dirname, filePath);
-  return fs.readFileSync(filePath, 'utf-8');
-}
-
 export const problemsPack1: EulerProblem[] = [
-  { id: 1, solver: euler001, code: getCode('./euler001.ts') },
-  { id: 2, solver: euler002, code: getCode('./euler002.ts') },
-  { id: 3, solver: euler003, code: getCode('./euler003.ts') },
-  { id: 4, solver: euler004, code: getCode('./euler004.ts') },
-  { id: 5, solver: euler005, code: getCode('./euler005.ts') },
-  { id: 6, solver: euler006, code: getCode('./euler006.ts') },
-  { id: 7, solver: euler007, code: getCode('./euler007.ts') },
-  { id: 8, solver: euler008, code: getCode('./euler008.ts') },
-  { id: 9, solver: euler009, code: getCode('./euler009.ts') },
-  { id: 10, solver: euler010, code: getCode('./euler010.ts') },
-  { id: 11, solver: euler011, code: getCode('./euler011.ts') },
-  { id: 12, solver: euler012, code: getCode('./euler012.ts') },
-  { id: 13, solver: euler013, code: getCode('./euler013.ts') },
-  { id: 14, solver: euler014, code: getCode('./euler014.ts') },
-  { id: 15, solver: euler015, code: getCode('./euler015.ts') },
-  { id: 16, solver: euler016, code: getCode('./euler016.ts') },
-  { id: 17, solver: euler017, code: getCode('./euler017.ts') },
-  { id: 18, solver: euler018, code: getCode('./euler018.ts') },
-  { id: 19, solver: euler019, code: getCode('./euler019.ts') },
-  { id: 20, solver: euler020, code: getCode('./euler020.ts') },
+  {
+    id: 1,
+    solver: euler001,
+    codeFilePath: path.join(__dirname, './euler001.ts'),
+  },
+  {
+    id: 2,
+    solver: euler002,
+    codeFilePath: path.join(__dirname, './euler002.ts'),
+  },
+  {
+    id: 3,
+    solver: euler003,
+    codeFilePath: path.join(__dirname, './euler003.ts'),
+  },
+  {
+    id: 4,
+    solver: euler004,
+    codeFilePath: path.join(__dirname, './euler004.ts'),
+  },
+  {
+    id: 5,
+    solver: euler005,
+    codeFilePath: path.join(__dirname, './euler005.ts'),
+  },
+  {
+    id: 6,
+    solver: euler006,
+    codeFilePath: path.join(__dirname, './euler006.ts'),
+  },
+  {
+    id: 7,
+    solver: euler007,
+    codeFilePath: path.join(__dirname, './euler007.ts'),
+  },
+  {
+    id: 8,
+    solver: euler008,
+    codeFilePath: path.join(__dirname, './euler008.ts'),
+  },
+  {
+    id: 9,
+    solver: euler009,
+    codeFilePath: path.join(__dirname, './euler009.ts'),
+  },
+  {
+    id: 10,
+    solver: euler010,
+    codeFilePath: path.join(__dirname, './euler010.ts'),
+  },
+  {
+    id: 11,
+    solver: euler011,
+    codeFilePath: path.join(__dirname, './euler011.ts'),
+  },
+  {
+    id: 12,
+    solver: euler012,
+    codeFilePath: path.join(__dirname, './euler012.ts'),
+  },
+  {
+    id: 13,
+    solver: euler013,
+    codeFilePath: path.join(__dirname, './euler013.ts'),
+  },
+  {
+    id: 14,
+    solver: euler014,
+    codeFilePath: path.join(__dirname, './euler014.ts'),
+  },
+  {
+    id: 15,
+    solver: euler015,
+    codeFilePath: path.join(__dirname, './euler015.ts'),
+  },
+  {
+    id: 16,
+    solver: euler016,
+    codeFilePath: path.join(__dirname, './euler016.ts'),
+  },
+  {
+    id: 17,
+    solver: euler017,
+    codeFilePath: path.join(__dirname, './euler017.ts'),
+  },
+  {
+    id: 18,
+    solver: euler018,
+    codeFilePath: path.join(__dirname, './euler018.ts'),
+  },
+  {
+    id: 19,
+    solver: euler019,
+    codeFilePath: path.join(__dirname, './euler019.ts'),
+  },
+  {
+    id: 20,
+    solver: euler020,
+    codeFilePath: path.join(__dirname, './euler020.ts'),
+  },
 ];
