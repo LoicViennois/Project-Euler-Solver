@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 
 import { ApiProblem, Problem, Solution } from './problem';
-import { UrlBuilder } from '../url-builder';
+import { UrlBuilderService } from './url-builder.service';
 
 
 @Injectable()
@@ -14,7 +14,7 @@ export class ProblemsService {
   private code = new Map<number, string>();
 
   constructor(private http: HttpClient,
-              private urlBuilder: UrlBuilder) {
+              private urlBuilder: UrlBuilderService) {
   }
 
   solve(problem: Problem): Observable<Solution> {

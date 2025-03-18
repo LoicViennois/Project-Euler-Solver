@@ -1,8 +1,8 @@
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class UrlBuilder {
+export class UrlBuilderService {
   private readonly baseUrl = environment.apiUrl;
   private readonly problemsEndpoint = 'problems';
 
