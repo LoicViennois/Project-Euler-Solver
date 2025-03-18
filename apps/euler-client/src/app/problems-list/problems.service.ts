@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 
 import { ApiProblem, Problem, Solution } from './problem';
-import { codeUrl, problemsUrl, solveUrl } from '../urls';
+import { UrlBuilder } from '../url-builder';
 
 
 @Injectable()
@@ -13,7 +13,8 @@ export class ProblemsService {
   private problems: Problem[];
   private code = new Map<number, string>();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private urlBuilder: UrlBuilder) {
   }
 
   solve(problem: Problem): Observable<Solution> {
@@ -21,7 +22,7 @@ export class ProblemsService {
       return EMPTY;
     }
     problem.isSolving = true;
-    const url = `${solveUrl}/${problem.id}`;
+    const url = this.urlBuilder.getSolveUrl(problem.id);
     return this.http.get<Solution>(url);
   }
 
@@ -29,7 +30,8 @@ export class ProblemsService {
     if (this.problems) {
       return of(this.problems);
     }
-    return this.http.get<ApiProblem[]>(problemsUrl).pipe(
+    const url = this.urlBuilder.getProblemsUrl();
+    return this.http.get<ApiProblem[]>(url).pipe(
       map(pList => {
         this.problems = pList.map(p => new Problem(p));
         return this.problems;
@@ -41,7 +43,7 @@ export class ProblemsService {
     if (this.code.has(id)) {
       return of(this.code.get(id));
     }
-    const url = `${codeUrl}/${id}`;
+    const url = this.urlBuilder.getCodeUrl(id);
     return this.http.get<string>(url).pipe(
       map(code => {
         this.code.set(id, code);

@@ -21,6 +21,7 @@ import { FirstIdPipe, LastIdPipe } from './problems-list/problem-id.pipe';
 import { FormatCodePipe } from './code-view/format-code.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { UrlBuilder } from './url-builder';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000'
     }),
   ],
-  providers: [ProblemsService],
+  providers: [ProblemsService, UrlBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule {
