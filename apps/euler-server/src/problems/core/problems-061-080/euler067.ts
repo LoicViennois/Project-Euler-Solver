@@ -7,7 +7,7 @@ import { max } from '@problems/core/maths';
 https://projecteuler.net/problem=67
 */
 export function euler067(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p042_words.txt');
+  const assetFilePath = path.resolve(__dirname, './assets/p067_triangle.txt');
   const rows = fs
     .readFileSync(assetFilePath)
     .toString()

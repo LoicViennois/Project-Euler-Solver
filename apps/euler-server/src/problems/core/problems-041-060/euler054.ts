@@ -34,7 +34,7 @@ type HandValue = {
 https://projecteuler.net/problem=54
 */
 export function euler054(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p059_cipher.txt');
+  const assetFilePath = path.resolve(__dirname, './assets/p054_poker.txt');
   const hands = fs
     .readFileSync(assetFilePath)
     .toString()
