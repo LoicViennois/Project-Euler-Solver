@@ -1,6 +1,6 @@
 {
   "name": "project-euler-solver",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "description": "Project Euler Solver",
   "license": "GPLv3",
   "author": "Loïc Viennois",

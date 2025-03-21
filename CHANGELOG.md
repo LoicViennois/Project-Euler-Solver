@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.8.0...v2.0.0) (2025-03-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* change server urls to REST-style resources: `/problems/solve/euler001` -> `/problems/1/solve`
+
+### Features
+
+* convert server to NestJS app ([c939125](https://github.com/LoicViennois/Project-Euler-Solver/commit/c939125029f56205f04e9587bca7ab3b2d28666f))
+
 ## [1.8.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.7.0...v1.8.0) (2025-03-21)
 
 
