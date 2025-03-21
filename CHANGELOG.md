@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/LoicViennois/Project-Euler-Solver/compare/v2.0.0...v2.0.1) (2025-03-21)
+
+
+### Bug Fixes
+
+* fix dependencies ([3385d73](https://github.com/LoicViennois/Project-Euler-Solver/commit/3385d73b8058fe2155e86a75ca7f8361311eeafe))
+
 ## [2.0.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.8.0...v2.0.0) (2025-03-21)
 
 
