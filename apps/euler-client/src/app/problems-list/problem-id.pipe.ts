@@ -1,9 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Problem } from './problem';
 
-@Pipe({
-  name: 'firstId'
-})
+@Pipe({ name: 'firstId', })
 export class FirstIdPipe implements PipeTransform {
 
   transform(problems: Problem[]): number {
@@ -12,9 +10,7 @@ export class FirstIdPipe implements PipeTransform {
 
 }
 
-@Pipe({
-  name: 'lastId'
-})
+@Pipe({ name: 'lastId', })
 export class LastIdPipe implements PipeTransform {
 
   transform(problems: Problem[]): number {

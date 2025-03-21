@@ -1,9 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as hljs from 'highlight.js';
 
-@Pipe({
-  name: 'formatCode'
-})
+@Pipe({ name: 'formatCode', })
 export class FormatCodePipe implements PipeTransform {
 
   transform(value: string, lang?: string): string {

@@ -20,7 +20,7 @@ FROM nginx:stable AS prod
 
 ENV EULER_SERVER_URL="http://localhost:3000"
 
-COPY --from=build /usr/src/app/dist/project-euler-solver /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/project-euler-solver/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker-entrypoint.sh /usr/local/bin/
 

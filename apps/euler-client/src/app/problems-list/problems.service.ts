@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,12 +10,10 @@ import { UrlBuilderService } from './url-builder.service';
 
 @Injectable()
 export class ProblemsService {
+  private http = inject(HttpClient);
+  private urlBuilder = inject(UrlBuilderService);
   private problems: Problem[];
   private code = new Map<number, string>();
-
-  constructor(private http: HttpClient,
-              private urlBuilder: UrlBuilderService) {
-  }
 
   solve(problem: Problem): Observable<Solution> {
     if (problem.isNotAvailable) {
