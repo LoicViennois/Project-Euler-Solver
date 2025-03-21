@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.7.0...v1.8.0) (2025-03-21)
+
+
+### Features
+
+* update PWA config ([b8bce4e](https://github.com/LoicViennois/Project-Euler-Solver/commit/b8bce4e77852780c51fe38b2fcf3f672d2c165c7))
+
+
+### Bug Fixes
+
+* **client:** update matomo code ([087f95a](https://github.com/LoicViennois/Project-Euler-Solver/commit/087f95a2db3be05cde0f0227d624dbab01408173))
+
 ## [1.7.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v1.6.0...v1.7.0) (2022-10-05)
 
 
