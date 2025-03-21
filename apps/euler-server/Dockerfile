@@ -1,5 +1,5 @@
 # Base
-FROM node:lts-alpine as base
+FROM node:lts-alpine AS base
 
 WORKDIR /usr/src/app
 
@@ -10,13 +10,14 @@ RUN npm ci
 COPY . .
 
 # Build
-FROM base as build
+FROM base AS build
 
 RUN npm run lint:ci && \
+    npm run test && \
     npm run build
 
 # Prod
-FROM node:lts-alpine as prod
+FROM node:lts-alpine AS prod
 
 EXPOSE 3000
 
