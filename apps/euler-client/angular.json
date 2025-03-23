@@ -96,18 +96,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project-euler-solver:build"
+            "buildTarget": "project-euler-solver:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project-euler-solver:build:production"
+              "buildTarget": "project-euler-solver:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project-euler-solver:build"
+            "buildTarget": "project-euler-solver:build"
           }
         },
         "lint": {
