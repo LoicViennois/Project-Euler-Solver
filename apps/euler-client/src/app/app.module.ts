@@ -1,7 +1,7 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 // Components
@@ -23,32 +23,25 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UrlBuilderService } from './problems-list/url-builder.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ProblemCardComponent,
-    FirstIdPipe,
-    LastIdPipe,
-    ProblemsListComponent,
-    CodeViewComponent,
-    FormatCodePipe,
-    CodeBlockComponent,
-    ModalContainerComponent,
-    AboutComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-  ],
-  providers: [ProblemsService, UrlBuilderService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ProblemCardComponent,
+        FirstIdPipe,
+        LastIdPipe,
+        ProblemsListComponent,
+        CodeViewComponent,
+        FormatCodePipe,
+        CodeBlockComponent,
+        ModalContainerComponent,
+        AboutComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })], providers: [ProblemsService, UrlBuilderService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }
