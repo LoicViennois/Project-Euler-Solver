@@ -1,22 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<header class="row justify-content-center pt-3 mx-0">
+<header class="row justify-content-center p-3 mx-0">
   <div class="col-md-auto order-lg-2 py-1">
-    <h1 class="title text-center">Project Euler Solver</h1>
+    <h1 class="title text-center page-title" routerLink="/">Project Euler Solver</h1>
     <div class="text-center">
       <a class="mx-2"
          href="https://github.com/LoicViennois/Project-Euler-Solver"
          target="_blank">
         <i class="title fa-lg fab fa-github"></i>
       </a>
-      <a [routerLink]="[{ outlets: { primary: [''], modal: ['about'] } }]"
-         class="mx-2">
+      <a class="mx-2"
+         routerLink="/about">
         <i class="title fa-lg fas fa-info-circle"></i>
       </a>
     </div>
   </div>
   <div class="col-lg order-lg-1">
     <p class="text-center pt-2">
-      <img [src]="badgeUrl" alt="project euler badge" class="text-center"/>
+      <img [src]="badgeUrl" alt="project euler badge" class="text-center" />
     </p>
   </div>
   <div class="col-lg order-lg-3 pt-3">
@@ -28,5 +27,4 @@
 <div class="container pt-3">
   <router-outlet></router-outlet>
 </div>
-<router-outlet name="modal"></router-outlet>
 
