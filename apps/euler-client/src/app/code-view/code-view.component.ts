@@ -5,7 +5,8 @@ import { ProblemsService } from '../problems-list/problems.service';
 @Component({
   selector: 'euler-code-view',
   templateUrl: './code-view.component.html',
-  styleUrls: ['./code-view.component.less']
+  styleUrls: ['./code-view.component.less'],
+  standalone: false,
 })
 export class CodeViewComponent implements OnInit {
   problems: Problem[];

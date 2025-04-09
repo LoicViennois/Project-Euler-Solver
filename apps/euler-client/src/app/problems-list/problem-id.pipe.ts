@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Problem } from './problem';
 
 @Pipe({
-  name: 'firstId'
+  name: 'firstId',
+  standalone: false,
 })
 export class FirstIdPipe implements PipeTransform {
 
@@ -13,7 +14,8 @@ export class FirstIdPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'lastId'
+  name: 'lastId',
+  standalone: false,
 })
 export class LastIdPipe implements PipeTransform {
 

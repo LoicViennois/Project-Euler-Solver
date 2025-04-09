@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as hljs from 'highlight.js';
 
 @Pipe({
-  name: 'formatCode'
+  name: 'formatCode',
+  standalone: false,
 })
 export class FormatCodePipe implements PipeTransform {
 

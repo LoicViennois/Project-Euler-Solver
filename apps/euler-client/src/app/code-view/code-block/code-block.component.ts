@@ -6,6 +6,7 @@ import { ProblemsService } from '../../problems-list/problems.service';
   selector: 'euler-code-block',
   templateUrl: './code-block.component.html',
   styleUrls: ['./code-block.component.css'],
+  standalone: false,
 })
 export class CodeBlockComponent implements OnInit {
   source = '';

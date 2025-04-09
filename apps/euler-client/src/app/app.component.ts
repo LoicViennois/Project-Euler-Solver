@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'euler-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  standalone: false,
 })
 export class AppComponent {
   badgeUrl = 'https://projecteuler.net/profile/LoicViennois.png';

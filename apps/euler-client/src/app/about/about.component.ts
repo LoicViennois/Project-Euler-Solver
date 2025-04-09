@@ -7,6 +7,7 @@ import pkg from '../../../package.json';
   selector: 'euler-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.less'],
+  standalone: false,
 })
 export class AboutComponent {
   readonly version: string = pkg.version;

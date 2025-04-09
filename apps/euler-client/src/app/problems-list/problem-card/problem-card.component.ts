@@ -6,7 +6,8 @@ import { Problem } from '../problem';
 @Component({
   selector: 'euler-problem-card',
   templateUrl: './problem-card.component.html',
-  styleUrls: ['./problem-card.component.less']
+  styleUrls: ['./problem-card.component.less'],
+  standalone: false,
 })
 export class ProblemCardComponent implements OnInit {
   @Input() problem: Problem;

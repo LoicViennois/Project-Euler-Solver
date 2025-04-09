@@ -6,7 +6,8 @@ import { Chunkify } from '../utils/chunkify';
 @Component({
   selector: 'euler-problems-list',
   templateUrl: './problems-list.component.html',
-  styleUrls: ['./problems-list.component.less']
+  styleUrls: ['./problems-list.component.less'],
+  standalone: false,
 })
 export class ProblemsListComponent implements OnInit {
   problems: Problem[][] = []; // By chunks of 10
