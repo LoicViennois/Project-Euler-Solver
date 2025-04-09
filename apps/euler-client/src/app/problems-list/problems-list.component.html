@@ -1,7 +1,7 @@
-<div class="row justify-content-center mx-0">
+<div class="row mx-0">
   <ng-container *ngIf="problems.length > 0 ; else loading">
     <div *ngFor="let pbs of problems" class="col-sm p-1">
-      <div class="row justify-content-center">
+      <div class="d-flex justify-content-center">
         <button (click)="solve(pbs)" class="btn btn-secondary btn-solve mb-1 mt-2">
           Solve problems
           {{ pbs | firstId }}
