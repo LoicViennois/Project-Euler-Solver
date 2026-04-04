@@ -7,7 +7,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 
-import { Solution } from '@problems/core/types/solution';
+import type { Solution } from '@problems/core/types/solution';
 
 import { CodeService } from './services/code.service';
 import { ProblemsService } from './services/problems.service';
