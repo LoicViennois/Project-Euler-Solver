@@ -7,8 +7,12 @@ import { problemsPack4 } from '@problems/core/problems-061-080';
 import { EulerProblem } from '@problems/core/types/euler-problem';
 import { Problem, Status } from '@problems/infra/types/problem';
 
+import { CodeService } from './code.service';
+
 @Injectable()
 export class ProblemsService {
+  constructor(private readonly codeService: CodeService) {}
+
   getProblems(): Problem[] {
     return this.listProblems().map((problemSolver) =>
       this.createProblem(problemSolver),
@@ -29,6 +33,9 @@ export class ProblemsService {
       id: problemSolver.id,
       name: problemSolver.solver ? problemSolver.solver.name : null,
       status: problemSolver.solver ? Status.toSolve : Status.notAvailable,
+      codeUrl: problemSolver.solver
+        ? this.codeService.getCodeUrl(problemSolver.id)
+        : null,
     };
   }
 }

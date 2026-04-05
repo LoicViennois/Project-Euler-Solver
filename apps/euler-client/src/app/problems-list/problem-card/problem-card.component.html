@@ -5,9 +5,10 @@
         <h6 class="col-9">
           <a [href]="url" class="link-problem" target="_blank">Problem {{ problem.id }}</a>
           &nbsp;<i class="fas fa-arrow-right"></i>&nbsp;
-          <a [class.disabled]="problem.isNotAvailable"
+          <a [class.disabled]="!problem.codeUrl"
+             [href]="problem.codeUrl"
              class="link-code"
-             routerLink="/code/{{ problem.id }}">code</a>
+             target="_blank">code</a>
         </h6>
         <button (click)="solve()"
                 *ngIf="problem.isToSolve"

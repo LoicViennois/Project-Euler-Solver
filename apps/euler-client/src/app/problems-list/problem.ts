@@ -14,11 +14,13 @@ export class ApiProblem {
   id: number;
   name: string;
   status: Status;
+  codeUrl: string | null;
 }
 
 export class Problem {
   id: number;
   name: string;
+  codeUrl: string | null;
   private status: Status;
   private pSolution: Solution;
 
@@ -26,6 +28,7 @@ export class Problem {
     this.id = p.id;
     this.name = p.name;
     this.status = p.status;
+    this.codeUrl = p.codeUrl;
   }
 
   get solution(): Solution {

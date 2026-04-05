@@ -1,10 +1,4 @@
-import {
-  Controller,
-  Get,
-  Logger,
-  Param,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Logger, Param, ParseIntPipe } from '@nestjs/common';
 
 import type { Solution } from '@problems/core/types/solution';
 
