@@ -1,7 +1,6 @@
 import {
   Controller,
   Get,
-  Header,
   Logger,
   Param,
   ParseIntPipe,
@@ -35,9 +34,9 @@ export class ProblemsController {
   }
 
   @Get(':id/code')
-  @Header('Content-Type', 'application/json')
-  getCode(@Param('id', ParseIntPipe) id: number): string {
-    Logger.log(`Get code for problem ${id}`, this.constructor.name);
-    return JSON.stringify(this.codeService.getCode(id));
+  getCode(@Param('id', ParseIntPipe) id: number): { url: string } {
+    Logger.log(`Get code url for problem ${id}`, this.constructor.name);
+    const url = this.codeService.getCodeUrl(id);
+    return { url };
   }
 }
