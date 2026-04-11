@@ -12,19 +12,16 @@ function substituteEnvVars() {
     return;
   }
 
-  // Determine EULER_SERVER_URL using @vercel/related-projects if in Vercel
-  if (process.env.VERCEL) {
-    const apiUrl = withRelatedProject({
-      projectName: 'project-euler-server',
-      defaultHost: process.env.EULER_SERVER_URL,
-    });
+  const apiUrl = withRelatedProject({
+    projectName: 'project-euler-server',
+    defaultHost: process.env.EULER_SERVER_URL,
+  });
 
-    if (apiUrl) {
-      // Ensure the URL has a protocol
-      process.env.EULER_SERVER_URL = apiUrl.startsWith('http') ? apiUrl : `https://${apiUrl}`;
-    }
-    console.log(`Using EULER_SERVER_URL: ${apiUrl}`);
+  if (apiUrl) {
+    // Ensure the URL has a protocol
+    process.env.EULER_SERVER_URL = apiUrl.startsWith('http') ? apiUrl : `https://${apiUrl}`;
   }
+  console.log(`Using EULER_SERVER_URL: ${apiUrl}`);
 
   try {
     let content = fs.readFileSync(indexDst, 'utf8');
