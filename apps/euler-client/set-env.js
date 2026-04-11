@@ -23,7 +23,7 @@ function substituteEnvVars() {
       // Ensure the URL has a protocol
       process.env.EULER_SERVER_URL = apiUrl.startsWith('http') ? apiUrl : `https://${apiUrl}`;
     }
-    console.log(`Using EULER_SERVER_URL: ${process.env.EULER_SERVER_URL}`);
+    console.log(`Using EULER_SERVER_URL: ${apiUrl}`);
   }
 
   try {
