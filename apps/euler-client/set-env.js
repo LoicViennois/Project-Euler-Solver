@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { withRelatedProject } = require('@vercel/related-projects');
 
 /**
  * Replaces environment variables in index.html, similar to envsubst.
@@ -9,6 +10,20 @@ function substituteEnvVars() {
   if (!fs.existsSync(indexDst)) {
     console.warn(`Warning: File not found at ${indexDst}. Skipping environment variable substitution.`);
     return;
+  }
+
+  // Determine EULER_SERVER_URL using @vercel/related-projects if in Vercel
+  if (process.env.VERCEL) {
+    const apiUrl = withRelatedProject({
+      projectName: 'project-euler-server',
+      defaultHost: process.env.EULER_SERVER_URL,
+    });
+
+    if (apiUrl) {
+      // Ensure the URL has a protocol
+      process.env.EULER_SERVER_URL = apiUrl.startsWith('http') ? apiUrl : `https://${apiUrl}`;
+    }
+    console.log(`Using EULER_SERVER_URL: ${process.env.EULER_SERVER_URL}`);
   }
 
   try {

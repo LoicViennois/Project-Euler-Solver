@@ -38,6 +38,7 @@
     "@angular/compiler-cli": "^20.1.4",
     "@angular/language-service": "^20.1.4",
     "@types/highlight.js": "^9.12.4",
+    "@vercel/related-projects": "^1.0.1",
     "angular-eslint": "20.1.1",
     "eslint": "^9.29.0",
     "less": "^4.3.0",
