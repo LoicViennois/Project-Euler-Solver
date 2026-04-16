@@ -1,11 +1,10 @@
-import * as fs from 'node:fs';
-
 import {
   Injectable,
   Logger,
   NotFoundException,
   UnprocessableEntityException,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 import { problemsPack1 } from '@problems/core/problems-001-020';
 import { problemsPack2 } from '@problems/core/problems-021-040';
@@ -15,7 +14,9 @@ import { EulerProblem } from '@problems/core/types/euler-problem';
 
 @Injectable()
 export class CodeService {
-  getCode(id: number) {
+  constructor(private readonly configService: ConfigService) {}
+
+  getCodeUrl(id: number): string {
     const problem = this.listProblems().find((ps) => ps.id === id);
 
     if (!problem) {
@@ -30,7 +31,7 @@ export class CodeService {
       throw new UnprocessableEntityException(message);
     }
 
-    return this.readCode(problem.codeFilePath);
+    return this.generateGithubUrl(problem.codeFilePath);
   }
 
   private listProblems(): EulerProblem[] {
@@ -42,7 +43,12 @@ export class CodeService {
     ];
   }
 
-  private readCode(filePath: string) {
-    return fs.readFileSync(filePath).toString();
+  private generateGithubUrl(filePath: string): string {
+    const prefix = this.configService.get<string>('github.prefix');
+
+    const pathMatch = filePath.match(/problems\/core\/.*/);
+    const relativePath = pathMatch ? pathMatch[0] : '';
+
+    return `${prefix}/${relativePath}`;
   }
 }

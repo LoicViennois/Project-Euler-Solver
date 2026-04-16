@@ -13,8 +13,4 @@ export class UrlBuilderService {
   getSolveUrl(id: number): string {
     return `${this.baseUrl}/${this.problemsEndpoint}/${id}/solve`;
   }
-
-  getCodeUrl(id: number): string {
-    return `${this.baseUrl}/${this.problemsEndpoint}/${id}/code`;
-  }
 }

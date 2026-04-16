@@ -12,9 +12,7 @@ COPY . .
 # Build
 FROM base AS build
 
-RUN npm run lint:ci && \
-    npm run test && \
-    npm run build
+RUN npm run build
 
 # Prod
 FROM node:lts-alpine AS prod

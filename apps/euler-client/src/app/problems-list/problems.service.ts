@@ -13,7 +13,6 @@ export class ProblemsService {
   private http = inject(HttpClient);
   private urlBuilder = inject(UrlBuilderService);
   private problems: Problem[];
-  private code = new Map<number, string>();
 
   solve(problem: Problem): Observable<Solution> {
     if (problem.isNotAvailable) {
@@ -33,19 +32,6 @@ export class ProblemsService {
       map(pList => {
         this.problems = pList.map(p => new Problem(p));
         return this.problems;
-      }),
-    );
-  }
-
-  getCode(id: number): Observable<string> {
-    if (this.code.has(id)) {
-      return of(this.code.get(id));
-    }
-    const url = this.urlBuilder.getCodeUrl(id);
-    return this.http.get<string>(url).pipe(
-      map(code => {
-        this.code.set(id, code);
-        return code;
       }),
     );
   }

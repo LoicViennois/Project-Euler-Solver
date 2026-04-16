@@ -5,8 +5,7 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "assets": [
-      "**/p*.txt",
-      "**/euler*.ts"
+      "**/p*.txt"
     ]
   }
 }

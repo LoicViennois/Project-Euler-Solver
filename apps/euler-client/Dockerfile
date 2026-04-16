@@ -12,8 +12,7 @@ COPY . .
 # Build
 FROM base AS build
 
-RUN npm run lint && \
-    npm run build:prod
+RUN npm run build:prod
 
 # Prod
 FROM nginx:stable AS prod

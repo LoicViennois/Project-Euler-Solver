@@ -7,4 +7,5 @@ export type Problem = {
   id: number;
   name: string | null;
   status: Status;
+  codeUrl: string | null;
 };
