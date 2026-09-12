@@ -3,17 +3,19 @@ FROM node:lts-alpine AS base
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+RUN npm install -g pnpm@12
 
-RUN npm ci
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml* ./
+
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
 # Build
 FROM base AS build
 
-RUN npm run lint && \
-    npm run build:prod
+RUN pnpm run lint && \
+    pnpm run build:prod
 
 # Prod
 FROM nginx:stable AS prod
