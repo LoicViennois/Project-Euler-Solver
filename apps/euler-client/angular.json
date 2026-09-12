@@ -122,6 +122,7 @@
     }
   },
   "cli": {
+    "packageManager": "pnpm",
     "analytics": false,
     "schematicCollections": [
       "angular-eslint"

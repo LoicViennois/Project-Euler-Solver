@@ -4,9 +4,11 @@
   "description": "Project Euler Solver",
   "license": "GPLv3",
   "author": "Loïc Viennois",
+  "packageManager": "pnpm@12.3.4",
   "scripts": {
-    "start:server": "npm --prefix apps/euler-server run start:dev",
-    "start:client": "npm --prefix apps/euler-client run start",
+    "install:all": "pnpm install && pnpm --dir apps/euler-client install && pnpm --dir apps/euler-server install",
+    "start:server": "pnpm --dir apps/euler-server run start:dev",
+    "start:client": "pnpm --dir apps/euler-client run start",
     "start": "run-p start:server start:client",
     "release": "standard-version"
   },
