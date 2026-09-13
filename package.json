@@ -11,11 +11,7 @@
     "test": "pnpm -r test",
     "start:server": "pnpm --filter project-euler-server run start:dev",
     "start:client": "pnpm --filter project-euler-client run start",
-    "start": "pnpm -r --parallel run start:dev",
-    "release": "standard-version"
+    "start": "pnpm -r --parallel run start:dev"
   },
-  "private": true,
-  "devDependencies": {
-    "standard-version": "^9.5.0"
-  }
+  "private": true
 }
