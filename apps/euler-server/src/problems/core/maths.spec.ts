@@ -9,7 +9,7 @@ import {
   mul,
   sieve,
   sum,
-} from './maths';
+} from './maths.js';
 
 describe('Maths', () => {
   describe('isPrime', () => {

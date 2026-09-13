@@ -1,12 +1,12 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { sum } from '@problems/core/maths';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { sum } from '../maths.js';
 import {
   arraysEqual,
   concat,
   digits2number,
   number2digits,
   range,
-} from '@problems/core/utils'; /*
+} from '../utils.js'; /*
 https://projecteuler.net/problem=61
 */
 

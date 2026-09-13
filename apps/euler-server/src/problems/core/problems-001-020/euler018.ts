@@ -1,4 +1,4 @@
-import { max } from '@problems/core/maths';
+import { max } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=18

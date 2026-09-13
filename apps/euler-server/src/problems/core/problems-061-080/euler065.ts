@@ -1,5 +1,5 @@
-import { sum } from '@problems/core/maths';
-import { bigNumber2digits, range } from '@problems/core/utils';
+import { sum } from '../maths.js';
+import { bigNumber2digits, range } from '../utils.js';
 
 function computeBigContinuedFraction(terms: bigint[]): [bigint, bigint] {
   const len = terms.length;

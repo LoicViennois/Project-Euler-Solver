@@ -1,4 +1,4 @@
-import { findPeriod } from './euler064';
+import { findPeriod } from './euler064.js';
 
 function computeContinuedFraction(terms: number[]): number {
   const len = terms.length;

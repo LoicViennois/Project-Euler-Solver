@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'node:path';
 
-import { max, min, sum } from '@problems/core/maths';
+import { max, min, sum } from '../maths.js';
 import {
   arraysEqual,
   concat,
@@ -9,7 +9,7 @@ import {
   nbOccurrences,
   range,
   uniq,
-} from '@problems/core/utils';
+} from '../utils.js';
 
 enum HandValues {
   HighCard, // 0
@@ -34,7 +34,10 @@ type HandValue = {
 https://projecteuler.net/problem=54
 */
 export function euler054(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p054_poker.txt');
+  const assetFilePath = path.resolve(
+    import.meta.dirname,
+    './assets/p054_poker.txt',
+  );
   const hands = fs
     .readFileSync(assetFilePath)
     .toString()

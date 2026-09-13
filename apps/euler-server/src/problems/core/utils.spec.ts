@@ -17,7 +17,7 @@ import {
   uniq,
   wordValue,
   zip,
-} from './utils';
+} from './utils.js';
 
 describe('Utils', () => {
   describe('number2digits', () => {

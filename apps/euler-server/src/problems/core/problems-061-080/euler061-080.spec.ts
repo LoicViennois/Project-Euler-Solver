@@ -1,10 +1,10 @@
-import { euler061 } from './euler061';
-import { euler062 } from './euler062';
-import { euler063 } from './euler063';
-import { euler064 } from './euler064';
-import { euler065 } from './euler065';
-import { euler066 } from './euler066';
-import { euler067 } from './euler067';
+import { euler061 } from './euler061.js';
+import { euler062 } from './euler062.js';
+import { euler063 } from './euler063.js';
+import { euler064 } from './euler064.js';
+import { euler065 } from './euler065.js';
+import { euler066 } from './euler066.js';
+import { euler067 } from './euler067.js';
 
 describe('Euler 061-080', () => {
   describe('euler061', () => {

@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 
-import { problemsPack1 } from '@problems/core/problems-001-020';
-import { problemsPack2 } from '@problems/core/problems-021-040';
-import { problemsPack3 } from '@problems/core/problems-041-060';
-import { problemsPack4 } from '@problems/core/problems-061-080';
-import { EulerProblem } from '@problems/core/types/euler-problem';
-import { Problem, Status } from '@problems/infra/types/problem';
+import { problemsPack1 } from '../../core/problems-001-020/index.js';
+import { problemsPack2 } from '../../core/problems-021-040/index.js';
+import { problemsPack3 } from '../../core/problems-041-060/index.js';
+import { problemsPack4 } from '../../core/problems-061-080/index.js';
+import { EulerProblem } from '../../core/types/euler-problem.js';
+import { Problem, Status } from '../types/problem.js';
 
 @Injectable()
 export class ProblemsService {

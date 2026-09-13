@@ -1,4 +1,4 @@
-import { range, uniq } from './utils';
+import { range, uniq } from './utils.js';
 
 /**
  * isPrime(XX) is more efficient than sieve(n).includes(XX)

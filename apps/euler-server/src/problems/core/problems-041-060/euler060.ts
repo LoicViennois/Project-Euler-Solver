@@ -1,5 +1,5 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { isPrime, sieve, sum } from '@problems/core/maths';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { isPrime, sieve, sum } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=60

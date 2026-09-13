@@ -1,13 +1,16 @@
 import * as fs from 'fs';
 import * as path from 'node:path';
 
-import { max } from '@problems/core/maths';
+import { max } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=67
 */
 export function euler067(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p067_triangle.txt');
+  const assetFilePath = path.resolve(
+    import.meta.dirname,
+    './assets/p067_triangle.txt',
+  );
   const rows = fs
     .readFileSync(assetFilePath)
     .toString()

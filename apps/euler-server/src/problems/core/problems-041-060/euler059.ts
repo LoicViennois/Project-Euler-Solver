@@ -1,16 +1,19 @@
 import * as fs from 'fs';
 import * as path from 'node:path';
 
-import { permutation } from '@problems/core/combinatorics';
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { sum } from '@problems/core/maths';
-import { concat, range, times, zip } from '@problems/core/utils';
+import { permutation } from '../combinatorics.js';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { sum } from '../maths.js';
+import { concat, range, times, zip } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=59
 */
 export function euler059(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p059_cipher.txt');
+  const assetFilePath = path.resolve(
+    import.meta.dirname,
+    './assets/p059_cipher.txt',
+  );
   const bytes = fs
     .readFileSync(assetFilePath)
     .toString()

@@ -1,5 +1,5 @@
-import { permutation } from '@problems/core/combinatorics';
-import { sum } from '@problems/core/maths';
+import { permutation } from '../combinatorics.js';
+import { sum } from '../maths.js';
 import {
   difference,
   digits2number,
@@ -7,7 +7,7 @@ import {
   range,
   union,
   zip,
-} from '@problems/core/utils';
+} from '../utils.js';
 
 /*
 https://projecteuler.net/problem=32

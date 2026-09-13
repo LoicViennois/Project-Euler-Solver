@@ -1,6 +1,6 @@
-import { permutation } from '@problems/core/combinatorics';
-import { isPrime } from '@problems/core/maths';
-import { digits2number, range } from '@problems/core/utils';
+import { permutation } from '../combinatorics.js';
+import { isPrime } from '../maths.js';
+import { digits2number, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=41

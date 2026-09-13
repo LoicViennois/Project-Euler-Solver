@@ -1,4 +1,4 @@
-import { sumBigInts } from '@problems/core/maths';
+import { sumBigInts } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=13

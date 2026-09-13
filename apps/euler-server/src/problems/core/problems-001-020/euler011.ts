@@ -1,5 +1,5 @@
-import { mul } from '@problems/core/maths';
-import { range, transpose } from '@problems/core/utils';
+import { mul } from '../maths.js';
+import { range, transpose } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=11

@@ -1,5 +1,5 @@
-import { sieve } from '@problems/core/maths';
-import { areDisjoint, haveSameLength, uniq } from '@problems/core/utils';
+import { sieve } from '../maths.js';
+import { areDisjoint, haveSameLength, uniq } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=47

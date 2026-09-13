@@ -1,5 +1,5 @@
-import { sum } from '@problems/core/maths';
-import { bigNumber2digits } from '@problems/core/utils';
+import { sum } from '../maths.js';
+import { bigNumber2digits } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=16

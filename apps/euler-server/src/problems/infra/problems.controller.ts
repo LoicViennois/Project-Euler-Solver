@@ -7,12 +7,12 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 
-import { Solution } from '@problems/core/types/solution';
+import type { Solution } from '../core/types/solution.js';
 
-import { CodeService } from './services/code.service';
-import { ProblemsService } from './services/problems.service';
-import { SolveService } from './services/solve.service';
-import { Problem } from './types/problem';
+import { CodeService } from './services/code.service.js';
+import { ProblemsService } from './services/problems.service.js';
+import { SolveService } from './services/solve.service.js';
+import type { Problem } from './types/problem.js';
 
 @Controller('problems')
 export class ProblemsController {

@@ -1,5 +1,5 @@
-import { factorial } from '@problems/core/maths';
-import { range } from '@problems/core/utils';
+import { factorial } from '../maths.js';
+import { range } from '../utils.js';
 
 function ncr(n: number, r: number): number {
   return factorial(n) / (factorial(r) * factorial(n - r));

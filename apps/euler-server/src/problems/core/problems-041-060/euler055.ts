@@ -1,4 +1,4 @@
-import { range } from '@problems/core/utils';
+import { range } from '../utils.js';
 
 function isPalindromic(n: number): boolean {
   const num = n + '';

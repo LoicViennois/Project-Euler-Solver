@@ -1,5 +1,5 @@
-import { dividers } from '@problems/core/maths';
-import { union } from '@problems/core/utils';
+import { dividers } from '../maths.js';
+import { union } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=12

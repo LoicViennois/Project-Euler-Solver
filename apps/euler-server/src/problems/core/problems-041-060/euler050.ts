@@ -1,5 +1,5 @@
-import { isPrime, sieve, sum } from '@problems/core/maths';
-import { maxBy } from '@problems/core/utils';
+import { isPrime, sieve, sum } from '../maths.js';
+import { maxBy } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=50

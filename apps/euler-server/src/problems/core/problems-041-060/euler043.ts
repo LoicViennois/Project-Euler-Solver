@@ -1,11 +1,11 @@
-import { sum } from '@problems/core/maths';
+import { sum } from '../maths.js';
 import {
   concat,
   digits2number,
   haveDuplicates,
   number2digits,
   range,
-} from '@problems/core/utils';
+} from '../utils.js';
 
 /*
 https://projecteuler.net/problem=43

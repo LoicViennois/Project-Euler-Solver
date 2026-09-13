@@ -1,4 +1,4 @@
-import { arraysEqual, range } from '@problems/core/utils';
+import { arraysEqual, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=04
