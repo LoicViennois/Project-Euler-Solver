@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v2.0.1...v3.0.0) (2026-09-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* change folder structure, migrate to standalone components
+
+### Features
+
+* upgrade to Angular 20 ([e8fbfa6](https://github.com/LoicViennois/Project-Euler-Solver/commit/e8fbfa6928e5a68fbf034a4f08a5d2f79c03874d))
+
 ### [2.0.1](https://github.com/LoicViennois/Project-Euler-Solver/compare/v2.0.0...v2.0.1) (2025-03-21)
 
 
