@@ -6,9 +6,11 @@
   "author": "Loïc Viennois",
   "packageManager": "pnpm@12.3.4",
   "scripts": {
-    "install:all": "pnpm install && pnpm --dir apps/euler-client install && pnpm --dir apps/euler-server install",
-    "start:server": "pnpm --dir apps/euler-server run start:dev",
-    "start:client": "pnpm --dir apps/euler-client run start",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "start:server": "pnpm --filter project-euler-server run start:dev",
+    "start:client": "pnpm --filter project-euler-client run start",
     "start": "run-p start:server start:client",
     "release": "standard-version"
   },
