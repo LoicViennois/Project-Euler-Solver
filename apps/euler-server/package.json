@@ -2,6 +2,7 @@
   "name": "project-euler-server",
   "version": "2.0.1",
   "license": "GPLv3",
+  "packageManager": "pnpm@12.3.4",
   "engines": {
     "node": ">=22.14.0"
   },
