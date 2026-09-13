@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Problem } from './problem';
 import { ProblemsService } from './problems.service';
 import { Chunkify } from '../utils/chunkify';
-import { NgFor, NgIf } from '@angular/common';
+
 import { ProblemCardComponent } from './problem-card/problem-card.component';
 import { FirstIdPipe, LastIdPipe } from './problem-id.pipe';
 
@@ -11,8 +11,6 @@ import { FirstIdPipe, LastIdPipe } from './problem-id.pipe';
   templateUrl: './problems-list.component.html',
   styleUrls: ['./problems-list.component.less'],
   imports: [
-    NgIf,
-    NgFor,
     ProblemCardComponent,
     FirstIdPipe,
     LastIdPipe,
