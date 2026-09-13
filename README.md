@@ -5,4 +5,4 @@
 Project Euler Solver is a demonstration of solving [Project Euler](https://projecteuler.net/) problems with web
 technologies.
 
-Project Euler Solver is built on [Angular 20](https://angular.dev).
+Project Euler Solver is built on [Angular 21](https://angular.dev).

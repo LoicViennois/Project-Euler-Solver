@@ -2,14 +2,14 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { ProblemsService } from '../problems.service';
 import { Problem } from '../problem';
 import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+
 
 
 @Component({
   selector: 'euler-problem-card',
   templateUrl: './problem-card.component.html',
   styleUrls: ['./problem-card.component.less'],
-  imports: [RouterLink, NgIf],
+  imports: [RouterLink],
 })
 export class ProblemCardComponent implements OnInit {
   @Input() problem: Problem;
