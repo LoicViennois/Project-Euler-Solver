@@ -1,50 +1,50 @@
 import * as path from 'node:path';
 
-import { EulerProblem } from '@problems/core/types/euler-problem';
+import { EulerProblem } from '../types/euler-problem.js';
 
-import { euler061 } from './euler061';
-import { euler062 } from './euler062';
-import { euler063 } from './euler063';
-import { euler064 } from './euler064';
-import { euler065 } from './euler065';
-import { euler066 } from './euler066';
-import { euler067 } from './euler067';
+import { euler061 } from './euler061.js';
+import { euler062 } from './euler062.js';
+import { euler063 } from './euler063.js';
+import { euler064 } from './euler064.js';
+import { euler065 } from './euler065.js';
+import { euler066 } from './euler066.js';
+import { euler067 } from './euler067.js';
 
 export const problemsPack4: EulerProblem[] = [
   {
     id: 61,
     solver: euler061,
-    codeFilePath: path.join(__dirname, './euler061.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler061.ts'),
   },
   {
     id: 62,
     solver: euler062,
-    codeFilePath: path.join(__dirname, './euler062.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler062.ts'),
   },
   {
     id: 63,
     solver: euler063,
-    codeFilePath: path.join(__dirname, './euler063.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler063.ts'),
   },
   {
     id: 64,
     solver: euler064,
-    codeFilePath: path.join(__dirname, './euler064.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler064.ts'),
   },
   {
     id: 65,
     solver: euler065,
-    codeFilePath: path.join(__dirname, './euler065.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler065.ts'),
   },
   {
     id: 66,
     solver: euler066,
-    codeFilePath: path.join(__dirname, './euler066.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler066.ts'),
   },
   {
     id: 67,
     solver: euler067,
-    codeFilePath: path.join(__dirname, './euler067.ts'),
+    codeFilePath: path.join(import.meta.dirname, './euler067.ts'),
   },
   { id: 68, solver: null, codeFilePath: '' },
   { id: 69, solver: null, codeFilePath: '' },

@@ -1,4 +1,4 @@
-import { isPrime } from '@problems/core/maths';
+import { isPrime } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=58

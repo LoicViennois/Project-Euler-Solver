@@ -1,11 +1,11 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { isPrime, sieve } from '@problems/core/maths';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { isPrime, sieve } from '../maths.js';
 import {
   arePermutations,
   concat,
   digits2number,
   number2digits,
-} from '@problems/core/utils';
+} from '../utils.js';
 
 /*
 https://projecteuler.net/problem=49

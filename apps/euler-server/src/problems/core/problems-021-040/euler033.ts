@@ -1,10 +1,5 @@
-import { gcd } from '@problems/core/maths';
-import {
-  digits2number,
-  intersection,
-  number2digits,
-  range,
-} from '@problems/core/utils';
+import { gcd } from '../maths.js';
+import { digits2number, intersection, number2digits, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=33

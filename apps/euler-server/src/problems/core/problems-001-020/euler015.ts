@@ -1,5 +1,5 @@
-import { sum } from '@problems/core/maths';
-import { range, times } from '@problems/core/utils';
+import { sum } from '../maths.js';
+import { range, times } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=15

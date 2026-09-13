@@ -1,5 +1,5 @@
-import { isPrime, sieve, sum } from '@problems/core/maths';
-import { digits2number, number2digits } from '@problems/core/utils';
+import { isPrime, sieve, sum } from '../maths.js';
+import { digits2number, number2digits } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=37

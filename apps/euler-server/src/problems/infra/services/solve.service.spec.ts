@@ -1,4 +1,4 @@
-import { SolveService } from './solve.service';
+import { SolveService } from './solve.service.js';
 
 describe('SolveService', () => {
   const solveService = new SolveService();

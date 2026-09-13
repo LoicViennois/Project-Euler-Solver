@@ -1,5 +1,5 @@
-import { mul } from '@problems/core/maths';
-import { number2digits, range } from '@problems/core/utils';
+import { mul } from '../maths.js';
+import { number2digits, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=08

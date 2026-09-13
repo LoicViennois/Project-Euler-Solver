@@ -1,4 +1,4 @@
-import { max } from '@problems/core/maths';
+import { max } from '../maths.js';
 import {
   difference,
   digits2number,
@@ -7,7 +7,7 @@ import {
   range,
   union,
   uniq,
-} from '@problems/core/utils';
+} from '../utils.js';
 
 /*
 https://projecteuler.net/problem=38

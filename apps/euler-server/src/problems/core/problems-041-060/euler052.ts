@@ -1,5 +1,5 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { arePermutations, range } from '@problems/core/utils';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { arePermutations, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=52

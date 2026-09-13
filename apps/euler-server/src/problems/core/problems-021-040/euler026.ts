@@ -1,4 +1,4 @@
-import { range } from '@problems/core/utils';
+import { range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=26

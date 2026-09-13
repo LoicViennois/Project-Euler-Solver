@@ -1,4 +1,4 @@
-import { sum } from './maths';
+import { sum } from './maths.js';
 
 export function number2digits(n: number | string): number[] {
   const s = n + '';

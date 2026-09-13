@@ -1,4 +1,4 @@
-import { range } from '@problems/core/utils';
+import { range } from '../utils.js';
 
 export function findPeriod(num: number): [number, number[]] {
   const sqrt = Math.sqrt(num);

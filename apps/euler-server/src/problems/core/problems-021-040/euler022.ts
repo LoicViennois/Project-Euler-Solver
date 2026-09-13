@@ -1,13 +1,16 @@
 import * as fs from 'fs';
 import * as path from 'node:path';
 
-import { wordValue } from '@problems/core/utils';
+import { wordValue } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=22
 */
 export function euler022(): number {
-  const assetFilePath = path.resolve(__dirname, './assets/p022_names.txt');
+  const assetFilePath = path.resolve(
+    import.meta.dirname,
+    './assets/p022_names.txt',
+  );
   const names = fs
     .readFileSync(assetFilePath)
     .toString()

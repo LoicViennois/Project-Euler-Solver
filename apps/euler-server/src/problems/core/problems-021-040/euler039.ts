@@ -1,6 +1,6 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { maxKey } from '@problems/core/maths';
-import { range } from '@problems/core/utils';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { maxKey } from '../maths.js';
+import { range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=39

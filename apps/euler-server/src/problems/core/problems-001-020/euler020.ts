@@ -1,5 +1,5 @@
-import { bigFactorial, sum } from '@problems/core/maths';
-import { bigNumber2digits } from '@problems/core/utils';
+import { bigFactorial, sum } from '../maths.js';
+import { bigNumber2digits } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=20

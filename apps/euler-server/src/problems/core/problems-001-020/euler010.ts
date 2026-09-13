@@ -1,4 +1,4 @@
-import { sieve, sum } from '@problems/core/maths';
+import { sieve, sum } from '../maths.js';
 
 /*
 https://projecteuler.net/problem=10

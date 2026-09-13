@@ -1,4 +1,4 @@
-import { times } from '@problems/core/utils';
+import { times } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=57

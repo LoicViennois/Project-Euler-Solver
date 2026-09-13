@@ -1,23 +1,23 @@
-import { euler001 } from './euler001';
-import { euler002 } from './euler002';
-import { euler003 } from './euler003';
-import { euler004 } from './euler004';
-import { euler005 } from './euler005';
-import { euler006 } from './euler006';
-import { euler007 } from './euler007';
-import { euler008 } from './euler008';
-import { euler009 } from './euler009';
-import { euler010 } from './euler010';
-import { euler011 } from './euler011';
-import { euler012 } from './euler012';
-import { euler013 } from './euler013';
-import { euler014 } from './euler014';
-import { euler015 } from './euler015';
-import { euler016 } from './euler016';
-import { euler017 } from './euler017';
-import { euler018 } from './euler018';
-import { euler019 } from './euler019';
-import { euler020 } from './euler020';
+import { euler001 } from './euler001.js';
+import { euler002 } from './euler002.js';
+import { euler003 } from './euler003.js';
+import { euler004 } from './euler004.js';
+import { euler005 } from './euler005.js';
+import { euler006 } from './euler006.js';
+import { euler007 } from './euler007.js';
+import { euler008 } from './euler008.js';
+import { euler009 } from './euler009.js';
+import { euler010 } from './euler010.js';
+import { euler011 } from './euler011.js';
+import { euler012 } from './euler012.js';
+import { euler013 } from './euler013.js';
+import { euler014 } from './euler014.js';
+import { euler015 } from './euler015.js';
+import { euler016 } from './euler016.js';
+import { euler017 } from './euler017.js';
+import { euler018 } from './euler018.js';
+import { euler019 } from './euler019.js';
+import { euler020 } from './euler020.js';
 
 describe('Euler 001-020', () => {
   describe('euler001', () => {

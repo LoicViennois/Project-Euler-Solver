@@ -1,6 +1,6 @@
-import { SolutionNotFoundError } from '@problems/core/errors/solution-not-found.error';
-import { min } from '@problems/core/maths';
-import { number2digits, range } from '@problems/core/utils';
+import { SolutionNotFoundError } from '../errors/solution-not-found.error.js';
+import { min } from '../maths.js';
+import { number2digits, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=62

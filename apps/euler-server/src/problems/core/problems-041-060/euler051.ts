@@ -1,6 +1,6 @@
-import { cartesianProduct, combination } from '@problems/core/combinatorics';
-import { isPrime } from '@problems/core/maths';
-import { maxBy, range } from '@problems/core/utils';
+import { cartesianProduct, combination } from '../combinatorics.js';
+import { isPrime } from '../maths.js';
+import { maxBy, range } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=51

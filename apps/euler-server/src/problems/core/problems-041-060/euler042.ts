@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'node:path';
 
-import { max } from '@problems/core/maths';
-import { wordValue } from '@problems/core/utils';
+import { max } from '../maths.js';
+import { wordValue } from '../utils.js';
 
 /*
 https://projecteuler.net/problem=42
@@ -12,7 +12,10 @@ export function euler042(): number {
     return (n * (n + 1)) / 2;
   };
 
-  const assetFilePath = path.resolve(__dirname, './assets/p042_words.txt');
+  const assetFilePath = path.resolve(
+    import.meta.dirname,
+    './assets/p042_words.txt',
+  );
   const words = fs
     .readFileSync(assetFilePath)
     .toString()
