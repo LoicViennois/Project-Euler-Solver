@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v3.0.0...v3.1.0) (2026-09-13)
+
+
+### Features
+
+* **client:** upgrade to Angular 21 ([#16](https://github.com/LoicViennois/Project-Euler-Solver/issues/16)) ([323c3c0](https://github.com/LoicViennois/Project-Euler-Solver/commit/323c3c08ac5feb777c2673e75b5d6d001c9d42f5))
+* **server:** upgrade to Nest 12, Vitest and Oxlint ([#14](https://github.com/LoicViennois/Project-Euler-Solver/issues/14)) ([84fa735](https://github.com/LoicViennois/Project-Euler-Solver/commit/84fa735be1f5113e85936dfa8740d9cac9a523ee))
+
 ## [3.0.0](https://github.com/LoicViennois/Project-Euler-Solver/compare/v2.0.1...v3.0.0) (2026-09-13)
 
 
