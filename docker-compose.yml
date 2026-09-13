@@ -1,13 +1,15 @@
-version: '2.4'
-
 services:
   server:
     image: ghcr.io/loicviennois/project-euler-server
-    build: ./apps/euler-server
+    build:
+      context: .
+      dockerfile: ./apps/euler-server/Dockerfile
     ports:
       - '3000:3000'
   client:
     image: ghcr.io/loicviennois/project-euler-client
-    build: ./apps/euler-client
+    build:
+      context: .
+      dockerfile: ./apps/euler-client/Dockerfile
     ports:
       - '8080:80'

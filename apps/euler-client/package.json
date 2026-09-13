@@ -9,6 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
     "lint": "ng lint"
@@ -29,7 +30,7 @@
     "@ng-bootstrap/ng-bootstrap": "^20.0.0",
     "bootstrap": "^5.3.5",
     "highlight.js": "^10.7.3",
-    "rxjs": "^7.8.2",
+    "rxjs": "catalog:",
     "tslib": "^2.3.0",
     "zone.js": "~0.16.0"
   },
