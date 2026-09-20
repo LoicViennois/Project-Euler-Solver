@@ -1,2 +1,17 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const environment = (window as any).env;
+import { gitInfo } from './git-info';
+
+interface WindowEnv {
+  production?: boolean;
+  apiUrl?: string;
+}
+
+const windowEnv = (window as unknown as { env?: WindowEnv }).env;
+
+export const environment = {
+  production: true,
+  apiUrl: '',
+  ...windowEnv,
+  commitSha: gitInfo.commitSha,
+  shortSha: gitInfo.shortSha,
+};
+

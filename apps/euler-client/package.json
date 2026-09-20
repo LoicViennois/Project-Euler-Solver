@@ -1,6 +1,5 @@
 {
   "name": "project-euler-client",
-  "version": "2.0.1",
   "license": "GPLv3",
   "packageManager": "pnpm@12.3.4",
   "engines": {
@@ -8,10 +7,14 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start:dev": "ng serve",
+    "prebuild": "node scripts/generate-git-info.mjs",
     "build": "ng build",
+    "prebuild:prod": "node scripts/generate-git-info.mjs",
     "build:prod": "ng build --configuration production",
+    "prestart": "node scripts/generate-git-info.mjs",
+    "start": "ng serve",
+    "prestart:dev": "node scripts/generate-git-info.mjs",
+    "start:dev": "ng serve",
     "lint": "ng lint"
   },
   "private": true,
