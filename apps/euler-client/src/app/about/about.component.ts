@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import pkg from '../../../package.json';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -9,6 +9,10 @@ import pkg from '../../../package.json';
   styleUrls: ['./about.component.less'],
 })
 export class AboutComponent {
-  readonly version: string = pkg.version;
+  readonly commitSha = environment.commitSha;
+  readonly shortSha = environment.shortSha;
+  readonly commitUrl = this.commitSha && this.commitSha !== 'dev'
+    ? `https://github.com/LoicViennois/Project-Euler-Solver/commit/${this.commitSha}`
+    : 'https://github.com/LoicViennois/Project-Euler-Solver';
 }
 
