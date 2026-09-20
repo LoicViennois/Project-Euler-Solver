@@ -6,13 +6,8 @@ import { dirname, resolve } from 'node:path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-let commitSha = '';
-try {
-  commitSha = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
-} catch {
-  commitSha = process.env.COMMIT_SHA || process.env.GITHUB_SHA || 'dev';
-}
-const shortSha = commitSha && commitSha !== 'dev' ? commitSha.slice(0, 7) : 'dev';
+const commitSha = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+const shortSha = commitSha.slice(0, 7);
 
 const content = `// This file is auto-generated during build.
 export const gitInfo = {
