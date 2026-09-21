@@ -4,22 +4,24 @@
   "license": "GPLv3",
   "author": "Loïc Viennois",
   "packageManager": "pnpm@12.3.4",
-  "engines": {
-    "node": ">=22.14.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.21.0",
+      "onFail": "download"
+    }
   },
   "scripts": {
     "ng": "ng",
     "prebuild": "node scripts/generate-git-info.mjs",
     "build": "ng build",
-    "prebuild:prod": "node scripts/generate-git-info.mjs",
-    "build:prod": "ng build --configuration production",
     "prestart": "node scripts/generate-git-info.mjs",
     "start": "ng serve",
-    "prestart:dev": "node scripts/generate-git-info.mjs",
-    "start:dev": "ng serve",
     "lint": "ng lint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +48,7 @@
     "@angular/cli": "^21.2.24",
     "@angular/compiler-cli": "^21.2.23",
     "@angular/language-service": "^21.2.23",
+    "@playwright/test": "^1.63.0",
     "@types/highlight.js": "^9.12.4",
     "@types/node": "^24.0.0",
     "angular-eslint": "21.4.0",

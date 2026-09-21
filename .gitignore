@@ -41,3 +41,8 @@ Thumbs.db
 
 # Generated build files
 /src/environments/git-info.ts
+
+# Playwright
+/playwright-report/
+/test-results/
+
