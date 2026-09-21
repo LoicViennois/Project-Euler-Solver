@@ -1,6 +1,5 @@
 import { enableProdMode, importProvidersFrom, isDevMode, provideZoneChangeDetection } from '@angular/core';
 
-import { environment } from './environments/environment';
 import { ProblemsService } from './app/problems-list/problems.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
