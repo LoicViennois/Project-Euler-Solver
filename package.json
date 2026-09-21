@@ -4,19 +4,19 @@
   "license": "GPLv3",
   "author": "Loïc Viennois",
   "packageManager": "pnpm@12.3.4",
-  "engines": {
-    "node": ">=22.14.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.21.0",
+      "onFail": "download"
+    }
   },
   "scripts": {
     "ng": "ng",
     "prebuild": "node scripts/generate-git-info.mjs",
     "build": "ng build",
-    "prebuild:prod": "node scripts/generate-git-info.mjs",
-    "build:prod": "ng build --configuration production",
     "prestart": "node scripts/generate-git-info.mjs",
     "start": "ng serve",
-    "prestart:dev": "node scripts/generate-git-info.mjs",
-    "start:dev": "ng serve",
     "lint": "ng lint",
     "test": "vitest run",
     "test:watch": "vitest",
