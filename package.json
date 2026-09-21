@@ -4,13 +4,56 @@
   "license": "GPLv3",
   "author": "Loïc Viennois",
   "packageManager": "pnpm@12.3.4",
-  "scripts": {
-    "build": "pnpm -r build",
-    "lint": "pnpm -r lint",
-    "test": "pnpm -r test",
-    "start:server": "pnpm --filter project-euler-server run start:dev",
-    "start:client": "pnpm --filter project-euler-client run start",
-    "start": "pnpm -r --parallel run start:dev"
+  "engines": {
+    "node": ">=22.14.0"
   },
-  "private": true
+  "scripts": {
+    "ng": "ng",
+    "prebuild": "node scripts/generate-git-info.mjs",
+    "build": "ng build",
+    "prebuild:prod": "node scripts/generate-git-info.mjs",
+    "build:prod": "ng build --configuration production",
+    "prestart": "node scripts/generate-git-info.mjs",
+    "start": "ng serve",
+    "prestart:dev": "node scripts/generate-git-info.mjs",
+    "start:dev": "ng serve",
+    "lint": "ng lint",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^21.2.23",
+    "@angular/common": "^21.2.23",
+    "@angular/compiler": "^21.2.23",
+    "@angular/core": "^21.2.23",
+    "@angular/forms": "^21.2.23",
+    "@angular/localize": "^21.2.23",
+    "@angular/platform-browser": "^21.2.23",
+    "@angular/platform-browser-dynamic": "^21.2.23",
+    "@angular/router": "^21.2.23",
+    "@angular/service-worker": "^21.2.23",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@ng-bootstrap/ng-bootstrap": "^20.0.0",
+    "bootstrap": "^5.3.5",
+    "highlight.js": "^10.7.3",
+    "rxjs": "^7.8.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.16.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.24",
+    "@angular/cli": "^21.2.24",
+    "@angular/compiler-cli": "^21.2.23",
+    "@angular/language-service": "^21.2.23",
+    "@types/highlight.js": "^9.12.4",
+    "@types/node": "^24.0.0",
+    "angular-eslint": "21.4.0",
+    "eslint": "^9.29.0",
+    "less": "^4.3.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.70.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.1.2"
+  }
 }
