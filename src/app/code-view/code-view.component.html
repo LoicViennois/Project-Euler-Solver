@@ -7,7 +7,7 @@
 <div class="row pt-4 pb-4">
   <div class="col-lg code-list sticky-top border border-dark mx-3 my-1">
     <ul class="fa-ul ml-2 py-1">
-      @for (pb of problems; track pb) {
+      @for (pb of problems(); track pb.id) {
         <li #rla="routerLinkActive"
           class="link-file"
           routerLinkActive="active">

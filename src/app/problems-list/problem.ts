@@ -1,3 +1,5 @@
+import { signal } from '@angular/core';
+
 export enum Status {
   toSolve,
   notAvailable,
@@ -17,49 +19,51 @@ export class ApiProblem {
 }
 
 export class Problem {
-  id: number;
-  name: string;
-  private status: Status;
-  private pSolution: Solution;
+  readonly id: number;
+  readonly name: string;
+  private readonly status = signal<Status>(Status.toSolve);
+  private readonly pSolution = signal<Solution | undefined>(undefined);
 
   constructor(p: ApiProblem) {
     this.id = p.id;
     this.name = p.name;
-    this.status = p.status;
+    this.status.set(p.status);
   }
 
-  get solution(): Solution {
-    return this.pSolution;
+  get solution(): Solution | undefined {
+    return this.pSolution();
   }
 
-  set solution(s: Solution) {
-    this.pSolution = s;
-    this.status = Status.solved;
+  set solution(s: Solution | undefined) {
+    this.pSolution.set(s);
+    if (s) {
+      this.status.set(Status.solved);
+    }
   }
 
   get isNotAvailable(): boolean {
-    return this.status === Status.notAvailable;
+    return this.status() === Status.notAvailable;
   }
 
   get isAvailable(): boolean {
-    return this.status !== Status.notAvailable;
+    return this.status() !== Status.notAvailable;
   }
 
   get isSolved(): boolean {
-    return this.status === Status.solved;
+    return this.status() === Status.solved;
   }
 
   get isSolving(): boolean {
-    return this.status === Status.solving;
+    return this.status() === Status.solving;
   }
 
   set isSolving(v: boolean) {
     if (v) {
-      this.status = Status.solving;
+      this.status.set(Status.solving);
     }
   }
 
   get isToSolve(): boolean {
-    return this.status === Status.toSolve;
+    return this.status() === Status.toSolve;
   }
 }

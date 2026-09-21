@@ -1,6 +1,6 @@
 <div class="row mx-0">
-  @if (problems.length > 0 ) {
-    @for (pbs of problems; track pbs) {
+  @if (problems().length > 0) {
+    @for (pbs of problems(); track pbs) {
       <div class="col-sm p-1">
         <div class="d-flex justify-content-center">
           <button (click)="solve(pbs)" class="btn btn-secondary btn-solve mb-1 mt-2">
@@ -10,7 +10,7 @@
             {{ pbs | lastId }}
           </button>
         </div>
-        @for (p of pbs; track p) {
+        @for (p of pbs; track p.id) {
           <euler-problem-card [problem]="p"></euler-problem-card>
         }
       </div>

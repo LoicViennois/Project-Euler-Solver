@@ -1,4 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { Problem } from './problem';
 import { ProblemsService } from './problems.service';
 import { Chunkify } from '../utils/chunkify';
@@ -15,16 +17,19 @@ import { FirstIdPipe, LastIdPipe } from './problem-id.pipe';
     FirstIdPipe,
     LastIdPipe,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProblemsListComponent implements OnInit {
-  problems: Problem[][] = [];
-  private problemsService = inject(ProblemsService);
+export class ProblemsListComponent {
+  readonly problems: Signal<Problem[][]>;
+  private readonly problemsService = inject(ProblemsService);
 
-
-  ngOnInit(): void {
-    this.problemsService.getProblems().subscribe((problems: Problem[]) => {
-      this.problems = Chunkify(problems, 10);
-    });
+  constructor() {
+    this.problems = toSignal(
+      this.problemsService.getProblems().pipe(
+        map(problems => Chunkify(problems, 10)),
+      ),
+      { initialValue: [] },
+    );
   }
 
   solve(problems: Problem[]): void {
@@ -34,5 +39,4 @@ export class ProblemsListComponent implements OnInit {
       });
     });
   }
-
 }
